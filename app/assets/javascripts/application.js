@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require custom-triggers.js
+//= require jquery-ui.min.js
+//= require responsiveslides.min.js
 //= require_tree .
