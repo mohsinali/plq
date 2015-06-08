@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
+gem 'rolify'
 group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
