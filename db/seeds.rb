@@ -17,5 +17,6 @@ ActiveRecord::Base.connection.execute("ALTER SEQUENCE roles_id_seq RESTART WITH 
 Role.create(name: "user")
 Role.create(name: "manager")
 Role.create(name: "agent")
+Role.create(name: "vendor")
 
-puts "Roles created: User, Manager, Agent"
+puts "Roles created: User, Manager, Agent, Vendor"
