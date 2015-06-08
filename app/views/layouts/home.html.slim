@@ -489,44 +489,10 @@ html
       .want-to-join-plq-dialog
         div
           a#dialogAgentFormButton.join-button href="javascript:void(0);"  AS AGENT
-          | \&nbsp;
+          | &nbsp;
           a#dialogVenderFormButton.join-button href="javascript:void(0);"  AS VENDER
     #AgentForm style="display:none;" title=("SIGN UP AS AGENT") 
-      .signup-form
-        form action="" method="post" name="agentfrm" 
-          .field-div
-            .label Name
-            .field
-              input.inputfield name="name" type="text" value=""
-            .clear
-          .field-div
-            .label Location
-            .field
-              input.inputfield name="location" type="text" value=""
-            .clear
-          .field-div
-            .label Service
-            .field
-              input.inputfield name="service" type="text" value=""
-            .clear
-          .field-div
-            .label Tier
-            .field
-              input.inputfield name="tier" type="text" value=""
-            .clear
-          .field-div
-            .label Social Links
-            .field
-              input.inputfield name="sociallinks" type="text" value=""
-              span Add Facebook, Instagram, Twitter (Comma Separated)
-            .clear
-          .field-div
-            .label Describe yourself in 140 characters
-            .field
-              textarea.inputfield name="aboutperson" rows="4" 
-            .clear
-          .align-right.padd-rgt-10
-            input.submit-button name="submit" type="submit" value=("Sign Up")
+      = render "shared/agent_signup_form"
     #VenderForm style="display:none;" title=("SIGN UP AS VENDER") 
       .signup-form
         form action="" method="post" name="venderfrm" 
