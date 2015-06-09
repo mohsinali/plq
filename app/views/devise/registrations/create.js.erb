@@ -5,10 +5,16 @@ errors_html = "";
     errors_html += "<li> <%= e.to_s.humanize %> <%= @resource.errors[e].first %> </li>";
   <% end %>
   errors_html += "</ul>";
-  <% #binding.pry %>
+
   <% if params[:role].eql? "agent" %>
+    $(".agent_loader").hide();
+    $("#btn_agent_signup").show();
+
     $("#agent_error_messages").html(errors_html);
   <% else %>
+    $(".vendor_loader").hide();
+    $("#btn_vendor_signup").show();
+
     $("#vendor_error_messages").html(errors_html);
   <% end %>
 <% else %>

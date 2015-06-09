@@ -49,7 +49,9 @@
         input type="hidden" class="user_role" name="role" value="agent"
       .clear
     .align-right.padd-rgt-10
-      input.submit-button name="commit" id="btn_signup" type="submit" value=("Sign Up")
+      .agent_loader style="display:none;"
+        = image_tag "loading.gif"
+      input.submit-button name="commit" id="btn_agent_signup" type="submit" value=("Sign Up")
       
     div style="display:none" 
       input name="utf8" type="hidden" value="✓" /

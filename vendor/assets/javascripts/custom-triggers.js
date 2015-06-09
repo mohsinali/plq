@@ -1,9 +1,19 @@
 $(function () {
+  $("#btn_agent_signup").click(function(){
+    $(".agent_loader").show();
+    $("#btn_agent_signup").hide();
+  });
+
+  $("#btn_vendor_signup").click(function(){
+    $(".vendor_loader").show();
+    $("#btn_vendor_signup").hide();
+  });
+
       $("#homeslider").responsiveSlides({
         //maxwidth: 800,
         speed: 800,
-		nav: false, 
-		auto: true
+    		nav: false, 
+    		auto: true
       });
 	  $("#testislider").responsiveSlides({
         //maxwidth: 800,

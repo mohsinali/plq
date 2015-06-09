@@ -50,7 +50,9 @@
         input type="hidden" name="role" value="vendor"
       .clear
     .align-right.padd-rgt-10
-      input.submit-button name="commit" id="btn_signup" type="submit" value=("Sign Up")
+      .vendor_loader style="display:none;"
+        = image_tag "loading.gif"
+      input.submit-button name="commit" id="btn_vendor_signup" type="submit" value=("Sign Up")
       
     div style="display:none" 
       input name="utf8" type="hidden" value="✓" /
