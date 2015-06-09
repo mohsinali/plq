@@ -88,10 +88,10 @@ $(function () {
 			$( "#VenderForm" ).dialog({
 			  modal: true,
 			  resizable: false,
-			   draggable: false,
-			   width: 500,
-			   height: 600,
-			   closeText: false
+			  draggable: false,
+			  width: 500,
+			  height: 600,
+			  closeText: false
 			});
 			$( "#VenderForm" ).effect( "bounce", "slow" );
 		});

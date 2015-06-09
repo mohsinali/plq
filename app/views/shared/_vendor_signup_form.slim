@@ -1,4 +1,5 @@
-#agent_error_messages
+#vendor_error_messages
+#error_messages
 .signup-form
   form#new_user.new_user accept-charset="UTF-8" action="/users" method="post" data-remote="true"
     .field-div
@@ -46,7 +47,7 @@
       .label Describe yourself in 140 characters
       .field
         input#user_description.inputfield name="user[description]" type="text" value=""
-        input type="hidden" class="user_role" name="role" value="agent"
+        input type="hidden" name="role" value="vendor"
       .clear
     .align-right.padd-rgt-10
       input.submit-button name="commit" id="btn_signup" type="submit" value=("Sign Up")
