@@ -1,3 +1,4 @@
+#error_messages
 .signup-form
   form#new_user.new_user accept-charset="UTF-8" action="/users" method="post" data-remote="true"
     .field-div
@@ -47,7 +48,7 @@
         input#user_description.inputfield name="user[description]" type="text" value=""
       .clear
     .align-right.padd-rgt-10
-      input.submit-button name="commit" type="submit" value=("Sign Up")
+      input.submit-button name="commit" id="btn_signup" type="submit" value=("Sign Up")
       
     div style="display:none" 
       input name="utf8" type="hidden" value="✓" /

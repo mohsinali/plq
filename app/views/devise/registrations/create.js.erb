@@ -1,1 +1,10 @@
-alert("hello");
+errors_html = "";
+<% if @resource.errors.any? %>
+  errors_html += "<ul class='error'>";
+  <% @resource.errors.each do |e| %>
+    errors_html += "<li> <%= e.to_s.humanize %> <%= @resource.errors[e].first %> </li>";
+  <% end %>
+  errors_html += "</ul>";
+<% end %>
+
+$("#error_messages").html(errors_html);
