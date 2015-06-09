@@ -15,9 +15,14 @@ html
           = image_tag "logo.png", alt: "The PLQ", width: "230", height: "86"
         .right-div
           div
-            a#loginButton.login href="javascript:void(0);"  LOG IN
-            | &nbsp;
-            a.signup.askSignupType href="javascript:void(0);"  SIGN UP
+            - if user_signed_in?
+              = link_to "My Account", "#", class: "login", id: "loginButton"
+              | &nbsp;
+              = link_to "Log out", destroy_user_session_path, class: "signup", :method=>'delete'
+            - else
+              a#loginButton.login href="javascript:void(0);"  LOG IN
+              | &nbsp;
+              a.signup.askSignupType href="javascript:void(0);"  SIGN UP
             | &nbsp;&nbsp;
             a#mainmenuButton.menu href="javascript:void(0);"  MENU
         .clearfix
@@ -512,19 +517,8 @@ html
             input.submit-button name="submit" type="submit" value=("Sign Up")
     #LoginForm style="display:none;" title=("LOG IN") 
       .signup-form
-        form action="" method="post" name="loginfrm" 
-          .field-div
-            .label Email
-            .field
-              input.inputfield name="email" type="text" value=""
-            .clear
-          .field-div
-            .label Password
-            .field
-              input.inputfield name="password" type="password" value=""
-            .clear
-          .align-right.padd-rgt-10
-            input.submit-button name="submit" type="submit" value=("Log In")
+        = render 'shared/sign_in_form'
+
     #MembershipForm style="display:none;" title=("REQUEST FOR MEMBERSHIP") 
       .signup-form
         form action="" method="post" name="membershipfrm" 

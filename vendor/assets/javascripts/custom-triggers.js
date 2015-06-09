@@ -9,6 +9,11 @@ $(function () {
     $("#btn_vendor_signup").hide();
   });
 
+  $(".btn_sign_in").click(function(){
+    $(".signin_loader").show();
+    $(".btn_sign_in").hide();
+  });
+
       $("#homeslider").responsiveSlides({
         //maxwidth: 800,
         speed: 800,

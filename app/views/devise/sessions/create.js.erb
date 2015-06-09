@@ -1,0 +1,7 @@
+<% if @resource.nil? %>
+	$(".sign_in_error").show();
+  $(".signin_loader").hide();
+  $(".btn_sign_in").show();
+<% else %>
+  location.reload();
+<% end %>
