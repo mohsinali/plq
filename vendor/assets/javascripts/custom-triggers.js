@@ -187,4 +187,17 @@ $(function () {
 			$( "#servicePopup" ).hide();
 		});
 
+
+		$( ".userSignupButton" ).click(function() {
+			$( "#UserSignUpForm" ).dialog({
+			  modal: true,
+			  resizable: false,
+			   draggable: false,
+			   width: 500,
+			   height: 270,
+			   closeText: false
+			});
+			$( "#UserSignUpForm" ).effect( "bounce", "slow" );
+		});
+
   });

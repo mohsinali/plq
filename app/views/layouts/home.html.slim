@@ -67,8 +67,7 @@ html
             p Using our location based technology platform we give users direct access to a mapped global network of lifestyle service providers.
             p Our iOS and Android applications provide registered users direct access to our network of verified providers.
             p Start enjoying your new lifestyle it's just a few taps away...
-          .signup-for-early-access
-            a#earlyAccessSignupButton href="javascript:void(0);"  SIGN UP FOR EARLY ACCESS
+          
       .plq-app
         h2
           span
@@ -77,6 +76,10 @@ html
             | App
         div
           = image_tag "app-screens2.jpg", alt: "PLQ App", border: "0"
+
+      .signup-for-early-access
+        a#earlyAccessSignupButton href="javascript:void(0);"  SIGN UP FOR EARLY ACCESS
+
       .plq-affiliate-services
         h2.align-center
           span
@@ -197,7 +200,7 @@ html
           h4 Free with PL user account
           p Personalized social guide of things to buy, to do and places to see curated by PL with access to our dedicated network of lifestyle agents.
           div
-            a.membership-button.askSignupType href="javascript:void(0);"  Join
+            a.membership-button.userSignupButton href="javascript:void(0);"  Join
         .membership-box
           h3 PLQ Silver
           h4 £25 per month
@@ -245,7 +248,7 @@ html
         div
           a#agentFormButton.join-button href="javascript:void(0);"  AGENT
           |  
-          a#venderFormButton.join-button href="javascript:void(0);"  VENDER
+          a#venderFormButton.join-button href="javascript:void(0);"  VENDOR
     .plq-map
       .home-container
         h2 Our Global Network
@@ -465,7 +468,7 @@ html
             a.linkedin-icon href="#" 
           .footer-mid
             .footer-button
-              a.signup-button.askSignupType href="javascript:void(0);"  SIGN UP NOW
+              a.signup-button.userSignupButton href="javascript:void(0);"  SIGN UP NOW
             .footer-nav
               a href="#" 
                 strong HOME
@@ -495,10 +498,10 @@ html
         div
           a#dialogAgentFormButton.join-button href="javascript:void(0);"  AS AGENT
           | &nbsp;
-          a#dialogVenderFormButton.join-button href="javascript:void(0);"  AS VENDER
+          a#dialogVenderFormButton.join-button href="javascript:void(0);"  AS VENDOR
     #AgentForm style="display:none;" title=("SIGN UP AS AGENT") 
       = render "shared/agent_signup_form"
-    #VenderForm style="display:none;" title=("SIGN UP AS VENDER") 
+    #VenderForm style="display:none;" title=("SIGN UP AS VENDOR") 
       = render "shared/vendor_signup_form"
     #EarlyAccessForm style="display:none;" title=("SIGN UP FOR EARLY ACCESS") 
       .signup-form
@@ -551,3 +554,19 @@ html
             a href="#"  Download PDF
           .align-right.padd-rgt-10
             input.submit-button name="submit" type="submit" value=("Send Request")
+
+    #UserSignUpForm style="display:none;" title=("SIGN UP AS USER") 
+      .signup-form
+        form action="" method="post" name="earlyaccessfrm" 
+          .field-div
+            .label Username
+            .field
+              input.inputfield name="username" type="text" value="" /
+            .clear
+          .field-div
+            .label Email
+            .field
+              input.inputfield name="email" type="text" value="" /
+            .clear
+          .align-right.padd-rgt-10
+            input.submit-button name="submit" type="submit" value=("Sign Up") /

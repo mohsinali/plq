@@ -23,14 +23,10 @@
     src: url(fonts/OpenSans-Italic.ttf);
 }
 body {
-	margin:0px;
-	padding:0px;
-	font-family: OpenSans-Regular;
-	background:#fff;
-}
-form {
-  padding:0px;
   margin:0px;
+  padding:0px;
+  font-family: OpenSans-Regular;
+  background:#fff;
 }
 a {
 -o-transition:.5s;
@@ -263,7 +259,7 @@ background:url(globe.png) top right no-repeat;
 padding: 0px 480px 40px 0px;
 }
 .plq-global-network .outer-padd {
-padding: 0px 0px 50px 0px;
+padding: 0px 0px 30px 0px;
 }
 .plq-global-network h1 {
 border-bottom:1px solid #cccccc;
@@ -282,6 +278,7 @@ font-weight:normal;
 
 .signup-for-early-access {
 text-align:center;
+margin:0px 0px 50px 0px;
 }
 .signup-for-early-access a {
 background:#4db6dc;
@@ -300,7 +297,7 @@ background:#1b99c7;
 }
 .plq-app {
 text-align:center;
-margin-bottom: 40px;
+margin-bottom: 50px;
 }
 
 .home-container h2 {
@@ -728,24 +725,22 @@ background:#1b99c7;
 .plq-map .find-city {
 position:absolute;
 z-index:99;
-width:244px;
-height:42px;
+width:250px;
 border:5px solid #4db6dc;
 background:#fff;
 text-align:left;
 left:39%;
 bottom: -15px;
-padding: 2px;
 }
 .plq-map .find-city .search-field {
 width:180px;
 border:none;
-padding: 12px 10px 8px 10px;
+padding: 14px 10px 10px 10px;
 margin:0px;
 background:#fff;
 font-size:16px;
 font-family: OpenSans-Light;
-float: left;
+float:left;
 }
 .plq-map .find-city .search-button {
 background-image: url(sprite.png);
@@ -754,7 +749,7 @@ background-position:0px -161px;
 width:41px;
 height:41px;
 padding:0px;
-margin:0px;
+margin:4px 0px 0px 5px;
 border:none;
 cursor:pointer;
 }
@@ -941,283 +936,1610 @@ width:20px;
 
 
 
+.inner-page-banner img {
+width:100%;
+border-bottom:4px solid #141414;
+}
+.inner-pages-main-padd {
+padding: 30px 0px 30px 0px;
+}
+.breadcrumbs {
+font-size:13px;
+color:#444;
+}
+.breadcrumbs a {
+font-size:13px;
+color:#4db6dc;
+
+text-decoration:none;
+}
+.breadcrumbs a:hover {
+color:#444;
+}
+.inner-page h1 {
+margin-top:10px;
+border-bottom:1px solid #ccc;
+padding-bottom:10px;
+margin-bottom:20px;
+}
+
+.left-pannel {
+float:left;
+width:28%;
+padding-top:10px; 
+}
+.content-pannel {
+float:right;
+width:68%; 
+text-align:left;
+padding-top:10px;
+}
+.results-found {
+border-bottom:1px dashed #ccc;
+padding:5px 0px 15px 0px;
+margin-bottom:20px;
+font-size:16px;
+}
+a.arrow-box { 
+background:#222;
+color:#fff;
+padding: 2px 10px 5px 10px;
+margin:0px;
+text-decoration:none;
+}
+a.arrow-box:hover { 
+background:#4db6dc;
+}
+.sorting {
+  margin:10px 0px 20px 0px;
+  font-size:16px;
+}
+.sorting select {
+  font-size:14px;
+  border:none;
+  background:#fff;
+  padding:5px;
+  color:#4db6dc;
+  border:1px solid #ccc;
+}
+
+.plq-listing .plq-profile {
+border: 1px solid #ddd;
+-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+font-size:13px;
+height:190px;
+margin-bottom:20px;
+}
+.plq-listing .plq-profile .photo {
+float:left;
+width:38%;
+}
+.plq-listing .plq-profile .photo img {
+border-right:3px solid #eee;
+}
+.plq-listing .plq-profile .info {
+float:left;
+width:59%;
+text-align:left;
+padding:10px 0px 0px 0px;
+color:#555;
+}
+.plq-listing .plq-profile .info .name {
+color:#4db6dc;
+font-family: OpenSans-Bold;
+font-size:18px;
+padding-bottom:5px;
+}
+.plq-listing .plq-profile .info .location {
+border-bottom:1px dashed #ddd;
+padding-bottom:10px;
+margin-bottom:10px;
+}
+.plq-listing .plq-profile .info .specialities {
+margin-bottom:15px;
+color:#777;
+} 
+.plq-listing .plq-profile .info .contact {
+text-align:right;
+}
+.plq-listing .plq-profile .info .contact a {
+background:#4db6dc;
+font-weight:normal;
+color:#fff;
+font-size:13px;
+text-decoration:none;
+padding:5px 10px 5px 10px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+.plq-listing .plq-profile .info .contact a:hover {
+background:#1b99c7;
+}
+
+.plq-listing .plq-profile .info .recommended {
+color:#555;
+border:1px solid #ddd;
+padding:5px;
+font-size:12px;
+float:right;
+}
+.plq-listing .plq-profile .info .recommended span {
+font-size:14px;
+font-family: OpenSans-Bold;
+color:#4db6dc;
+}
+
+
+.left-pannel h3 {
+font-size:18px;
+color:#444;
+font-family: OpenSans-Bold;
+font-weight:normal;
+padding:0px 0px 5px 0px;
+margin:0px;
+}
+.refine-search {
+margin-bottom:25px;
+}
+.refine-search .input-field {
+background:#eee;
+border:none;
+padding:5px 10px 5px 10px;
+margin:0px;
+font-size:14px;
+font-family: OpenSans-Regular;
+height:31px;
+float:left;
+width:79%;
+}
+.refine-search .search-button {
+background:url(search-icon.gif) no-repeat;
+width:41px;
+height:41px;
+float:left;
+border:none;
+padding:0px;
+margin:0px;
+cursor:pointer;
+}
+
+.lp-filter-box {
+margin:0px 0px 15px 0px;
+border:1px solid #ddd;
+}
+.lp-filter-box h4 {
+margin:0px 0px 20px 0px;
+background:#555;
+color:#fff;
+font-size:18px;
+font-weight:normal;
+padding:8px 12px 8px 12px;
+margin:0px;
+}
+.lp-filter-box .options {
+padding: 15px;
+}
+.lp-filter-box .options ul {
+list-style:none;
+padding:0px;
+margin:0px;
+}
+.lp-filter-box .options ul li {
+font-size:13px;
+color:#555;
+line-height:19px;
+margin:0px;
+padding:0px 0px 3px 0px;
+}
+.lp-filter-box .options .view-all-link {
+padding-left:5px;
+margin-top:10px;
+}
+.lp-filter-box .options .reset-link {
+float:right;
+margin-top:10px;
+}
+.lp-filter-box .options .reset-link a {
+color:#4db6dc;
+text-decoration:none;
+font-size:12px;
+}
+.lp-filter-box .options .view-all-link a {
+color:#4db6dc;
+text-decoration:none;
+font-size:12px;
+}
+.lp-filter-box .options .view-all-link a:hover , .lp-filter-box .options .reset-link a:hover {
+color:#444;
+}
+
+ul.error , .error {
+background:#ffc3c0;
+border:1px solid #ff2400;
+color:#CC0000;
+font-weight:normal;
+list-style-image:url(white-bul.gif);
+padding: 15px;
+margin: 0px 0px 20px 0px;
+}
+ul.error li {
+color:#CC0000;
+font-weight:normal;
+list-style-image:url(white-bul.gif);
+padding: 0px 5px 4px 5px;
+margin:0px 20px 0px 20px;
+font-size:14px;
+line-height:19px;
+}
+
+ul.success , .success {
+background:#b9fcb5;
+border:1px solid #3cba35;
+color:#199e12;
+font-weight:normal;
+list-style-image:url(white-bul.gif);
+padding: 15px;
+margin: 0px 0px 20px 0px;
+}
+ul.success li {
+color:#199e12;
+font-weight:normal;
+list-style-image:url(white-bul.gif);
+padding: 0px 5px 4px 5px;
+margin:0px 20px 0px 20px;
+font-size:14px;
+line-height:19px;
+}
+
+.loading {
+background:url(loading.gif) 96% 0% no-repeat;
+width:100%;
+height:64px;
+}
 
 @media only screen and (max-width: 1000px) {
-	
+
+  .container, .home-container {
+    margin: 0px auto;
+    width: 95%;
+  }
+  
+  .mainmenuouter {
+    width:95%;
+  }
+  .main-slider-text {
+    margin-left: 100px;
+    margin-top: 140px;
+    width: 60%;
+  }
+  .main-slider-text h2 {
+    font-size: 36px;
+    line-height: 38px;
+    margin: 0 0 10px;
+  }
+  .main-slider-text p {
+     font-size: 28px;
+      line-height: 32px;
+  }
+  
+  .plq-app img {
+    width:90%;
+  }
+  .plq-global-network {
+    background: none;
+    margin-top: 50px;
+  }
+  .plq-global-network .outer-padd {
+      padding: 0 0 20px;
+  }
+  .plq-global-network .inner-padd {
+    padding: 0 0px 20px 0;
+  }
+  .plq-global-network h1 {
+    text-align:center;
+    font-size: 28px;
+  }
+  .home-container h2 {
+    font-size: 28px;
+  } 
+  .plq-affiliate-services ul.services li {
+    color: #fff;
+    display: inline;
+    float: left;
+    margin: 0px 0px 20px 60px;
+    width: 356px;
+  }
+  .services-popup .text {
+    float: none;
+    width: 100%;
+  }
+  .services-popup .photo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  }
+  .services-popup .photo img {
+    width: 90%;
+  }
+  .membership-box {
+    float: left;
+    height: 330px;
+    margin: 0px 10px 20px 10px;
+    padding: 10px 20px;
+    width: 41%;
+  }
+  
+  footer .footer-left {
+
+    width: 29%;
+
+  }
+  footer .footer-mid {
+    width: 40%;
+  }
+  
+  footer .footer-right {
+    width: 30%;
+  }
+  
+  
+  
+  
+  
+  .plq-map .locationpin.losangeles {
+  left:22%;
+  top:48.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:24%;
+  top:44%;
+  }
+  .plq-map .locationpin.toronto {
+  left:28.5%;
+  top:39%;
+  }
+  .plq-map .locationpin.newyork {
+  left:32%;
+  top:41%;
+  }
+  .plq-map .locationpin.miami {
+  left:29.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.dubai {
+  left:58.5%;
+  top:54%;
+  }
+  .plq-map .locationpin.london {
+  left:46.5%;
+  top:37%;
+  }
+  .plq-map .locationpin.paris {
+  left:49%;
+  top:39%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:51%;
+  top:30%;
+  }
+  
+  
+  
+  .plq-listing .plq-profile .photo img {
+    width: 92%;
+  }
+  .plq-listing .plq-profile .info .name {
+    font-size: 16px;
+  }
+  .refine-search .input-field {
+    width: 71%;
+  }
+  
 }
 
-@media only screen and (max-width: 800px) {
-	
-}
+@media only screen and (max-width: 900px) {
 
+  .plq-affiliate-services ul.services li {
+    margin: 0px 0px 20px 20px;
+  }
+} 
+@media only screen and (max-width: 810px) {
+
+  
+  
+  .container, .home-container {
+    margin: 0px auto;
+    width: 95%;
+  }
+  
+  .mainmenuouter {
+    width:95%;
+  }
+  .main-slider-text {
+    margin-left: 0px;
+    margin-top: 140px;
+    width: 100%;
+    text-align:center;
+  }
+  .main-slider-text h2 {
+    font-size: 30px;
+    line-height: 32px;
+    margin: 0 0 10px;
+  }
+  .main-slider-text p {
+     font-size: 24px;
+      line-height: 26px;
+  }
+  
+  .plq-app img {
+    width:100%;
+  }
+  .plq-global-network {
+    background: none;
+    margin-top: 50px;
+  }
+  .plq-global-network .outer-padd {
+      padding: 0 0 20px;
+  }
+  .plq-global-network .inner-padd {
+    padding: 0 0px 20px 0;
+  }
+  .plq-global-network h1 {
+    text-align:center;
+    font-size: 28px;
+  }
+  .home-container h2 {
+    font-size: 28px;
+  } 
+  .plq-affiliate-services ul.services li {
+    color: #fff;
+    display: block;
+    float: none;
+    margin: 20px auto;
+    width: 356px;
+  }
+  .services-popup .text {
+    float: none;
+    width: 100%;
+  }
+  .services-popup .photo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  }
+  .services-popup .photo img {
+    width: 90%;
+  }
+  .membership-box {
+    float: left;
+    height: 330px;
+    margin: 0px 10px 20px 10px;
+    padding: 10px 20px;
+    width: 39%;
+  }
+  
+  footer .footer-left {
+    float: none;
+    padding-top: 0px;
+    text-align: center;
+    width: 140px;
+    clear:both;
+    margin:0px auto;
+    
+  }
+  footer .footer-mid {
+    float: none;
+    text-align: center;
+    width: 100%;
+    clear:both;
+    padding-top:30px;
+  }
+  
+  footer .footer-right {
+    float: none;
+    padding-top: 24px;
+    text-align: center;
+    width: 255px;
+    margin:0px auto;
+  }
+  
+  
+  
+  .plq-map .find-city {
+
+    left: 32%;
+
+  }
+  
+  .plq-map .locationpin.losangeles {
+  left:15%;
+  top:48.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:18.5%;
+  top:44%;
+  }
+  .plq-map .locationpin.toronto {
+  left:24%;
+  top:39%;
+  }
+  .plq-map .locationpin.newyork {
+  left:28%;
+  top:41%;
+  }
+  .plq-map .locationpin.miami {
+  left:24.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.dubai {
+  left:60.5%;
+  top:54%;
+  }
+  .plq-map .locationpin.london {
+  left:45.5%;
+  top:37%;
+  }
+  .plq-map .locationpin.paris {
+  left:47.5%;
+  top:39%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:52%;
+  top:31%;
+  }
+  
+  .left-pannel {
+    float: none;
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .content-pannel {
+    float: none;
+    padding-top: 10px;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .plq-listing .plq-profile .photo img {
+    width: 90%;
+  }
+  .plq-listing .plq-profile .info .name {
+    font-size: 16px;
+  }
+  
+  .refine-search .input-field {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 740px) {
+.vectormap img {
+    width:100%;
+  }
+  
+  .plq-map .locationpin.losangeles {
+  left:13%;
+  top:48.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:16.5%;
+  top:44%;
+  }
+  .plq-map .locationpin.toronto {
+  left:22%;
+  top:39%;
+  }
+  .plq-map .locationpin.newyork {
+  left:26%;
+  top:41%;
+  }
+  .plq-map .locationpin.miami {
+  left:22.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.dubai {
+  left:60.5%;
+  top:54%;
+  }
+  .plq-map .locationpin.london {
+  left:45.5%;
+  top:37%;
+  }
+  .plq-map .locationpin.paris {
+  left:47.5%;
+  top:39%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:52%;
+  top:31%;
+  }
+  
+  
+  
+}
 @media only screen and (max-width: 600px) {
-	
-	header {
-	    height: 130px;
-	}
-	
-	.container, .home-container {
-		margin: 0px auto;
-		width: 95%;
-	}
-	header .logo {
-		float: none;
-		width: 100%;
-		text-align:center;
-	}	
-	header .right-div {
-		float: none;
-		padding-top: 0px;
-		text-align: center;
-		width: 100%;
-	}
-	.mainmenuouter {
-		width:95%;
-	}
-	.main-slider-text {
-		margin-left: 0px;
-		margin-top: 140px;
-		width: 100%;
-		text-align:center;
-	}
-	.main-slider-text h2 {
-		font-size: 22px;
-		line-height: 22px;
-		margin: 0 0 10px;
-	}
-	.main-slider-text p {
-		 font-size: 18px;
-    	line-height: 24px;
-	}
-	.rslides img {
-		min-height:220px;  
-	}
-	.mainmenu {
-		right:0px;
-		top:131px;
-		width:150px;
-	}
-	.plq-app img {
-		width:100%;
-	}
-	.plq-global-network {
-		background: none;
-		margin-top: 50px;
-	}
-	.plq-global-network .outer-padd {
-	    padding: 0 0 50px;
-	}
-	.plq-global-network .inner-padd {
-		padding: 0 0px 40px 0;
-	}
-	.plq-global-network h1 {
-		text-align:center;
-		font-size: 24px;
-	}
-	.home-container h2 {
-		font-size: 24px;
-	}	
-	.plq-affiliate-services ul.services li {
-		color: #fff;
-		display: block;
-		float: none;
-		margin: 20px auto;
-		width: 356px;
-	}
-	.services-popup .text {
-		float: none;
-		width: 100%;
-	}
-	.services-popup .photo {
-		float: none;
-		width: 100%;
-		text-align:center;
-	}
-	.services-popup .photo img {
-		width: 90%;
-	}
-	.membership-box {
-		float: none;
-		height: 330px;
-		margin: 20px auto;
-		padding: 10px 20px;
-		width: 80%;
-	}
-	
-	footer .footer-left {
-		float: none;
-		padding-top: 0px;
-		text-align: center;
-		width: 140px;
-		clear:both;
-		margin:0px auto;
-		
-	}
-	footer .footer-mid {
-		float: none;
-		text-align: center;
-		width: 100%;
-		clear:both;
-		padding-top:30px;
-	}
-	
-	footer .footer-right {
-		float: none;
-		padding-top: 24px;
-		text-align: center;
-		width: 255px;
-		margin:0px auto;
-	}
-	.plq-map {
-		background:url(map-bg.jpg) repeat-x;
-		color:#fff;
-		min-height:600px;
-		text-align:center;
-		padding-top:27px;
-	}
-	.vectormap img {
-		width:100%;
-	}
-	.plq-map .locationpin.losangeles {
-	left:67px;
-	top:163px;
-	}
-	.plq-map .locationpin.lasvegas {
-	left:87px;
-	top:147px;
-	}
-	.plq-map .locationpin.toronto {
-	left:117px;
-	top:128px;
-	}
-	.plq-map .locationpin.newyork {
-	left:145px;
-	top:138px;
-	}
-	.plq-map .locationpin.miami {
-	left:125px;
-	top:183px;
-	}
-	.plq-map .locationpin.dubai {
-	left:328px;
-	top:188px;
-	}
-	.plq-map .locationpin.london {
-	left:255px;
-	top:128px;
-	}
-	.plq-map .locationpin.paris {
-	left:268px;
-	top:135px;
-	}
-	
-	.plq-map .locationpin.stockholm {
-	left:270px;
-	top:100px;
-	}
-	.plq-map .find-city {
-		bottom: -65px;
-		height: 52px;
-		left: 26%;
-		width: 250px;
-	}
+  
+  header {
+      height: 130px;
+  }
+  
+  .container, .home-container {
+    margin: 0px auto;
+    width: 95%;
+  }
+  header .logo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  } 
+  header .right-div {
+    float: none;
+    padding-top: 0px;
+    text-align: center;
+    width: 100%;
+  }
+  .mainmenuouter {
+    width:95%;
+  }
+  .main-slider-text {
+    margin-left: 0px;
+    margin-top: 140px;
+    width: 100%;
+    text-align:center;
+  }
+  .main-slider-text h2 {
+    font-size: 22px;
+    line-height: 22px;
+    margin: 0 0 10px;
+  }
+  .main-slider-text p {
+     font-size: 18px;
+      line-height: 24px;
+  }
+  .rslides img {
+    min-height:220px;  
+  }
+  .mainmenu {
+    right:0px;
+    top:131px;
+    width:150px;
+  }
+  .plq-app img {
+    width:100%;
+  }
+  .plq-global-network {
+    background: none;
+    margin-top: 50px;
+  }
+  .plq-global-network .outer-padd {
+      padding: 0 0 20px;
+  }
+  .plq-global-network .inner-padd {
+    padding: 0 0px 20px 0;
+  }
+  .plq-global-network h1 {
+    text-align:center;
+    font-size: 24px;
+  }
+  .home-container h2 {
+    font-size: 24px;
+  } 
+  .plq-affiliate-services ul.services li {
+    color: #fff;
+    display: block;
+    float: none;
+    margin: 20px auto;
+    width: 356px;
+  }
+  .services-popup .text {
+    float: none;
+    width: 100%;
+  }
+  .services-popup .photo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  }
+  .services-popup .photo img {
+    width: 90%;
+  }
+  .membership-box {
+    float: none;
+    height: 330px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 80%;
+  }
+  
+  footer .footer-left {
+    float: none;
+    padding-top: 0px;
+    text-align: center;
+    width: 140px;
+    clear:both;
+    margin:0px auto;
+    
+  }
+  footer .footer-mid {
+    float: none;
+    text-align: center;
+    width: 100%;
+    clear:both;
+    padding-top:30px;
+  }
+  
+  footer .footer-right {
+    float: none;
+    padding-top: 24px;
+    text-align: center;
+    width: 255px;
+    margin:0px auto;
+  }
+  .plq-map {
+    background:url(map-bg.jpg) repeat-x;
+    color:#fff;
+    min-height:600px;
+    text-align:center;
+    padding-top:27px;
+  }
+  .vectormap img {
+    width:100%;
+  }
+  
+  .plq-map .find-city {
+    bottom: -65px;
+    height: 52px;
+    left: 26%;
+    width: 250px;
+  }
+  
+  .plq-map .locationpin.losangeles {
+  left:13%;
+  top:46.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:16.5%;
+  top:42%;
+  }
+  .plq-map .locationpin.toronto {
+  left:22%;
+  top:37%;
+  }
+  .plq-map .locationpin.newyork {
+  left:26%;
+  top:39%;
+  }
+  .plq-map .locationpin.miami {
+  left:23%;
+  top:50%;
+  }
+  .plq-map .locationpin.dubai {
+  left:60.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.london {
+  left:45%;
+  top:35%;
+  }
+  .plq-map .locationpin.paris {
+  left:47%;
+  top:37%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:50%;
+  top:30%;
+  }
+  .ui-dialog {
+    width:400px!important;
+  }
+  .want-to-join-plq-dialog a.join-button {
+    font-size: 20px!important;
+    font-weight: normal;
+    padding: 8px 12px!important;
+    text-decoration: none;
+  }
+  
+  
+  
+  
+  .left-pannel {
+    float: none;
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .content-pannel {
+    float: none;
+    padding-top: 10px;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .plq-listing .plq-profile .photo img {
+    width: 90%;
+  }
+  .plq-listing .plq-profile .info .name {
+    font-size: 14px;
+  }
+  
+}
+
+@media only screen and (max-width: 520px) {
+  .plq-map {
+    min-height:550px;
+  }
+  .plq-global-network h1 span {
+    border:none;
+  }
+  .plq-map .find-city {
+    left: 20%;
+  }
+  .want-to-join-plq-dialog a.join-button {
+    font-size: 17px!important;
+    font-weight: normal;
+    padding: 8px 8px!important;
+    text-decoration: none;
+  }
+  
+  
+  .plq-listing .plq-profile {
+    height:100%;
+    padding-bottom:20px;
+  }
+  .plq-listing .plq-profile .photo {
+    float:none;
+    width:100%;
+    text-align:center;
+  }
+  .plq-listing .plq-profile .info {
+    float:none;
+    width:100%;
+    text-align:center;
+  }
+  .plq-listing .plq-profile .photo img {
+    width: 60%;
+    border:none;
+  }
+  .plq-listing .plq-profile .info .name {
+    font-size: 18px;
+  }
+  .plq-listing .plq-profile .info .contact {
+    text-align:center;
+  }
+  
+  .plq-listing .plq-profile .info .recommended {
+    float: none;
+    padding: 5px;
+    width:75%;
+    margin:0px auto;
+  }
+  .inner-page-banner img {
+  min-height:127px;
+  }
 }
 
 @media only screen and (max-width: 420px) {
-	
-	.plq-map {
-		min-height:520px;
-	}
-	.plq-map .locationpin.losangeles {
-	left:67px;
-	top:103px;
-	}
-	.plq-map .locationpin.lasvegas {
-	left:87px;
-	top:87px;
-	}
-	.plq-map .locationpin.toronto {
-	left:117px;
-	top:68px;
-	}
-	.plq-map .locationpin.newyork {
-	left:145px;
-	top:78px;
-	}
-	.plq-map .locationpin.miami {
-	left:125px;
-	top:123px;
-	}
-	.plq-map .locationpin.dubai {
-	left:218px;
-	top:118px;
-	}
-	.plq-map .locationpin.london {
-	left:178px;
-	top:68px;
-	}
-	.plq-map .locationpin.paris {
-	left:188px;
-	top:75px;
-	}
-	
-	.plq-map .locationpin.stockholm {
-	left:190px;
-	top:60px;
-	}
-	.plq-map .find-city {
-		left: 16%;
-	}
-	
+  .ui-dialog {
+    width:300px!important;
+  }
+  .plq-map {
+    min-height:520px;
+  }
+  
+  
+  .plq-map .find-city {
+    left: 16%;
+  }
+  
+  
+  .plq-map .locationpin.losangeles {
+  left:12%;
+  top:43.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:15.5%;
+  top:39%;
+  }
+  .plq-map .locationpin.toronto {
+  left:21%;
+  top:34%;
+  }
+  .plq-map .locationpin.newyork {
+  left:25%;
+  top:36%;
+  }
+  .plq-map .locationpin.miami {
+  left:22%;
+  top:47%;
+  }
+  .plq-map .locationpin.dubai {
+  left:59.5%;
+  top:49%;
+  }
+  .plq-map .locationpin.london {
+  left:44%;
+  top:32%;
+  }
+  .plq-map .locationpin.paris {
+  left:46%;
+  top:34%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:49%;
+  top:27%;
+  }
+  .what-customers-say h2 span {
+  border:none;
+  }
+  
+  
+  .signup-for-early-access a {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  
+  
+  
+  .results-found {
+    font-size: 13px;
+  }
+  
+  
+}
+
+@media only screen and (max-width: 390px) {
+  .ui-dialog {
+    width:265px!important;
+  }
+  .plq-map {
+    min-height:510px;
+  }
+
+
+  .plq-affiliate-services ul.services li {
+    width: 100%;
+  }
+  .plq-affiliate-services ul.services li img {
+    width: 100%;
+    height:300px;
+  }
+  
+  .plq-affiliate-services .overlay {
+
+  height:300px;
+  }
+
+  .plq-affiliate-services .services .service a {
+  height:300px;
+  }
+  
+  .want-to-join-plq a.join-button {
+    font-size: 24px;
+    font-weight: normal;
+    padding: 8px 18px;
+    text-decoration: none;
+  }
+  
+  .plq-map .find-city {
+    left: 10%;
+  }
+  .plq-affiliate-services ul.services li h3 {
+  font-size:20px;
+  }
+  
+  
+  
+  .plq-map .locationpin.losangeles {
+  left:10%;
+  top:39.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:13.5%;
+  top:35%;
+  }
+  .plq-map .locationpin.toronto {
+  left:19%;
+  top:30%;
+  }
+  .plq-map .locationpin.newyork {
+  left:23%;
+  top:32%;
+  }
+  .plq-map .locationpin.miami {
+  left:20%;
+  top:43%;
+  }
+  .plq-map .locationpin.dubai {
+  left:57.5%;
+  top:45%;
+  }
+  .plq-map .locationpin.london {
+  left:42%;
+  top:28%;
+  }
+  .plq-map .locationpin.paris {
+  left:44%;
+  top:30%;
+  }
+  
+  
+  .refine-search .input-field {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  
+  .plq-map {
+    min-height:480px;
+  }
+
+  .signup-for-early-access a {
+    font-size: 16px;
+    padding: 10px 10px;
+  }
+  .plq-map .find-city {
+    left: 3%;
+  }
+
 }
 
 
-@media only screen and (max-device-width: 800px) {
-	
+@media only screen and (max-device-width: 810px) {
+
+    .container, .home-container {
+    margin: 0px auto;
+    width: 95%;
+  }
+  
+  .mainmenuouter {
+    width:95%;
+  }
+  .main-slider-text {
+    margin-left: 0px;
+    margin-top: 140px;
+    width: 100%;
+    text-align:center;
+  }
+  .main-slider-text h2 {
+    font-size: 30px;
+    line-height: 32px;
+    margin: 0 0 10px;
+  }
+  .main-slider-text p {
+     font-size: 24px;
+      line-height: 26px;
+  }
+  
+  .plq-app img {
+    width:100%;
+  }
+  .plq-global-network {
+    background: none;
+    margin-top: 50px;
+  }
+  .plq-global-network .outer-padd {
+      padding: 0 0 50px;
+  }
+  .plq-global-network .inner-padd {
+    padding: 0 0px 40px 0;
+  }
+  .plq-global-network h1 {
+    text-align:center;
+    font-size: 28px;
+  }
+  .home-container h2 {
+    font-size: 28px;
+  } 
+  .plq-affiliate-services ul.services li {
+    color: #fff;
+    display: block;
+    float: none;
+    margin: 20px auto;
+    width: 356px;
+  }
+  .services-popup .text {
+    float: none;
+    width: 100%;
+  }
+  .services-popup .photo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  }
+  .services-popup .photo img {
+    width: 90%;
+  }
+  .membership-box {
+    float: left;
+    height: 330px;
+    margin: 0px 10px 20px 10px;
+    padding: 10px 20px;
+    width: 39%;
+  }
+  
+  footer .footer-left {
+    float: none;
+    padding-top: 0px;
+    text-align: center;
+    width: 140px;
+    clear:both;
+    margin:0px auto;
+    
+  }
+  footer .footer-mid {
+    float: none;
+    text-align: center;
+    width: 100%;
+    clear:both;
+    padding-top:30px;
+  }
+  
+  footer .footer-right {
+    float: none;
+    padding-top: 24px;
+    text-align: center;
+    width: 255px;
+    margin:0px auto;
+  }
+  
+  
+  
+  .plq-map .find-city {
+
+    left: 32%;
+
+  }
+  
+  .plq-map .locationpin.losangeles {
+  left:15%;
+  top:48.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:18.5%;
+  top:44%;
+  }
+  .plq-map .locationpin.toronto {
+  left:24%;
+  top:39%;
+  }
+  .plq-map .locationpin.newyork {
+  left:28%;
+  top:41%;
+  }
+  .plq-map .locationpin.miami {
+  left:24.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.dubai {
+  left:60.5%;
+  top:54%;
+  }
+  .plq-map .locationpin.london {
+  left:45.5%;
+  top:37%;
+  }
+  .plq-map .locationpin.paris {
+  left:47.5%;
+  top:39%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:52%;
+  top:31%;
+  }
+  
+}
+
+@media only screen and (max-device-width: 740px) {
+  
+  .vectormap img {
+    width:100%;
+  }
+  
+  .plq-map .locationpin.losangeles {
+  left:13%;
+  top:48.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:16.5%;
+  top:44%;
+  }
+  .plq-map .locationpin.toronto {
+  left:22%;
+  top:39%;
+  }
+  .plq-map .locationpin.newyork {
+  left:26%;
+  top:41%;
+  }
+  .plq-map .locationpin.miami {
+  left:22.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.dubai {
+  left:60.5%;
+  top:54%;
+  }
+  .plq-map .locationpin.london {
+  left:45.5%;
+  top:37%;
+  }
+  .plq-map .locationpin.paris {
+  left:47.5%;
+  top:39%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:52%;
+  top:31%;
+  }
+
 }
 
 @media only screen and (max-device-width: 600px) {
 
+    header {
+      height: 130px;
+  }
+  
+  .container, .home-container {
+    margin: 0px auto;
+    width: 95%;
+  }
+  header .logo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  } 
+  header .right-div {
+    float: none;
+    padding-top: 0px;
+    text-align: center;
+    width: 100%;
+  }
+  .mainmenuouter {
+    width:95%;
+  }
+  .main-slider-text {
+    margin-left: 0px;
+    margin-top: 140px;
+    width: 100%;
+    text-align:center;
+  }
+  .main-slider-text h2 {
+    font-size: 22px;
+    line-height: 22px;
+    margin: 0 0 10px;
+  }
+  .main-slider-text p {
+     font-size: 18px;
+      line-height: 24px;
+  }
+  .rslides img {
+    min-height:220px;  
+  }
+  .mainmenu {
+    right:0px;
+    top:131px;
+    width:150px;
+  }
+  .plq-app img {
+    width:100%;
+  }
+  .plq-global-network {
+    background: none;
+    margin-top: 50px;
+  }
+  .plq-global-network .outer-padd {
+      padding: 0 0 50px;
+  }
+  .plq-global-network .inner-padd {
+    padding: 0 0px 40px 0;
+  }
+  .plq-global-network h1 {
+    text-align:center;
+    font-size: 24px;
+  }
+  .home-container h2 {
+    font-size: 24px;
+  } 
+  .plq-affiliate-services ul.services li {
+    color: #fff;
+    display: block;
+    float: none;
+    margin: 20px auto;
+    width: 356px;
+  }
+  .services-popup .text {
+    float: none;
+    width: 100%;
+  }
+  .services-popup .photo {
+    float: none;
+    width: 100%;
+    text-align:center;
+  }
+  .services-popup .photo img {
+    width: 90%;
+  }
+  .membership-box {
+    float: none;
+    height: 330px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 80%;
+  }
+  
+  footer .footer-left {
+    float: none;
+    padding-top: 0px;
+    text-align: center;
+    width: 140px;
+    clear:both;
+    margin:0px auto;
+    
+  }
+  footer .footer-mid {
+    float: none;
+    text-align: center;
+    width: 100%;
+    clear:both;
+    padding-top:30px;
+  }
+  
+  footer .footer-right {
+    float: none;
+    padding-top: 24px;
+    text-align: center;
+    width: 255px;
+    margin:0px auto;
+  }
+  .plq-map {
+    background:url(map-bg.jpg) repeat-x;
+    color:#fff;
+    min-height:600px;
+    text-align:center;
+    padding-top:27px;
+  }
+  .vectormap img {
+    width:100%;
+  }
+  
+  .plq-map .find-city {
+    bottom: -65px;
+    height: 52px;
+    left: 26%;
+    width: 250px;
+  }
+  
+  .plq-map .locationpin.losangeles {
+  left:13%;
+  top:46.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:16.5%;
+  top:42%;
+  }
+  .plq-map .locationpin.toronto {
+  left:22%;
+  top:37%;
+  }
+  .plq-map .locationpin.newyork {
+  left:26%;
+  top:39%;
+  }
+  .plq-map .locationpin.miami {
+  left:23%;
+  top:50%;
+  }
+  .plq-map .locationpin.dubai {
+  left:60.5%;
+  top:52%;
+  }
+  .plq-map .locationpin.london {
+  left:45%;
+  top:35%;
+  }
+  .plq-map .locationpin.paris {
+  left:47%;
+  top:37%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:50%;
+  top:30%;
+  }
+  .ui-dialog {
+    width:400px!important;
+  }
+  .want-to-join-plq-dialog a.join-button {
+    font-size: 20px!important;
+    font-weight: normal;
+    padding: 8px 12px!important;
+    text-decoration: none;
+  }
+
+}
+
+@media only screen and (max-device-width: 520px) {
+  .plq-map {
+    min-height:550px;
+  }
+  .plq-global-network h1 span {
+    border:none;
+  }
+  .plq-map .find-city {
+    left: 20%;
+  }
+  .want-to-join-plq-dialog a.join-button {
+    font-size: 17px!important;
+    font-weight: normal;
+    padding: 8px 8px!important;
+    text-decoration: none;
+  }
 }
 
 @media only screen and (max-device-width: 420px) {
-	
+
+    .ui-dialog {
+    width:300px!important;
+  }
+  .plq-map {
+    min-height:520px;
+  }
+  
+  
+  .plq-map .find-city {
+    left: 16%;
+  }
+  
+  
+  .plq-map .locationpin.losangeles {
+  left:12%;
+  top:43.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:15.5%;
+  top:39%;
+  }
+  .plq-map .locationpin.toronto {
+  left:21%;
+  top:34%;
+  }
+  .plq-map .locationpin.newyork {
+  left:25%;
+  top:36%;
+  }
+  .plq-map .locationpin.miami {
+  left:22%;
+  top:47%;
+  }
+  .plq-map .locationpin.dubai {
+  left:59.5%;
+  top:49%;
+  }
+  .plq-map .locationpin.london {
+  left:44%;
+  top:32%;
+  }
+  .plq-map .locationpin.paris {
+  left:46%;
+  top:34%;
+  }
+  
+  .plq-map .locationpin.stockholm {
+  left:49%;
+  top:27%;
+  }
+  .what-customers-say h2 span {
+  border:none;
+  }
+  
+  
+  .signup-for-early-access a {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  
 }
 
-ul.error , .error {
-  background:#ffc3c0;
-  border:1px solid #ff2400;
-  color:#CC0000;
-  font-weight:normal;
-  list-style-image:url(white-bul.gif);
-  padding: 15px;
-  margin: 0px 0px 20px 0px;
-}
-ul.error li {
-  color:#CC0000;
-  font-weight:normal;
-  list-style-image:url(white-bul.gif);
-  padding: 0px 5px 4px 5px;
-  margin:0px 20px 0px 20px;
-  font-size:14px;
-  line-height:19px;
-}
+@media only screen and (max-device-width: 390px) {
 
-ul.success , .success {
-  background:#b9fcb5;
-  border:1px solid #3cba35;
-  color:#199e12;
-  font-weight:normal;
-  list-style-image:url(white-bul.gif);
-  padding: 15px;
-  margin: 0px 0px 20px 0px;
+  .ui-dialog {
+    width:265px!important;
+  }
+  .plq-map {
+    min-height:510px;
+  }
+
+
+  .plq-affiliate-services ul.services li {
+    width: 100%;
+  }
+  .plq-affiliate-services ul.services li img {
+    width: 100%;
+    height:300px;
+  }
+  
+  .plq-affiliate-services .overlay {
+
+  height:300px;
+  }
+
+  .plq-affiliate-services .services .service a {
+  height:300px;
+  }
+  
+  .want-to-join-plq a.join-button {
+    font-size: 24px;
+    font-weight: normal;
+    padding: 8px 18px;
+    text-decoration: none;
+  }
+  
+  .plq-map .find-city {
+    left: 10%;
+  }
+  .plq-affiliate-services ul.services li h3 {
+  font-size:20px;
+  }
+  
+  
+  
+  .plq-map .locationpin.losangeles {
+  left:10%;
+  top:39.5%;
+  }
+  .plq-map .locationpin.lasvegas {
+  left:13.5%;
+  top:35%;
+  }
+  .plq-map .locationpin.toronto {
+  left:19%;
+  top:30%;
+  }
+  .plq-map .locationpin.newyork {
+  left:23%;
+  top:32%;
+  }
+  .plq-map .locationpin.miami {
+  left:20%;
+  top:43%;
+  }
+  .plq-map .locationpin.dubai {
+  left:57.5%;
+  top:45%;
+  }
+  .plq-map .locationpin.london {
+  left:42%;
+  top:28%;
+  }
+  .plq-map .locationpin.paris {
+  left:44%;
+  top:30%;
+  }
+  
 }
-  ul.success li {
-  color:#199e12;
-  font-weight:normal;
-  list-style-image:url(white-bul.gif);
-  padding: 0px 5px 4px 5px;
-  margin:0px 20px 0px 20px;
-  font-size:14px;
-  line-height:19px;
+@media only screen and (max-device-width: 320px) {
+
+  .plq-map {
+    min-height:480px;
+  }
+
+  .signup-for-early-access a {
+    font-size: 16px;
+    padding: 10px 10px;
+  }
+  .plq-map .find-city {
+    left: 3%;
+  }
+  
 }
