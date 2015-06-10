@@ -29,8 +29,7 @@
       .clear
     .field-div
       .label Country
-      .field
-        / input#user_social_links.inputfield name="user[social_links]" type="text" value=""        
+      .field            
         = select_tag "user[country]", options_from_collection_for_select(Country.all, "name", "name"), class: "inputfield"
       .clear
     .field-div
