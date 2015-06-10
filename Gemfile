@@ -17,6 +17,7 @@ gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem 'rolify'
+gem 'gibbon'
 group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
