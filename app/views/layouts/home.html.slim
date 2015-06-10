@@ -37,23 +37,24 @@ html
     ul#homeslider.rslides
       li
         .main-slider-text
-          h2 PLQ Platform Lifestyle Quintessential
+          h2 PLQ
           p On Demand Lifestyle Network
         div          
           = image_tag "home-slide-1.jpg", alt: ""
       li
         .main-slider-text
-          h2 PLQ Platform Lifestyle Quintessential
+          h2 PLQ
           p On Demand Lifestyle Network
         div
           = image_tag "home-slide-2.jpg", alt: ""
       li
         .main-slider-text
-          h2 PLQ Platform Lifestyle Quintessential
+          h2 PLQ
           p On Demand Lifestyle Network
         div
           = image_tag "home-slide-3.jpg", alt: ""
     .home-container
+      == render 'layouts/messages'
       .plq-global-network
         .outer-padd
           .inner-padd
@@ -62,11 +63,9 @@ html
               | with our
               strong global network
             p
-              strong Platform Lifestyle Quintessential (PLQ), is a location based on demand  lifestyle service network, connecting users with a global network of lifestyle providers, products, and services.
-            p Giving you access to all things lifestyle related, PLQ synchronises our provider network with each users lifestyle preferences, as no one action stands alone, travel leads to food as fashion leads to entertainment.
-            p Using our location based technology platform we give users direct access to a mapped global network of lifestyle service providers.
-            p Our iOS and Android applications provide registered users direct access to our network of verified providers.
+              strong Platform Lifestyle Quintessential (PLQ), is a location based on demand lifestyle service, connecting users with a global network of lifestyle providers, products, and services.
             p Start enjoying your new lifestyle it's just a few taps away...
+
           
       .plq-app
         h2
@@ -76,6 +75,8 @@ html
             | App
         div
           = image_tag "app-screens2.jpg", alt: "PLQ App", border: "0"
+
+        p Our iOS and Android applications provide registered users direct access to our network of verified providers.
 
       .signup-for-early-access
         a#earlyAccessSignupButton href="javascript:void(0);"  SIGN UP FOR EARLY ACCESS
@@ -455,7 +456,7 @@ html
                   | Become a member
           .find-city
             form action="" method="post" name="searchfrm" 
-              input.search-field name="searchcity" placeholder=("FIND YOUR CITY") type="text" value=""
+              input.search-field name="searchcity" placeholder=("Find an agent in your city") type="text" value=""
               input.search-button name="submit" type="submit" value=""
           .vectormap
             = image_tag "map.png", alt: "Map", border: "0"
