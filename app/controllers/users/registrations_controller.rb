@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :configure_sign_up_params, only: [:create]
   before_filter :configure_account_update_params, only: [:update]
+  after_action :notify_admin, only: [:create]
 
   # GET /resource/sign_up
   # def new
@@ -12,12 +13,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
 
     resource.save
+    
+    ## Assign a role to newly created user
+    resource.add_role params[:role]
+
     yield resource if block_given?
     if resource.persisted?
-
-      ## Assign a role to newly created user
-      resource.add_role params[:role]
-      
+      flash[:notice] = "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
@@ -72,6 +74,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       u.permit(:name, :location, :service, :tier, :social_links, :description, :email, :password, :password_confirmation)
     end
     
+  end
+
+  def notify_admin    
+    UserMailer.notify_admin(@resource).deliver
   end
 
   # If you have extra params to permit, append them to the sanitizer.
