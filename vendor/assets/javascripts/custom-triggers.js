@@ -14,6 +14,12 @@ $(function () {
     $(".btn_sign_in").hide();
   });
 
+  $(document).on("click", ".btn_user_signup", function(e){    
+    $(".user_loader").show();
+    $(".btn_user_signup").hide();
+  });
+
+
       $("#homeslider").responsiveSlides({
         //maxwidth: 800,
         speed: 800,

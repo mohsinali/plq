@@ -505,19 +505,7 @@ html
       = render "shared/vendor_signup_form"
     #EarlyAccessForm style="display:none;" title=("SIGN UP FOR EARLY ACCESS") 
       .signup-form
-        form action="" method="post" name="earlyaccessfrm" 
-          .field-div
-            .label Name
-            .field
-              input.inputfield name="name" type="text" value=""
-            .clear
-          .field-div
-            .label Email
-            .field
-              input.inputfield name="email" type="text" value=""
-            .clear
-          .align-right.padd-rgt-10
-            input.submit-button name="submit" type="submit" value=("Sign Up")
+        = render "layouts/mailchimp_subscription_form"
     #LoginForm style="display:none;" title=("LOG IN") 
       .signup-form
         = render 'shared/sign_in_form'
@@ -557,16 +545,4 @@ html
 
     #UserSignUpForm style="display:none;" title=("SIGN UP AS USER") 
       .signup-form
-        form action="" method="post" name="earlyaccessfrm" 
-          .field-div
-            .label Username
-            .field
-              input.inputfield name="username" type="text" value="" /
-            .clear
-          .field-div
-            .label Email
-            .field
-              input.inputfield name="email" type="text" value="" /
-            .clear
-          .align-right.padd-rgt-10
-            input.submit-button name="submit" type="submit" value=("Sign Up") /
+        = render "layouts/mailchimp_subscription_form"

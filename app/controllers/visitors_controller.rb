@@ -1,6 +1,8 @@
 class VisitorsController < ApplicationController
-	layout 'home'
-  def index
+  layout 'home'
+  include Mailchimp
 
+  def index
+    subscribe "mohsin360@outlook.com", "Wasim"
   end
 end
