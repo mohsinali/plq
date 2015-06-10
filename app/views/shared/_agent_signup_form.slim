@@ -28,6 +28,12 @@
         span Add Facebook, Instagram, Twitter (Comma Separated)
       .clear
     .field-div
+      .label Country
+      .field
+        / input#user_social_links.inputfield name="user[social_links]" type="text" value=""        
+        = select_tag "user[country]", options_from_collection_for_select(Country.all, "name", "name"), class: "inputfield"
+      .clear
+    .field-div
       .label Email
       .field
         input#user_email class="inputfield" name="user[email]" type="email" value=""

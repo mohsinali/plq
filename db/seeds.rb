@@ -20,3 +20,15 @@ Role.create(name: "agent")
 Role.create(name: "vendor")
 
 puts "Roles created: User, Manager, Agent, Vendor"
+
+
+## Countries
+Country.destroy_all
+ActiveRecord::Base.connection.execute("ALTER SEQUENCE countries_id_seq RESTART WITH 1")
+
+file = Rails.public_path.to_s + "/countries_seed.csv"
+CSV.foreach(file) do |row|      
+  Country.create(name: row[1], code: row[0])
+end
+
+puts "Countries uploaded."
