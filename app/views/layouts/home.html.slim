@@ -9,31 +9,7 @@ html
     == javascript_include_tag 'application'
     == csrf_meta_tags
   body
-    header
-      .container
-        .logo
-          = image_tag "logo.png", alt: "The PLQ", width: "230", height: "86"
-        .right-div
-          div
-            - if user_signed_in?
-              = link_to "My Account", "#", class: "login", id: "loginButton"
-              | &nbsp;
-              = link_to "Log out", destroy_user_session_path, class: "signup", :method=>'delete'
-            - else
-              a#loginButton.login href="javascript:void(0);"  LOG IN
-              | &nbsp;
-              a.signup.askSignupType href="javascript:void(0);"  SIGN UP
-            | &nbsp;&nbsp;
-            a#mainmenuButton.menu href="javascript:void(0);"  MENU
-        .clearfix
-    .mainmenuouter
-      #mainmenu.mainmenu style="display:none;" 
-        .mainmenuclose
-        ul
-          li
-            a href="#"  AGENT
-          li
-            a href="#"  PARTNER
+    = render 'layouts/top_nav'
     ul#homeslider.rslides
       li
         .main-slider-text

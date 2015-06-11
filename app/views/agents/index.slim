@@ -1,0 +1,207 @@
+.inner-pages-main-padd
+  .breadcrumbs
+    a href="#"  HOME 
+    | &raquo; OUR PREFERRED AGENTS
+  h1 Our Preferred Agents
+  
+  .left-pannel
+    .refine-search
+      h3 Refine Your Agent Search
+      form
+        input.input-field name="refinesearch" type="text"
+        input.search-button name="submit" type="submit" value=""
+      .clear
+    .lp-filter-box
+      h4 Country
+      .options
+        ul
+          li
+            input name="country" type="checkbox" value="US"
+            | United States (173)
+          li
+            input name="country" type="checkbox" value="Canada"
+            | Canada (70)
+          li
+            input name="country" type="checkbox" value="UAE"
+            | UAE (202)
+          li
+            input name="country" type="checkbox" value=("United Kingdom")
+            | United Kingdom (120)
+          li
+            input name="country" type="checkbox" value="France"
+            | France (67)
+        .reset-link
+          a href="#"  RESET
+        .view-all-link
+          a href="#"  VIEW ALL
+        .clear
+    .lp-filter-box
+      h4 City
+      .options
+        ul
+          li
+            input name="city" type="checkbox" value=("New York")
+            | New York (66)
+          li
+            input name="city" type="checkbox" value="Toronto"
+            | Toronto (70)
+          li
+            input name="city" type="checkbox" value="Dubai"
+            | Dubai (202)
+          li
+            input name="city" type="checkbox" value="London"
+            | London (120)
+          li
+            input name="city" type="checkbox" value="Paris"
+            | Paris (67)
+        .reset-link
+          a href="#"  RESET
+        .view-all-link
+          a href="#"  VIEW ALL
+        .clear
+    .lp-filter-box
+      h4 Services
+      .options
+        ul
+          li
+            input name="interests" type="checkbox" value="Restaurant"
+            | Restaurant (317)
+          li
+            input name="interests" type="checkbox" value="Chauffer"
+            | Chauffer  (236)
+          li
+            input name="interests" type="checkbox" value=("Interior Design")
+            | Interior Design  (172)
+          li
+            input name="interests" type="checkbox" value="Nightlife"
+            | Nightlife  (29)
+          li
+            input name="interests" type="checkbox" value="Accomodation"
+            | Accomodation  (93)
+          li
+            input name="interests" type="checkbox" value="Fashion"
+            | Fashion  (12)
+          li
+            input name="interests" type="checkbox" value="Travel"
+            | Travel  (66)
+          li
+            input name="interests" type="checkbox" value="Communication"
+            | Communication  (43)
+        .reset-link
+          a href="#"  RESET
+        .clear
+    .lp-filter-box
+      h4 Languages
+      .options
+        ul
+          li
+            input name="languages" type="checkbox" value="English"
+            | English
+          li
+            input name="languages" type="checkbox" value="French"
+            | French
+          li
+            input name="languages" type="checkbox" value="Spanish"
+            | Spanish
+          li
+            input name="languages" type="checkbox" value="Arabic"
+            | Arabic
+          li
+            input name="languages" type="checkbox" value="German"
+            | German
+        .reset-link
+          a href="#"  RESET
+        .view-all-link
+          a href="#"  VIEW ALL
+        .clear
+  .content-pannel
+    .results-found
+      | 1564  Results Found &nbsp;
+      a.arrow-box href="#"  &laquo;
+      a.arrow-box href="#"  &lsaquo;
+      | &nbsp; Page 1 of 63 &nbsp;
+      a.arrow-box href="#"  &rsaquo;
+      a.arrow-box href="#"  &raquo;
+    .sorting
+      span Sort by: &nbsp;
+      select name="sortfield" 
+        option value="1"  Available to Contact
+        option value="2"  Agent Name: A to Z
+        option value="3"  Agent Name: Z to A
+        option value="4"  Number of Reviews
+        option value="5"  Percent Recommended
+    .plq-listing
+      - User.with_role(:agent).each do |user|
+        .plq-profile
+          .photo
+            a href="#"                    
+              = image_tag "agent-1.jpg"
+          .info
+            .name
+              a href="#"  #{user.name}
+            .service #{user.services_string}
+            .location #{user.location}
+            .specialities
+              .interest Interests: Hotels, Independent Tours
+              .destination #{user.country}
+            .contact
+              a href="#"  CONTACT
+          .clear
+           
+    .results-found
+      | 1564  Results Found &nbsp;
+      a.arrow-box href="#"  &laquo;
+      a.arrow-box href="#"  &lsaquo;
+      | &nbsp; Page 1 of 63 &nbsp;
+      a.arrow-box href="#"  &rsaquo;
+      a.arrow-box href="#"  &raquo;
+    #ProfileDetail style="display:none;" title="Profile" 
+      .profile-detail
+        .photo
+          .name Robert Belford
+          img alt="" border="0" src="images/agent-big-image.jpg" width="100%"
+          .recommended
+            span 97%
+            Recommended
+            span 5
+            | Reviews
+          .contact
+            a href="#"  CONTACT
+        .info
+          .service Nightlife Services
+          .location Toronto, SA Canada
+          .specialities
+            .interest
+              strong Interests:
+              | Hotels, Independent Tours
+            .destination
+              strong Destination:
+              | USA, Canada
+            div
+              strong Years of Experience:
+              | 16
+            div
+              strong Language:
+              | English
+          .about
+            h3 About
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          .reviews
+            h3 Reviews
+            .user-review
+              img alt="" border="0" height="50" src="images/small-img.jpg" width="50"
+              span Jamie Parnell
+              | \- He was just superb when I visited US and hired him as my Agent
+            .clear
+            .user-review
+              img alt="" border="0" height="50" src="images/small-img3.jpg" width="50"
+              span Anita Pulkarni
+              | \- Robert has provided me 7 star sevices when I visited New York for the first time.
+            .clear
+            .user-review
+              img alt="" border="0" height="50" src="images/small-img2.jpg" width="50"
+              span Kim Rupert
+              | \- Wow! what a man he was. Just Amazing. I am very pleased
+            .clear
+        .clear
+  .clear
