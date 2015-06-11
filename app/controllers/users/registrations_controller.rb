@@ -11,11 +11,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
-
+    
     resource.save
     
+    ## #####################################
     ## Assign a role to newly created user
     resource.add_role params[:role]
+    
+    # Add Selected services
+    params[:user_service].each do |service|
+      UserService.create(name: service, user_id: resource.id)
+    end
+
+    # Add Selected cities
+    params[:user_cities].each do |city|
+      UserCity.create(name: city, user_id: resource.id)
+    end
+
+    ## #####################################
+    ########################################
 
     yield resource if block_given?
     if resource.persisted?
@@ -71,7 +85,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:name, :location, :service, :tier, :social_links, :description, :email, :password, :password_confirmation)
+      u.permit(:name, :location, :service, :tier, :country, :social_links, :description, :email, :password, :password_confirmation)
     end
     
   end

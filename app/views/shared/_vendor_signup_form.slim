@@ -13,18 +13,19 @@
         input#user_location.inputfield name="user[location]" type="text" value=""
       .clear
     .field-div
-      .label Service
+      .label Services
       .field
-        - User.services.each do |s|
-          label #{s}
-          = check_box_tag "user_service[]", s, checked = false, options = { class: "inputfield" }
+        .moreheight
+          - User.services.each do |s|
+            = check_box_tag "user_service[]", s, checked = false, options = { class: "chkboxfield" }
+            label #{s}
       .clear
     .field-div
       .label Tier
       .field
-        - User.tier.each do |t|
+        - User.tier.each do |t|          
+          = radio_button_tag 'user[tier]', t, checked = false, options = { class: "chkboxfield" }
           label #{t}
-          = radio_button_tag 'tier', t, checked = false
       .clear
     .field-div
       .label Social Links
@@ -41,8 +42,8 @@
       .label Cities
       .field
         - User.cities.each do |c|
+          = check_box_tag "user_cities[]", c, checked = false, options = { class: "chkboxfield" }
           label #{c}
-          = check_box_tag "user[cities[]]", c, checked = false, options = { class: "inputfield" }
       .clear
     .field-div
       .label Email
@@ -63,7 +64,7 @@
       .label Describe yourself in 140 characters
       .field
         / input#user_description.inputfield name="user[description]" type="text" value=""
-        textarea#user_description.inputfield name="user[description]" type="text"
+        textarea#user_description.inputfield name="user[description]" type="text" maxlength="140"
         input type="hidden" name="role" value="vendor"
       .clear
     .align-right.padd-rgt-10

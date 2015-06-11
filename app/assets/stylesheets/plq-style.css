@@ -1218,6 +1218,23 @@ margin: 15px 0px 0px 0px;
 text-align: center;
 font-size: 18px;
 }
+
+.signup-form .field .chkboxfield {
+float:left;
+width:10%;
+font-size:12px;
+
+}
+.signup-form .field label {
+float:left;
+width:37%;
+font-size:12px;
+height:25px;
+}
+.signup-form .field .moreheight label {
+height:40px;
+}
+
 @media only screen and (max-width: 1000px) {
 
   .container, .home-container {

@@ -21,9 +21,9 @@ class User < ActiveRecord::Base
 
   def self.services
     [
-      "Restaurant Reservations/Suggestions", "Chauffer Services", "Interior Design Home Planning",
+      "Restaurant Reservations", "Chauffer Services", "Interior Design",
       "Nightlife & Event Hosting", "Travel Coordination", "24/7 direct communication",
-      "Accommodation Sourcing", "Fashion and style Consolation", "Global Lifestyle Management Network"
+      "Accommodation Sourcing", "Fashion and style Consolation", "Global Lifestyle Management"
     ]
   end
 
