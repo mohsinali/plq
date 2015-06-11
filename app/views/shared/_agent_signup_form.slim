@@ -14,12 +14,16 @@
     .field-div
       .label Service
       .field
-        input#user_service.inputfield name="user[service]" type="text" value=""
+        - User.services.each do |s|
+          label #{s}
+          = check_box_tag "user_service[]", s, checked = false, options = { class: "inputfield" }
       .clear
     .field-div
       .label Tier
       .field
-        input#user_tier.inputfield name="user[tier]" type="text" value=""
+        - User.tier.each do |t|
+          label #{t}
+          = radio_button_tag 'tier', t, checked = false
       .clear
     .field-div
       .label Social Links
@@ -27,11 +31,18 @@
         input#user_social_links.inputfield name="user[social_links]" type="text" value=""
         span Add Facebook, Instagram, Twitter (Comma Separated)
       .clear
-    / .field-div
-    /   .label Country
-    /   .field            
-    /     = select_tag "user[country]", options_from_collection_for_select(Country.all, "name", "name"), class: "inputfield"
-    /   .clear
+    .field-div
+      .label Country
+      .field
+        = select_tag "user[country]", options_from_collection_for_select(Country.all, "name", "name"), class: "inputfield"
+      .clear
+    .field-div
+      .label Cities
+      .field
+        - User.cities.each do |c|
+          label #{c}
+          = check_box_tag "user[cities[]]", c, checked = false, options = { class: "inputfield" }
+      .clear
     .field-div
       .label Email
       .field

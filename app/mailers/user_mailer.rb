@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "admin@plq.com"
+  default from: "The PLQ <admin@theplq.com>"
 
   def notify_admin user
   	@user = user

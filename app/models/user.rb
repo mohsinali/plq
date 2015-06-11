@@ -14,4 +14,21 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  
+  def self.cities
+    ["Los Angeles", "Las Vegas", "Miami", "Toronto", "New York", "London", "Paris", "Stockholm", "Dubai"]
+  end
+
+  def self.services
+    [
+      "Restaurant Reservations/Suggestions", "Chauffer Services", "Interior Design Home Planning",
+      "Nightlife & Event Hosting", "Travel Coordination", "24/7 direct communication",
+      "Accommodation Sourcing", "Fashion and style Consolation", "Global Lifestyle Management Network"
+    ]
+  end
+
+  def self.tier
+    ["PLQ Social", "PLQ Silver", "PLQ Gold", "PLQ Black"]
+  end
+
 end
