@@ -8,8 +8,11 @@
     .refine-search
       h3 Refine Your Agent Search
       form
-        input.input-field name="refinesearch" type="text"
-        input.search-button name="submit" type="submit" value=""
+        = search_form_for @q do |f|
+          = f.search_field :name_cont, class: "input-field"
+        / input.input-field name="refinesearch" type="text"
+          = f.submit "hello"
+        / input.search-button name="submit" type="submit" value=""
       .clear
     .lp-filter-box
       h4 Country

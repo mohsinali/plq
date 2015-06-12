@@ -210,11 +210,11 @@ html
         ul#testislider.rslides2
           li
             | "PLQ is fantastic at finding the appropriate services based on my needs and preferences."
-            br/
+            br
             span - SATISFIED USER -
           li
             | "PLQ is awesome. I Love it."
-            br/
+            br
             span - SATISFIED USER -
     .want-to-join-plq
       .home-container
@@ -470,12 +470,7 @@ html
       .copyright
         .container
           | Copyright Platform Lifestyle Ltd, Trading as The PLQ-2015. All rights reserved.
-    #SignupTypeSelect style="display:none;" title=("Want to join PLQ network") 
-      .want-to-join-plq-dialog
-        div
-          a#dialogAgentFormButton.join-button href="javascript:void(0);"  AS AGENT
-          | &nbsp;
-          a#dialogVenderFormButton.join-button href="javascript:void(0);"  AS VENDOR
+    = render 'shared/plq_network'
     #AgentForm style="display:none;" title=("SIGN UP AS AGENT") 
       = render "shared/agent_signup_form"
     #VenderForm style="display:none;" title=("SIGN UP AS VENDOR") 

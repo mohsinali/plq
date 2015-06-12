@@ -15,5 +15,17 @@ html
     .container
       .inner-page
         == yield
+
+    = render 'shared/plq_network'
+    #AgentForm style="display:none;" title=("SIGN UP AS AGENT") 
+      = render "shared/agent_signup_form"
+    #VenderForm style="display:none;" title=("SIGN UP AS VENDOR") 
+      = render "shared/vendor_signup_form"
+    #EarlyAccessForm style="display:none;" title=("SIGN UP FOR EARLY ACCESS") 
+      .signup-form
+        = render "layouts/mailchimp_subscription_form"
+    #LoginForm style="display:none;" title=("LOG IN") 
+      .signup-form
+        = render 'shared/sign_in_form'
     = render 'layouts/footer'
     

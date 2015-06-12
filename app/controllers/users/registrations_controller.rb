@@ -1,8 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :configure_sign_up_params, only: [:create]
   before_filter :configure_account_update_params, only: [:update]
-  after_action :notify_admin, only: [:create]
-
+  
   # GET /resource/sign_up
   # def new
   #   super
@@ -14,29 +13,39 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
     resource.save
     
-    ## #####################################
-    ## Assign a role to newly created user
-    resource.add_role params[:role]
-    
-    # Add Selected services
-    params[:user_service].each do |service|
-      UserService.create(name: service, user_id: resource.id)
-    end
-
-    # Add Selected cities
-    params[:user_cities].each do |city|
-      UserCity.create(name: city, user_id: resource.id)
-    end
-
-    ## #####################################
-    ########################################
+      
 
     yield resource if block_given?
     if resource.persisted?
       ## #####################################
+      ## Assign a role to newly created user
+      resource.add_role params[:role]
+      
+      # Add Selected services
+      params[:user_service].each do |service|
+        UserService.create(name: service, user_id: resource.id)
+      end
+
+      # Add Selected cities
+      params[:user_cities].each do |city|
+        UserCity.create(name: city, user_id: resource.id)
+      end
+
+      ## #####################################
+      ########################################
+
+
+
+      ## #####################################
       ## Assign interests
       resource.interest_list.add(params[:interests], parse: true)
       resource.save
+
+      @resource = resource
+
+      ## ########################
+      ## Notify Admin
+      notify_admin()
     
       flash[:notice] = "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       if resource.active_for_authentication?

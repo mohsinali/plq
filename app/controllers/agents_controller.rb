@@ -1,5 +1,6 @@
 class AgentsController < ApplicationController
 	def index
-    @agents = User.with_role(:agent).ransack(params[:q]).result.page(params[:page])
+    @q = User.with_role(:agent).ransack(params[:q])
+    @agents = @q.result.page(params[:page])
   end
 end

@@ -1369,6 +1369,19 @@ text-decoration:none;
 .pagination .next a:hover , .pagination .last a:hover , .pagination .prev a:hover  , .pagination .first a:hover { 
 background:#4db6dc;
 }
+
+.flash_notice {
+  background:#b9fcb5;
+border:1px solid #3cba35;
+color:#199e12;
+font-weight:normal;
+padding: 15px;
+margin: 15px 0px 20px 0px;
+text-align: center;
+font-size: 16px;
+}
+
+
 @media only screen and (max-width: 1000px) {
 
   .container, .home-container {
