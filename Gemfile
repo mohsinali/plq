@@ -20,6 +20,7 @@ gem 'rolify'
 gem 'gibbon'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
+gem 'ransack'
 group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
