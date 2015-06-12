@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
   rolify
   # enum role: [:user, :vip, :admin]
-  after_initialize :set_default_role, :if => :new_record?
+  # after_initialize :set_default_role, :if => :new_record?
   acts_as_taggable_on :interests
   
-  has_many :user_services
-  has_many :user_cities
+  has_many :user_services, dependent: :destroy
+  has_many :user_cities, dependent: :destroy
 
   # def set_default_role
   #   self.role ||= :user

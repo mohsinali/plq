@@ -37,15 +37,19 @@
     .field-div
       .label Country
       .field
-        = select_tag "user[country]", options_from_collection_for_select(Country.all, "name", "name"), class: "inputfield"
+        = select_tag "user[country]", options_from_collection_for_select(Country.all.order("name asc"), "name", "name"), class: "inputfield"
       .clear
     .field-div
       .label Cities
       .field
         - User.cities.each do |c|
           = check_box_tag "user_cities[]", c, checked = false, options = { class: "chkboxfield" }
-          label #{c}
-          
+          label #{c}          
+      .clear
+    .field-div
+      .label Interests
+      .field
+        input#user_interests class="inputfield" name="interests" type="text" placeholder="Comma seperated interests"
       .clear
     .field-div
       .label Email

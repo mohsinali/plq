@@ -1,0 +1,15 @@
+.plq-profile
+  .photo
+    a href="#"                    
+      = image_tag "agent-1.jpg"
+  .info
+    .name
+      a href="#"  #{user.name}
+    .service #{user.services_string}
+    .location #{user.location}
+    .specialities
+      .interest Interests: #{user.interest_list}
+      .destination Destination: #{user.country}
+    .contact
+      a href="#"  CONTACT
+  .clear

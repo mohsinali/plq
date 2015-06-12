@@ -33,6 +33,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     yield resource if block_given?
     if resource.persisted?
+      ## #####################################
+      ## Assign interests
+      resource.interest_list.add(params[:interests], parse: true)
+      resource.save
+    
       flash[:notice] = "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?

@@ -131,22 +131,9 @@
         option value="4"  Number of Reviews
         option value="5"  Percent Recommended
     .plq-listing
-      - User.with_role(:agent).each do |user|
-        .plq-profile
-          .photo
-            a href="#"                    
-              = image_tag "agent-1.jpg"
-          .info
-            .name
-              a href="#"  #{user.name}
-            .service #{user.services_string}
-            .location #{user.location}
-            .specialities
-              .interest Interests: Hotels, Independent Tours
-              .destination #{user.country}
-            .contact
-              a href="#"  CONTACT
-          .clear
+      - @agents.each do |user|
+        = render 'agent_item', user: user
+    = paginate @agents
            
     .results-found
       | 1564  Results Found &nbsp;
@@ -159,7 +146,7 @@
       .profile-detail
         .photo
           .name Robert Belford
-          img alt="" border="0" src="images/agent-big-image.jpg" width="100%"
+          = image_tag "agent-big-image.jpg", border: "0", width: "100%"
           .recommended
             span 97%
             Recommended
@@ -189,17 +176,17 @@
           .reviews
             h3 Reviews
             .user-review
-              img alt="" border="0" height="50" src="images/small-img.jpg" width="50"
+              = image_tag "small-img.jpg", border: "0", height: "50", width: "50"
               span Jamie Parnell
               | \- He was just superb when I visited US and hired him as my Agent
             .clear
-            .user-review
-              img alt="" border="0" height="50" src="images/small-img3.jpg" width="50"
+            .user-review              
+              = image_tag "small-img3.jpg", border: "0", height: "50", width: "50"
               span Anita Pulkarni
               | \- Robert has provided me 7 star sevices when I visited New York for the first time.
             .clear
-            .user-review
-              img alt="" border="0" height="50" src="images/small-img2.jpg" width="50"
+            .user-review              
+              = image_tag "small-img2.jpg", border: "0", height: "50", width: "50"
               span Kim Rupert
               | \- Wow! what a man he was. Just Amazing. I am very pleased
             .clear
