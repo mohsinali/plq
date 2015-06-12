@@ -1,7 +1,8 @@
 header
   .container
     .logo
-      = image_tag "logo.png", alt: "The PLQ", width: "230", height: "86"
+      = link_to root_path do
+        = image_tag "logo.png", alt: "The PLQ", width: "230", height: "86"
     .right-div
       div
         - if user_signed_in?

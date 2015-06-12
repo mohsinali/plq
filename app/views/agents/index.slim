@@ -56,8 +56,7 @@
             | Paris (67)
         .reset-link
           a href="#"  RESET
-        .view-all-link
-          a href="#"  VIEW ALL
+        
         .clear
     .lp-filter-box
       h4 Services
@@ -115,13 +114,7 @@
           a href="#"  VIEW ALL
         .clear
   .content-pannel
-    .results-found
-      | 1564  Results Found &nbsp;
-      a.arrow-box href="#"  &laquo;
-      a.arrow-box href="#"  &lsaquo;
-      | &nbsp; Page 1 of 63 &nbsp;
-      a.arrow-box href="#"  &rsaquo;
-      a.arrow-box href="#"  &raquo;
+    = paginate @agents
     .sorting
       span Sort by: &nbsp;
       select name="sortfield" 
@@ -135,13 +128,7 @@
         = render 'agent_item', user: user
     = paginate @agents
            
-    .results-found
-      | 1564  Results Found &nbsp;
-      a.arrow-box href="#"  &laquo;
-      a.arrow-box href="#"  &lsaquo;
-      | &nbsp; Page 1 of 63 &nbsp;
-      a.arrow-box href="#"  &rsaquo;
-      a.arrow-box href="#"  &raquo;
+    
     #ProfileDetail style="display:none;" title="Profile" 
       .profile-detail
         .photo
