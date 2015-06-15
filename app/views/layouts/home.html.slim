@@ -482,38 +482,7 @@ html
       .signup-form
         = render 'shared/sign_in_form'
 
-    #MembershipForm style="display:none;" title=("REQUEST FOR MEMBERSHIP") 
-      .signup-form
-        form action="" method="post" name="membershipfrm" 
-          .field-div
-            .label Name
-            .field
-              input.inputfield name="name" type="text" value=""
-            .clear
-          .field-div
-            .label Location
-            .field
-              input.inputfield name="location" type="text" value=""
-            .clear
-          .field-div
-            .label Tier
-            .field
-              input.inputfield name="tier" type="text" value=""
-            .clear
-          .field-div
-            .label Contact Number
-            .field
-              input.inputfield name="contactnum" type="text" value=""
-            .clear
-          .field-div
-            .label email
-            .field
-              input.inputfield name="email" type="text" value=""
-            .clear
-          .download-pdf-link
-            a href="#"  Download PDF
-          .align-right.padd-rgt-10
-            input.submit-button name="submit" type="submit" value=("Send Request")
+    = render 'layouts/membership_form'
 
     #UserSignUpForm style="display:none;" title=("SIGN UP AS USER") 
       .signup-form

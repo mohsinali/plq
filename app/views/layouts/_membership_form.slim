@@ -1,0 +1,34 @@
+#MembershipForm style="display:none;" title=("REQUEST FOR MEMBERSHIP")
+  .signup-form
+    form action="#{request_for_membership_users_path}" method="post" name="membershipfrm" data-remote="true"
+      .field-div
+        .label Name
+        .field
+          input.inputfield name="name" type="text" value=""
+        .clear
+      .field-div
+        .label Location
+        .field
+          input.inputfield name="location" type="text" value=""
+        .clear
+      .field-div
+        .label Tier
+        .field
+          input.inputfield name="tier" type="text" value=""
+        .clear
+      .field-div
+        .label Contact Number
+        .field
+          input.inputfield name="contactnum" type="text" value=""
+        .clear
+      .field-div
+        .label email
+        .field
+          input.inputfield name="email" type="text" value=""
+        .clear
+      .download-pdf-link
+        a href="#"  Download PDF
+      .align-right.padd-rgt-10
+        .membership_loader style="display:none;"
+          = image_tag "loading.gif"
+        input.submit-button.btn_membership_form name="submit" type="submit" value=("Send Request")

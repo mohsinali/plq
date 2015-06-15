@@ -1,4 +1,9 @@
 $ ->
+  $(".btn_membership_form").click ->
+    $(".membership_loader").show()
+    $(".btn_membership_form").hide()
+
+
 	## Signup form validation
   # $(document).on "click", "#btn_signup", (e)->
     # $("form#new_user").validate()

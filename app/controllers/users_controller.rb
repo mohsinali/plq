@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  after_action :verify_authorized
+  before_action :authenticate_user!, except: [:request_for_membership]
+  after_action :verify_authorized, except: [:request_for_membership]
 
   def index
     @users = User.all
@@ -27,6 +27,13 @@ class UsersController < ApplicationController
     authorize user
     user.destroy
     redirect_to users_path, :notice => "User deleted."
+  end
+
+  def request_for_membership
+    UserMailer.request_for_membership(params).deliver
+    flash[:notice] = "Your membership request has been received."
+
+    respond_to :js
   end
 
   private
