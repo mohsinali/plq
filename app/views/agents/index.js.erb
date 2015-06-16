@@ -1,0 +1,9 @@
+$(".plq-listing").html("");
+<% if @agents.any? %> 
+  <% @agents.each do |agent| %>
+    $(".plq-listing").append("<%= escape_javascript(render 'agent_item', user: agent) %>");
+  <% end %>
+
+<% else %>
+  $(".plq-listing").html("No agent found.");
+<% end %>
