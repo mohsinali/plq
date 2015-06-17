@@ -206,4 +206,37 @@ $(function () {
 			$( "#UserSignUpForm" ).effect( "bounce", "slow" );
 		});
 
+		$( ".profileDetaillink" ).click(function() {	
+			id = $(this).attr("id");
+
+			$( "#ProfileDetail" ).dialog({
+			  modal: true,
+			  resizable: false,
+			   draggable: false,
+			   width: 700,
+			   height: 600,
+			   closeText: false,
+			   open: function( event, ui ) { 
+			   		// alert(id);
+			   		get_json_data(id);
+			   		
+			    }
+			});
+			$( "#ProfileDetail" ).effect( "bounce", "fast" );
+		});
+
+		function get_json_data(id){
+			data = "";
+			$.ajax({
+			  method: "GET",
+			  url: "/agents/"+id,
+			  dataType: 'JSON'			  
+			})
+			  .done(function( msg ) {
+			  	debugger
+			  	$(".detail_name").html(msg[0].name);
+			  	// $(".detail_location").html(msg[0].country);
+			  });			
+		}
+
   });

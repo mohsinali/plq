@@ -4,7 +4,7 @@
       = image_tag "agent-1.jpg"
   .info
     .name
-      a href="#"  #{user.name}
+      a.profileDetaillink id="#{user.id}" href="javascript:void(0);"  #{user.name}
     .service #{user.services_string}
     .location #{user.location}
     .specialities
