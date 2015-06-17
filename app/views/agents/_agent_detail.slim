@@ -1,48 +1,50 @@
 #ProfileDetail style="display:none;" title="Profile" 
   .profile-detail
     .photo
-      .detail_name.name Robert Belford
-      img alt="" border="0" src="images/agent-big-image.jpg" width="100%" /
+      .detail_name.name 
+      = image_tag "agent-big-image.jpg", border: "0", width: "100%"
       .recommended
         span 97%
-        Recommended \
+        Recommended
         span 5
         | Reviews
       .contact
-        a href="#"  CONTACT
+        a href="#" CONTACT
     .info
-      .service.detail_services Nightlife Services
-      .location.detail_location Toronto, SA Canada
+      .service.detail_services 
+      .location.detail_location 
       .specialities
         .interest
-          strong Interests:
+          strong Interests: 
           | Hotels, Independent Tours
         .destination
-          strong Destination:
-          | USA, Canada
+          strong Destination: 
+          span.cities
+          
         div
-          strong Years of Experience:
+          strong Years of Experience: 
           | 16
         div
-          strong Language:
+          strong Language: 
           | English
       .about
         h3 About
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p.description 
+
       .reviews
         h3 Reviews
         .user-review
-          img alt="" border="0" height="50" src="images/small-img.jpg" width="50" /
+          = image_tag "small-img.jpg", border: "0", height: "50", width: "50"
           span Jamie Parnell
           | \- He was just superb when I visited US and hired him as my Agent
         .clear
         .user-review
-          img alt="" border="0" height="50" src="images/small-img3.jpg" width="50" /
+          = image_tag "small-img3.jpg", border: "0", height: "50", width: "50"
           span Anita Pulkarni
           | \- Robert has provided me 7 star sevices when I visited New York for the first time.
         .clear
         .user-review
-          img alt="" border="0" height="50" src="images/small-img2.jpg" width="50" /
+          = image_tag "small-img2.jpg", border: "0", height: "50", width: "50"
           span Kim Rupert
           | \- Wow! what a man he was. Just Amazing. I am very pleased
         .clear

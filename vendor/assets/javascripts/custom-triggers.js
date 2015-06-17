@@ -233,9 +233,25 @@ $(function () {
 			  dataType: 'JSON'			  
 			})
 			  .done(function( msg ) {
-			  	debugger
+          cities_obj_array = msg[0].user_cities
+          var cities_name_array = [];
+          for (var i in cities_obj_array) {
+            cities_name_array.push(cities_obj_array[i].name);
+          }
+          var cities = cities_name_array.join(", ");
+
+          services_obj_array = msg[0].user_services
+          var services_name_array = [];
+          for (var i in services_obj_array) {
+            services_name_array.push(services_obj_array[i].name);
+          }
+          var services = services_name_array.join(", ");
+          
 			  	$(".detail_name").html(msg[0].name);
-			  	// $(".detail_location").html(msg[0].country);
+			  	$(".detail_location").html(msg[0].country);
+          $(".description").html(msg[0].description);
+          $(".cities").html(cities);
+          $(".detail_services").html(services);
 			  });			
 		}
 

@@ -98,53 +98,6 @@
     = paginate @agents
            
     
-    #ProfileDetail style="display:none;" title="Profile" 
-      .profile-detail
-        .photo
-          .name Robert Belford
-          = image_tag "agent-big-image.jpg", border: "0", width: "100%"
-          .recommended
-            span 97%
-            Recommended
-            span 5
-            | Reviews
-          .contact
-            a href="#"  CONTACT
-        .info
-          .service Nightlife Services
-          .location Toronto, SA Canada
-          .specialities
-            .interest
-              strong Interests:
-              | Hotels, Independent Tours
-            .destination
-              strong Destination:
-              | USA, Canada
-            div
-              strong Years of Experience:
-              | 16
-            div
-              strong Language:
-              | English
-          .about
-            h3 About
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          .reviews
-            h3 Reviews
-            .user-review
-              = image_tag "small-img.jpg", border: "0", height: "50", width: "50"
-              span Jamie Parnell
-              | \- He was just superb when I visited US and hired him as my Agent
-            .clear
-            .user-review              
-              = image_tag "small-img3.jpg", border: "0", height: "50", width: "50"
-              span Anita Pulkarni
-              | \- Robert has provided me 7 star sevices when I visited New York for the first time.
-            .clear
-            .user-review              
-              = image_tag "small-img2.jpg", border: "0", height: "50", width: "50"
-              span Kim Rupert
-              | \- Wow! what a man he was. Just Amazing. I am very pleased
-            .clear
-        .clear
+    = render 'agent_detail'
+    
   .clear
