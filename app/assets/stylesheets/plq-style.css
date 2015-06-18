@@ -1382,6 +1382,136 @@ font-size: 16px;
 }
 
 
+/* My Account page CSS */
+
+.user-profile-lp {
+font-size:14px;
+color:#444;
+}
+.user-profile-lp .img-box {
+}
+.user-profile-lp .img-box img {
+padding: 5px;
+border:1px solid #ddd;
+width:97%;
+}
+.user-profile-lp .name {
+color:#4db6dc;
+font-family: OpenSans-Bold;
+font-size:22px;
+margin:5px 0px 5px 0px;
+}
+.user-profile-lp .member-since {
+border-top: 1px dashed #bbb;
+padding:10px 0px 10px 0px;
+margin-top:10px;
+color:#FF6600;
+} 
+
+
+.user-profile-lp .recommended {
+color:#555;
+border:1px solid #ddd;
+padding:5px;
+font-size:13px;
+
+}
+.user-profile-lp .recommended span {
+font-size:15px;
+font-family: OpenSans-Bold;
+color:#4db6dc;
+}
+
+.user-profile-lp .language {
+margin-top:15px;
+}
+.user-profile-lp span {
+font-weight:normal;
+font-family: OpenSans-Bold;
+}
+.user-profile-cp {
+font-size:16px;
+color:#444;
+}
+.user-profile-cp .reviews {
+border-top:1px dashed #bbb;
+border-bottom:1px dashed #bbb;
+padding:15px 0px 15px 0px;
+margin:25px 0px 25px 0px;
+font-size:13px;
+color:#444;
+}
+.user-profile-cp .reviews .user-review img {
+float:left; margin: 0px 10px 10px 0px;
+}
+.user-profile-cp .reviews .user-review span {
+color:#4db6dc;
+font-size:13px;
+font-family: OpenSans-Bold;
+}
+
+.user-profile-cp h3 {
+font-weight:normal;
+color:#555;
+font-family: OpenSans-Bold;
+font-size:16px;
+padding:0px;
+margin:0px 0px 5px 0px;
+}
+.user-profile-cp .about p {
+padding:0px;
+margin:0px 0px 10px 0px;
+}
+
+.user-profile-cp .info-box {
+border: 1px solid #ddd;
+-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.15);
+-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.15);
+box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.15);
+margin-bottom:20px;
+padding:20px;
+font-size:14px;
+color:#444;
+line-height:23px;
+}
+.user-profile-cp .info-box .email {
+color:#4db6dc;
+font-family: OpenSans-Bold;
+font-size:16px;
+}
+.user-profile-cp span {
+font-weight:normal;
+font-family: OpenSans-Bold;
+}
+.user-profile-cp .info-box a {
+color:#4db6dc;
+text-decoration:none;
+}
+.user-profile-cp .info-box a:hover {
+color:#333;
+
+}
+.edit-profile-button {
+float:right;
+margin-top:20px;
+}
+.edit-profile-button a {
+background:#4db6dc;
+font-weight:normal;
+color:#fff;
+font-size:16px;
+text-decoration:none;
+padding:5px 10px 5px 10px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+.edit-profile-button a:hover {
+background:#1b99c7;
+}
+/*---------------------*/
+
+
 @media only screen and (max-width: 1000px) {
 
   .container, .home-container {
@@ -1718,6 +1848,14 @@ font-size: 16px;
   text-align:left;
   padding:10px 0px 0px 0px;
   }
+
+  .user-profile-lp .img-box {
+  width:50%;
+  margin:10px auto;
+  }
+  .user-profile-lp {
+    text-align:center;
+  }
   
 }
 @media only screen and (max-width: 740px) {
@@ -1971,6 +2109,10 @@ font-size: 16px;
   .plq-listing .plq-profile .info .name {
     font-size: 14px;
   }
+
+  .user-profile-lp .img-box {
+  width:70%;
+  }
   
 }
 
@@ -2093,6 +2235,10 @@ font-size: 16px;
   
   .results-found {
     font-size: 13px;
+  }
+
+  .user-profile-lp .img-box {
+  width:80%;
   }
   
   
@@ -2359,6 +2505,13 @@ font-size: 16px;
   padding:10px 0px 0px 0px;
   }
   
+  .user-profile-lp .img-box {
+  width:50%;
+  margin:10px auto;
+  }
+  .user-profile-lp {
+    text-align:center;
+  }
 }
 
 @media only screen and (max-device-width: 740px) {
@@ -2590,6 +2743,10 @@ font-size: 16px;
     text-decoration: none;
   }
 
+  .user-profile-lp .img-box {
+  width:70%;
+  }
+
 }
 
 @media only screen and (max-device-width: 520px) {
@@ -2670,6 +2827,10 @@ font-size: 16px;
   .signup-for-early-access a {
     font-size: 18px;
     padding: 10px 15px;
+  }
+
+  .user-profile-lp .img-box {
+  width:80%;
   }
   
 }
