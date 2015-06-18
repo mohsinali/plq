@@ -9,10 +9,14 @@
     .user-profile-lp
       .img-box
         = image_tag "agent-big-image.jpg", border: "0", width: "100%"
-      .name Robert Belford
-      .location 12 New Burlington St, W1S 3BF
-      .city London, UK
-      .member-since Member Since 2 years and 3 months
+      .name
+        = @user.name
+      .location
+        = @user.location
+      .city
+        = @user.country
+      .member-since
+        = "Member Since " + @user.created_at.strftime("%b %d, %Y")
       .recommended
         span 97% 
         | Recommended | 
@@ -24,35 +28,43 @@
   .content-pannel
     .user-profile-cp
       .info-box
-        .email roberbelford2010@gmail.com
+        .email
+          = @user.email
         .services
           span Services: 
-          | Nightlife, Accomodation, Travel
+          - services = []
+          - @user.user_services.each do |s|
+            - services << s.name
+          = services.join(", ")
+
         .tier
           span Tier: 
-          | PLQ Gold
+          = @user.tier
       .info-box
         .interest
           span Interests: 
           | Hotels, Independent Tours
         .destination
           span Destination: 
-          | UK
+          - cities = []
+          - @user.user_cities.each do |c|
+            - cities << c.name
+          = cities.join(", ")
         div
           span Years of Experience: 
           | 16
       .info-box
         h3 My Social Media Links
         div
+          = @user.social_links
+        /div
           a href="https://www.facebook.com/plqrobert" target="_blank"  https://www.facebook.com/plqrobert
-        div
-          a href="https://www.twirter.com/plqrobert" target="_blank"  https://www.twirter.com/plqrobert
-        div
-          a href="https://www.linkedin.com/robertjordonplq" target="_blank"  https://www.linkedin.com/robertjordonplq
+          
       .info-box
         .about
           h3 About Me
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          p
+            = @user.description
       .reviews
         h3 Reviews
         .user-review
