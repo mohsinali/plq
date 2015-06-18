@@ -1,0 +1,17 @@
+h1 All Users
+
+table.table.table-bordered
+  thead
+    tr
+      th Name
+      th Email
+      th Country
+      th Role
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.name
+        td = user.email
+        td = user.country
+        td = user.roles.first.name

@@ -3,5 +3,9 @@
   $(".signin_loader").hide();
   $(".btn_sign_in").show();
 <% else %>
-  location.reload();
+  <% if current_user.has_role? :admin %>
+    window.location = '/admin'
+  <% else %>
+    location.reload();
+  <% end %>
 <% end %>

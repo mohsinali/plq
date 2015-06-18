@@ -11,18 +11,18 @@
 # See http://railsapps.github.io/rails-environment-variables.html
 
 ## Roles
-Role.destroy_all
+Role.delete_all
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE roles_id_seq RESTART WITH 1")
 
-Role.create(name: "admin")
 Role.create(name: "user")
 Role.create(name: "manager")
 Role.create(name: "agent")
 Role.create(name: "vendor")
+Role.create(name: "admin")
 
-puts "Roles created: Admin, User, Manager, Agent, Vendor"
+puts "Roles created: User, Manager, Agent, Vendor, Admin"
 
-user = User.create(email: "admin@plq.com", password: "321321321", name: "Kerwin")
+user = User.create(email: "admin@plq.com", password: "321321321", name: "Kerwin", confirmed_at: Time.now)
 user.add_role :admin
 
 puts "Admin created."
