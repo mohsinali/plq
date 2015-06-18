@@ -14,12 +14,18 @@
 Role.destroy_all
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE roles_id_seq RESTART WITH 1")
 
+Role.create(name: "admin")
 Role.create(name: "user")
 Role.create(name: "manager")
 Role.create(name: "agent")
 Role.create(name: "vendor")
 
-puts "Roles created: User, Manager, Agent, Vendor"
+puts "Roles created: Admin, User, Manager, Agent, Vendor"
+
+user = User.create(email: "admin@plq.com", password: "321321321", name: "Kerwin")
+user.add_role :admin
+
+puts "Admin created."
 
 
 ## Countries
