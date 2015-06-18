@@ -1,0 +1,73 @@
+.inner-pages-main-padd
+  .breadcrumbs
+    = link_to 'HOME ', root_path 
+    | &raquo; My Account
+  .edit-profile-button
+    = link_to 'Edit Profile', edit_user_registration_path
+  h1 My Account
+  .left-pannel
+    .user-profile-lp
+      .img-box
+        = image_tag "agent-big-image.jpg", border: "0", width: "100%"
+      .name Robert Belford
+      .location 12 New Burlington St, W1S 3BF
+      .city London, UK
+      .member-since Member Since 2 years and 3 months
+      .recommended
+        span 97% 
+        | Recommended | 
+        span 5 
+        | Reviews
+      .language
+        span Languages: 
+        | English, Spanish, French
+  .content-pannel
+    .user-profile-cp
+      .info-box
+        .email roberbelford2010@gmail.com
+        .services
+          span Services: 
+          | Nightlife, Accomodation, Travel
+        .tier
+          span Tier: 
+          | PLQ Gold
+      .info-box
+        .interest
+          span Interests: 
+          | Hotels, Independent Tours
+        .destination
+          span Destination: 
+          | UK
+        div
+          span Years of Experience: 
+          | 16
+      .info-box
+        h3 My Social Media Links
+        div
+          a href="https://www.facebook.com/plqrobert" target="_blank"  https://www.facebook.com/plqrobert
+        div
+          a href="https://www.twirter.com/plqrobert" target="_blank"  https://www.twirter.com/plqrobert
+        div
+          a href="https://www.linkedin.com/robertjordonplq" target="_blank"  https://www.linkedin.com/robertjordonplq
+      .info-box
+        .about
+          h3 About Me
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .reviews
+        h3 Reviews
+        .user-review
+          = image_tag "small-img.jpg", border: "0", height: "50", width: "50"
+          span Jamie Parnell 
+          | - He was just superb when I visited US and hired him as my Agent
+        .clear
+        .user-review
+          = image_tag "small-img3.jpg", border: "0", height: "50", width: "50"
+          span Anita Pulkarni 
+          | - Robert has provided me 7 star sevices when I visited New York for the first time.
+        .clear
+        .user-review
+          = image_tag "small-img2.jpg", border: "0", height: "50", width: "50"
+          span Kim Rupert 
+          | - Wow! what a man he was. Just Amazing. I am very pleased
+        .clear
+  .clear
