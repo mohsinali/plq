@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
-  after_action :verify_authorized, except: [:request_for_membership]
+  after_action :verify_authorized, except: [:request_for_membership, :show]
 
   def index
     @users = User.all
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    authorize @user
+    # authorize @user
   end
 
   def update

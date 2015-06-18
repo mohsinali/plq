@@ -45,4 +45,8 @@ class User < ActiveRecord::Base
     ["PLQ Social", "PLQ Silver", "PLQ Gold", "PLQ Black"]
   end
 
+  def to_param
+    [id, name.parameterize].join("-")
+  end
+
 end
