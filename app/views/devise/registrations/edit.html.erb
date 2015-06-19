@@ -4,7 +4,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :name, autofocus: true %>
+    <%= f.input :location %>
+    <%= f.association :user_services, label: "Services", as: :check_boxes %>
+    <%= f.input :tier, collection: User.tier, as: :radio_buttons %>
+    <%= f.input :social_links %>
+    <span> Add Facebook, Instagram, Twitter (Comma Separated) </span>
+    </br>
+    <%= label_tag "Country" %><%= f.input :social_links %>
+    <%= select_tag "user[country]", options_from_collection_for_select(Country.all.order("name asc"), "name", "name", selected: resource.country) %>
+    <%= f.association :user_cities, label: "Cities", as: :check_boxes %>
+    <%= f.input :description, label: "About Me", as: :text %>
+    <%= f.input :email, required: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
