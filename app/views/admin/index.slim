@@ -1,12 +1,13 @@
-h1 All Users
+h1 Registered Agents &amp; Partners
 
-table.table.table-bordered
+table.table.table-bordered.users-list
   thead
     tr
       th Name
       th Email
       th Country
       th Role
+	  th
 
   tbody
     - @users.each do |user|
@@ -15,3 +16,5 @@ table.table.table-bordered
         td = user.email
         td = user.country
         td = user.roles.first.name
+		td
+          a href="#"  View Detail  
