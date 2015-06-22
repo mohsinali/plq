@@ -66,7 +66,8 @@ $(function () {
 			   height: 600,
 			   closeText: false
 			});
-			$( "#AgentForm" ).effect( "bounce", "slow" );
+			//$( "#AgentForm" ).effect( "bounce", "slow" );
+			$( "#AgentForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		
@@ -82,7 +83,8 @@ $(function () {
 			   height: 600,
 			   closeText: false
 			});
-			$( "#VenderForm" ).effect( "bounce", "slow" );
+			//$( "#VenderForm" ).effect( "bounce", "slow" );
+			$( "#VenderForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		
@@ -98,7 +100,8 @@ $(function () {
 			   height: 600,
 			   closeText: false
 			});
-			$( "#AgentForm" ).effect( "bounce", "slow" );
+			//$( "#AgentForm" ).effect( "bounce", "slow" );
+			$( "#AgentForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		
@@ -114,7 +117,8 @@ $(function () {
 			  height: 600,
 			  closeText: false
 			});
-			$( "#VenderForm" ).effect( "bounce", "slow" );
+			//$( "#VenderForm" ).effect( "bounce", "slow" );
+			$( "#VenderForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		
@@ -129,7 +133,8 @@ $(function () {
 			   height: 270,
 			   closeText: false
 			});
-			$( "#EarlyAccessForm" ).effect( "bounce", "slow" );
+			//$( "#EarlyAccessForm" ).effect( "bounce", "slow" );
+			$( "#EarlyAccessForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		
@@ -144,7 +149,8 @@ $(function () {
 			   height: 270,
 			   closeText: false
 			});
-			$( "#LoginForm" ).effect( "bounce", "slow" );
+			//$( "#LoginForm" ).effect( "bounce", "slow" );
+			$( "#LoginForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		$( ".membershipButtons" ).click(function() {
@@ -158,7 +164,8 @@ $(function () {
 			   height: 490,
 			   closeText: false
 			});
-			$( "#MembershipForm" ).effect( "bounce", "slow" );
+			//$( "#MembershipForm" ).effect( "bounce", "slow" );
+			$( "#MembershipForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		$( ".askSignupType" ).click(function() {
@@ -172,7 +179,7 @@ $(function () {
 			   height: 200,
 			   closeText: false
 			});
-			$( "#SignupTypeSelect" ).effect( "bounce", "slow" );
+			$( "#SignupTypeSelect" ).effect( "bounce", "fast" );
 		});
 		
 		
@@ -203,7 +210,8 @@ $(function () {
 			   height: 270,
 			   closeText: false
 			});
-			$( "#UserSignUpForm" ).effect( "bounce", "slow" );
+			//$( "#UserSignUpForm" ).effect( "bounce", "slow" );
+			$( "#UserSignUpForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 
 		$( ".profileDetaillink" ).click(function() {	
@@ -222,7 +230,8 @@ $(function () {
 			   		
 			    }
 			});
-			$( "#ProfileDetail" ).effect( "bounce", "fast" );
+			//$( "#ProfileDetail" ).effect( "bounce", "fast" );
+			$( "#ProfileDetail" ).effect("highlight", {color:"#b8dae6"});
 		});
 
 		function get_json_data(id){
