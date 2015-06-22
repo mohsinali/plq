@@ -3,7 +3,8 @@ class AdminController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @users = User.all.order(created_at: :desc)
+  	@agents = User.with_role(:agent)
+  	@vendors = User.with_role(:vendor)
   end
 
   protected

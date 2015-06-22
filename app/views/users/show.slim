@@ -2,8 +2,9 @@
   .breadcrumbs
     = link_to 'HOME ', root_path 
     | &raquo; My Account
-  .edit-profile-button
-    = link_to 'Edit Profile', edit_user_registration_path
+  - if @user == current_user
+    .edit-profile-button
+      = link_to 'Edit Profile', edit_user_registration_path
   h1 My Account
   .left-pannel
     .user-profile-lp

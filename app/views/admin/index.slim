@@ -1,20 +1,44 @@
-h1 Registered Agents &amp; Partners
+- if @agents.any? or @vendors.any?
+  - if @agents.any?
+    h1 Registered Agents
 
-table.table.table-bordered.users-list
-  thead
-    tr
-      th Name
-      th Email
-      th Country
-      th Role
-	  th
+    table.table.table-bordered.users-list
+      thead
+        tr
+          th Name
+          th Email
+          th Country
+          th Role
+          th 
 
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.name
-        td = user.email
-        td = user.country
-        td = user.roles.first.name
-		td
-          a href="#"  View Detail  
+      tbody
+        - @agents.each do |agent|
+          tr
+            td = agent.name
+            td = agent.email
+            td = agent.country
+            td = agent.roles.first.name.humanize
+            td = link_to 'View Detail', user_path(agent)
+
+  - if @vendors.any?
+    h1 Registered Partners
+    table.table.table-bordered.users-list
+      thead
+        tr
+          th Name
+          th Email
+          th Country
+          th Role
+          th Action
+
+      tbody
+        - @vendors.each do |vendor|
+          tr
+            td = vendor.name
+            td = vendor.email
+            td = vendor.country
+            td = vendor.roles.first.name.humanize
+            td = link_to 'View Detail', user_path(vendor)
+
+- else
+  h1 No registered Agent or Partner yet.
