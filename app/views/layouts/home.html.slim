@@ -431,7 +431,10 @@ html
                   strong Contact:
                   | Become a member
           .find-city
-            form action="" method="post" name="searchfrm" 
+            = search_form_for @q, url: "/agents" do |f|
+              = f.search_field :name_or_country_or_email_cont, class: "search-field", placeholder: "Find an agent in your city"
+              = f.submit "", class: "search-button"
+            /form action="" method="post" name="searchfrm" 
               input.search-field name="searchcity" placeholder=("Find an agent in your city") type="text" value=""
               input.search-button name="submit" type="submit" value=""
           .vectormap

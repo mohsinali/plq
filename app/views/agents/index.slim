@@ -93,8 +93,12 @@
         option value="4"  Number of Reviews
         option value="5"  Percent Recommended
     .plq-listing
-      - @agents.each do |user|
-        = render 'agent_item', user: user
+      - if @agents.any?
+        - @agents.each do |user|
+          = render 'agent_item', user: user
+      - else
+        p
+        | Currently we are not active in your region. Be the first one to subscribe as an agent / vendor.
     = paginate @agents
            
     
