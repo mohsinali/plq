@@ -229,7 +229,7 @@ html
     .plq-map
       .home-container
         h2 Our Global Network
-        p We are currently active in the following regions:
+        /p We are currently active in the following regions:
         / .cities [ Dubai . London . Stockholm . Istanbul . Toronto . New York . Miami . Los Angeles . Las Vegas ]
         .map
           .locationpin.losangeles
@@ -436,6 +436,9 @@ html
               input.search-button name="submit" type="submit" value=""
           .vectormap
             = image_tag "map.png", alt: "Map", border: "0"
+        br    
+        p We are currently active in the following regions:
+        .cities Dubai . London . Stockholm . Istanbul . Toronto . New York . Miami . Los Angeles . Las Vegas
     footer
       .container
         .inner-padd

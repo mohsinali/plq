@@ -1,29 +1,88 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h1>Edit <%= resource_name.to_s.humanize %></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, autofocus: true %>
-    <%= f.input :location %>
-    <%= f.association :user_services, label: "Services", as: :check_boxes %>
-    <%= f.input :tier, collection: User.tier, as: :radio_buttons %>
-    <%= f.input :social_links %>
-    <span> Add Facebook, Instagram, Twitter (Comma Separated) </span>
-    </br>
-    <%= label_tag "Country" %><%= f.input :social_links %>
-    <%= select_tag "user[country]", options_from_collection_for_select(Country.all.order("name asc"), "name", "name", selected: resource.country) %>
-    <%= f.association :user_cities, label: "Cities", as: :check_boxes %>
-    <%= f.input :description, label: "About Me", as: :text %>
-    <%= f.input :email, required: true %>
+  	
+	<div class="field-div">
+	<div class="left-label">Name</div>
+    <%= f.input :name, autofocus: true, label: false %>
+	<div class="clear"></div>
+	</div>
+	
+	<div class="field-div">
+	<div class="left-label">Location</div>
+    <%= f.input :location, label: false %>
+	<div class="clear"></div>
+	</div>
+	
+	<div class="field-div">
+	<div class="left-label">Services</div>
+    <%= f.association :user_services, label: "Services", as: :check_boxes , label: false %>
+	<div class="clear"></div>
+	</div>
+	
+    <div class="field-div">
+	<div class="left-label">Tier</div>
+	<%= f.input :tier, collection: User.tier, as: :radio_buttons , label: false %>
+	<div class="clear"></div>
+    </div>
+	
+	<div class="field-div">
+	<div class="left-label">Social Links</div>
+	<%= f.input :social_links, label: false %>
+    <span class="light"> Add Facebook, Instagram, Twitter (Comma Separated) </span>
+	<div class="clear"></div>
+    </div>
+	
+	<div class="field-div">
+	<div class="left-label">Country</div>
+	<div class="input">
+    <%= select_tag "user[country]", options_from_collection_for_select(Country.all.order("name asc"), "name", "name", selected: resource.country) %></div>
+	<div class="clear"></div>
+	</div>
+	
+    <div class="field-div">
+	<div class="left-label">Cities</div>
+	<%= f.association :user_cities, label: "Cities", as: :check_boxes , label: false %>
+	<div class="clear"></div>
+	</div>
+	
+	<div class="field-div">
+	<div class="left-label">About Me</div>
+    <%= f.input :description, label: "About Me", as: :text , label: false %>
+	<div class="clear"></div>
+	</div>
+	
+	<div class="field-div">
+	<div class="left-label">Email</div>
+    <%= f.input :email, required: true , label: false %>
+	<div class="clear"></div>
+	</div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+	<div class="field-div">
+	<div class="left-label">Password</div>
+    <%= f.input :password, autocomplete: "off", hint: " leave it blank if you don't want to change it", required: false , label: false %>
+	<div class="clear"></div>
+	</div>
+	
+	<div class="field-div">
+	<div class="left-label">Password Confirmation</div>
+    <%= f.input :password_confirmation, required: false , label: false %>
+	<div class="clear"></div>
+	</div>
+	
+	<div class="field-div">
+	<div class="left-label">* Current password</div>
+    <%= f.input :current_password, hint: " we need your current password to confirm your changes", required: true , label: false %>
+	<div class="clear"></div>
+	</div>
+	
   </div>
 
   <div class="form-actions">
@@ -31,8 +90,10 @@
   </div>
 <% end %>
 
+<div class="cancel-back">
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>

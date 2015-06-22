@@ -1551,6 +1551,100 @@ color:#333;
 }
 /* ------------------ */
 
+
+
+.form-inputs .field-div {
+margin:0px 0px 15px 0px;
+
+}
+
+.form-inputs .field-div .left-label {
+float:left;
+width:20%;
+font-size:16px;
+color:#444;
+font-family: OpenSans-Regular;
+padding-top:10px;
+}
+.form-inputs .field-div .input {
+float:right;
+width:79%;
+text-align:left;
+font-size:13px;
+color:#444;
+font-family: OpenSans-Regular;
+line-height:22px;
+}
+.form-inputs .field-div span.light {
+font-size:12px;
+color:#777;
+font-family: OpenSans-Regular;
+margin-left:21%;
+}
+.form-inputs .field-div .input input[type="text"] , .form-inputs .field-div .input input[type="password"] , .form-inputs .field-div .input input[type="email"] , .form-inputs .field-div .input textarea , .form-inputs .field-div .input select {
+background:#eee;
+border:none;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding: 10px;
+color:#777;
+width:50%;
+font-weight:normal;
+font-family: OpenSans-Regular;
+}
+
+.form-inputs .field-div .input span.checkbox {
+width:25%;
+float:left;
+}
+.form-inputs .field-div .input span.radio {
+width:20%;
+float:left;
+}
+
+.form-actions input[type="submit"] {
+background:#4db6dc;
+border:none;
+font-weight:normal;
+color:#fff;
+font-size:18px;
+text-decoration:none;
+padding:10px 20px 10px 20px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+cursor:pointer;
+text-transform:uppercase;
+-o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
+}
+.form-actions input[type="submit"]:hover {
+background:#1b99c7;
+}
+.cancel-back {
+margin-top:20px;
+padding-top:20px;
+border-top:1px dashed #ddd;
+font-size:14px;
+}
+.cancel-back h3 {
+margin:0px;
+padding:0px;
+color:#333;
+font-size:18px;
+font-weight:normal;
+font-family: OpenSans-Bold;
+}
+.cancel-back a {
+color:#4db6dc;
+text-decoration:none;
+font-weight:normal;
+}
+
 @media only screen and (max-width: 1000px) {
 
   .container, .home-container {
