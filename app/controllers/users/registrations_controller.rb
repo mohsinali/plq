@@ -28,11 +28,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user_cities].each do |city|
         UserCity.create(name: city, user_id: resource.id)
       end
-
-      ## #####################################
-      ########################################
-
-
+      
+      ## ########################
+      ## Upload Profile Image      
+      resource.image = params[:user][:image]
 
       ## #####################################
       ## Assign interests
@@ -44,27 +43,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
       ## ########################
       ## Notify Admin
       notify_admin()
-    
+      
       flash[:notice] = "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
         # respond_with resource, location: after_sign_up_path_for(resource)
         @resource = resource
-        respond_to :html, :js
+        respond_to :js
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
         expire_data_after_sign_in!
         # respond_with resource, location: after_inactive_sign_up_path_for(resource)
         @resource = resource
-        respond_to :html, :js
+        respond_to :js
       end
     else
       clean_up_passwords resource
       set_minimum_password_length
       # respond_with resource
       @resource = resource
-      respond_to :html, :js
+      respond_to :js
     end
   end
 
@@ -97,7 +96,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:name, :location, :service, :tier, :country, :social_links, :description, :email, :password, :password_confirmation)
+      u.permit(:name, :location, :service, :tier, :country, :social_links, :description, :image, :email, :password, :password_confirmation)
     end
     
   end
@@ -109,7 +108,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :location, {:user_service_ids => []}, {:user_city_ids => []}, :tier, :country, :social_links, :description, :email, :password, :password_confirmation, :current_password)
+      u.permit(:name, :location, {:user_service_ids => []}, {:user_city_ids => []}, :tier, :country, :social_links, :description, :image, :email, :password, :password_confirmation, :current_password)
     end
   end
 

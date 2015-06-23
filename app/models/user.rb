@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  mount_uploader :image, ProfileImageUploader
+
   rolify
   # enum role: [:user, :vip, :admin]
   # after_initialize :set_default_role, :if => :new_record?

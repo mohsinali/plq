@@ -67,6 +67,11 @@
         textarea#user_description.inputfield name="user[description]" type="text" maxlength="140"
         input type="hidden" name="role" value="vendor"
       .clear
+    .field-div
+      .label Profile Image
+      .field
+        input#user_image.inputfield type="file" name="user[image]"
+      .clear
     .align-right.padd-rgt-10
       .vendor_loader style="display:none;"
         = image_tag "loading.gif"

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require custom-triggers.js
 //= require jquery-ui.min.js
 //= require responsiveslides.min.js

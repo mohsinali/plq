@@ -21,6 +21,8 @@ gem 'gibbon'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
 gem 'ransack'
+gem 'carrierwave'
+gem 'remotipart', '~> 1.2'
 group :development do
   gem 'quiet_assets'
   gem 'rails_layout'

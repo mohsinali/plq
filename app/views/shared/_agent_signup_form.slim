@@ -1,6 +1,6 @@
 #agent_error_messages
 .signup-form
-  form#new_user.new_user accept-charset="UTF-8" action="/users" method="post" data-remote="true"
+  form#new_user.new_user accept-charset="UTF-8" enctype="multipart/form-data" action="/users" method="post" data-remote="true"
     .field-div
       .label Name
       .field
@@ -72,6 +72,12 @@
         textarea#user_description.inputfield name="user[description]" type="text" maxlength="140"
         input type="hidden" class="user_role" name="role" value="agent"
       .clear
+    .field-div
+      .label Profile Image
+      .field
+        input#user_image.inputfield type="file" name="user[image]"
+      .clear
+    
     .align-right.padd-rgt-10
       .agent_loader style="display:none;"
         = image_tag "loading.gif"
