@@ -261,6 +261,11 @@ $(function () {
           $(".description").html(msg[0].description);
           $(".cities").html(cities);
           $(".detail_services").html(services);
+
+          if( msg[0].image.url == null )
+            $(".profile_image").attr('src', "/assets/default_avatar.jpg");
+          else
+            $(".profile_image").attr('src', msg[0].image.url);
 			  });			
 		}
 

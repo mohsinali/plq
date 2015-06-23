@@ -9,7 +9,10 @@
   .left-pannel
     .user-profile-lp
       .img-box
-        = image_tag "agent-big-image.jpg", border: "0", width: "100%"
+        - if @user.image?
+          = image_tag @user.image, border: "0", width: "100%"
+        - else
+          = image_tag "default_avatar.jpg", border: "0", width: "100%"
       .name
         = @user.name
       .location

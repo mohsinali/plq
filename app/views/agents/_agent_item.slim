@@ -1,7 +1,10 @@
 .plq-profile
   .photo
-    a.profileDetaillink id="#{user.id}" href="javascript:void(0);"                    
-      = image_tag "agent-1.jpg"
+    a.profileDetaillink id="#{user.id}" href="javascript:void(0);"
+      - if user.image?
+        = image_tag user.image, size: "270x190"
+      - else
+        = image_tag "default_avatar.jpg", size: "270x190"
   .info
     .name
       a.profileDetaillink id="#{user.id}" href="javascript:void(0);"  #{user.name}
