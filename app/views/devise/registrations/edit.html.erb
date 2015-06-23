@@ -19,7 +19,7 @@
 	
 	<div class="field-div">
 	<div class="left-label">Services</div>
-    <%= f.association :user_services, label: "Services", as: :check_boxes , label: false %>
+    <%= f.association :user_services, as: :check_boxes , label: false %>
 	<div class="clear"></div>
 	</div>
 	
@@ -45,13 +45,20 @@
 	
     <div class="field-div">
 	<div class="left-label">Cities</div>
-	<%= f.association :user_cities, label: "Cities", as: :check_boxes , label: false %>
+	<%= f.association :user_cities, as: :check_boxes , label: false %>
 	<div class="clear"></div>
 	</div>
 	
 	<div class="field-div">
 	<div class="left-label">About Me</div>
-    <%= f.input :description, label: "About Me", as: :text , label: false %>
+    <%= f.input :description, as: :text , label: false %>
+	<div class="clear"></div>
+	</div>
+
+	<div class="field-div">
+	<div class="left-label">Profile Image</div>
+    <%= image_tag resource.image, size: "270x190" %>
+    <%= f.file_field :image, label: false %>
 	<div class="clear"></div>
 	</div>
 	
