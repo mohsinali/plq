@@ -57,8 +57,10 @@
 
 	<div class="field-div">
 	<div class="left-label">Profile Image</div>
-    <%= image_tag resource.image, size: "270x190" %>
-    <%= f.file_field :image, label: false %>
+    <div class="input">
+      <%= image_tag resource.image, size: "270x190" %>
+    </div>
+    <%= f.input :image, label: false %>
 	<div class="clear"></div>
 	</div>
 	
