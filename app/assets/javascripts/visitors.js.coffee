@@ -1,4 +1,5 @@
 $ ->
+  s = skrollr.init()
   $(".btn_membership_form").click ->
     $(".membership_loader").show()
     $(".btn_membership_form").hide()
