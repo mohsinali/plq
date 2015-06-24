@@ -154,9 +154,8 @@ $(function () {
 		});
 		
 		$( ".membershipButtons" ).click(function() {
-		
-		
-			$( "#MembershipForm" ).dialog({
+			
+      $( "#MembershipForm" ).dialog({
 			  modal: true,
 			  resizable: false,
 			   draggable: false,
@@ -166,6 +165,11 @@ $(function () {
 			});
 			//$( "#MembershipForm" ).effect( "bounce", "slow" );
 			$( "#MembershipForm" ).effect("highlight", {color:"#b8dae6"});
+      
+      // Add Tier name in a hidden field on form.
+      var tier = $(this).attr("tier");
+      $("#tier").val(tier);
+
 		});
 		
 		$( ".askSignupType" ).click(function() {

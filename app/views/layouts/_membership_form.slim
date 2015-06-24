@@ -11,7 +11,7 @@
         .field
           input.inputfield name="location" type="text" value=""
         .clear
-      .field-div
+      /.field-div
         .label Tier
         .field
           input.inputfield name="tier" type="text" value=""
@@ -25,9 +25,10 @@
         .label email
         .field
           input.inputfield name="email" type="text" value=""
+          input#tier name="tier" type="hidden" value=""
         .clear
       .download-pdf-link
-        a href="#"  Download PDF
+        a href="javascript:void(0);"  Download PDF
       .align-right.padd-rgt-10
         .membership_loader style="display:none;"
           = image_tag "loading.gif"
