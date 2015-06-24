@@ -86,12 +86,12 @@
     = paginate @agents
     .sorting
       span Sort by: &nbsp;
-      select name="sortfield" 
-        option value="1"  Available to Contact
-        option value="2"  Agent Name: A to Z
-        option value="3"  Agent Name: Z to A
-        option value="4"  Number of Reviews
-        option value="5"  Percent Recommended
+      select name="sortfield" onchange=("location = this.options[this.selectedIndex].value;")
+        option value="/agents"  Available to Contact
+        option value="/agents?q[s]=name+asc"  Agent Name: A to Z
+        option value="/agents?q[s]=name+desc"  Agent Name: Z to A
+        option value="/agents"  Number of Reviews
+        option value="/agents"  Percent Recommended
     .plq-listing
       - if @agents.any?
         - @agents.each do |user|
