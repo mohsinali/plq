@@ -1,0 +1,153 @@
+.inner-pages-main-padd
+  .breadcrumbs
+    a href="#"  HOME 
+    | &raquo; OUR PREFERRED VENDORS
+  h1 Our Preferred Vendors
+  == render 'layouts/messages'
+
+  .left-pannel
+    .refine-search
+      h3 Refine Your Vendor Search
+      form
+        input.input-field name="refinesearch" type="text"
+        input.search-button name="submit" type="submit" value=""
+      .clear
+    .lp-filter-box
+      h4 Country
+      .options
+        ul
+          li
+            input name="country" type="checkbox" value="US"
+            | United States (173)
+          li
+            input name="country" type="checkbox" value="Canada"
+            | Canada (70)
+          li
+            input name="country" type="checkbox" value="UAE"
+            | UAE (202)
+          li
+            input name="country" type="checkbox" value="United Kingdom"
+            | United Kingdom (120)
+          li
+            input name="country" type="checkbox" value="France"
+            | France (67)
+        .reset-link
+          a href="#"  RESET
+        .view-all-link
+          a href="#"  VIEW ALL
+        .clear
+    .lp-filter-box
+      h4 City
+      .options
+        ul
+          li
+            input name="city" type="checkbox" value=("New York")
+            | New York (66)
+          li
+            input name="city" type="checkbox" value="Toronto"
+            | Toronto (70)
+          li
+            input name="city" type="checkbox" value="Dubai"
+            | Dubai (202)
+          li
+            input name="city" type="checkbox" value="London"
+            | London (120)
+          li
+            input name="city" type="checkbox" value="Paris"
+            | Paris (67)
+        .reset-link
+          a href="#"  RESET
+        .view-all-link
+          a href="#"  VIEW ALL
+        .clear
+    .lp-filter-box
+      h4 Service
+      .options
+        ul
+          li
+            input name="interests" type="checkbox" value="Restaurant"
+            | Restaurant (317)
+          li
+            input name="interests" type="checkbox" value="Chauffer"
+            | Chauffer  (236)
+          li
+            input name="interests" type="checkbox" value="Interior Design"
+            | Interior Design  (172)
+          li
+            input name="interests" type="checkbox" value="Nightlife"
+            | Nightlife  (29)
+          li
+            input name="interests" type="checkbox" value="Accomodation"
+            | Accomodation  (93)
+          li
+            input name="interests" type="checkbox" value="Fashion"
+            | Fashion  (12)
+          li
+            input name="interests" type="checkbox" value="Travel"
+            | Travel  (66)
+          li
+            input name="interests" type="checkbox" value="Communication"
+            | Communication  (43)
+        .reset-link
+          a href="#"  RESET
+        .clear
+    .lp-filter-box
+      h4 Tier
+      .options
+        ul
+          li
+            input name="languages" type="checkbox" value=("PLQ Silver")
+            | PLQ Silver
+          li
+            input name="languages" type="checkbox" value=("PLQ Gold")
+            | PLQ Gold
+          li
+            input name="languages" type="checkbox" value=("PLQ Black")
+            | PLQ Black
+        .reset-link
+          a href="#"  RESET
+        .clear
+    .lp-filter-box
+      h4 Languages
+      .options
+        ul
+          li
+            input name="languages" type="checkbox" value="English"
+            | English
+          li
+            input name="languages" type="checkbox" value="French"
+            | French
+          li
+            input name="languages" type="checkbox" value="Spanish"
+            | Spanish
+          li
+            input name="languages" type="checkbox" value="Arabic"
+            | Arabic
+          li
+            input name="languages" type="checkbox" value="German"
+            | German
+        .reset-link
+          a href="#"  RESET
+        .view-all-link
+          a href="#"  VIEW ALL
+        .clear
+  .content-pannel
+    = paginate @vendors
+    .sorting
+      span Sort by: &nbsp;
+      select name="sortfield" onchange=("location = this.options[this.selectedIndex].value;")
+        option value="/vendors?q[s]=name+asc"  Vendor Name: A to Z
+        option value="/vendors?q[s]=name+desc"  Vendor Name: Z to A
+        option value="/vendors"  Number of Reviews
+        option value="/vendors"  Percent Recommended
+    .plq-listing
+      - if @vendors.any?
+        - @vendors.each do |user|
+          = render 'vendor_item', user: user
+      - else
+        p
+        | Currently we are not active in your region. Be the first one to subscribe as an agent / vendor.
+    = paginate @vendors
+
+    = render 'vendor_detail'
+  .clear
