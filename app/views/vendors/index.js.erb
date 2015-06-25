@@ -1,7 +1,7 @@
 $(".plq-listing").html("");
-<% if @agents.any? %> 
-  <% @agents.each do |agent| %>
-    $(".plq-listing").append("<%= escape_javascript(render 'agent_item', user: agent) %>");
+<% if @vendors.any? %> 
+  <% @vendors.each do |vendor| %>
+    $(".plq-listing").append("<%= escape_javascript(render 'vendor_item', user: vendor) %>");
   <% end %>
 
 <% else %>

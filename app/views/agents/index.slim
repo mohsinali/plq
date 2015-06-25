@@ -1,6 +1,6 @@
 .inner-pages-main-padd
   .breadcrumbs
-    a href="#"  HOME 
+    = link_to 'HOME ', root_path
     | &raquo; OUR PREFERRED AGENTS
   h1 Our Preferred Agents
   == render 'layouts/messages'
@@ -25,7 +25,7 @@
             
           .reset-link
             a href="#"  RESET
-          .view-all-link
+          /.view-all-link
             a href="#"  VIEW ALL
           .clear
       .lp-filter-box
@@ -53,7 +53,7 @@
           .reset-link
             a href="#"  RESET
           .clear
-    .lp-filter-box
+    /.lp-filter-box
       h4 Languages
       .options
         ul
@@ -82,6 +82,7 @@
     .sorting
       span Sort by: &nbsp;
       select name="sortfield" onchange=("location = this.options[this.selectedIndex].value;")
+        option value=""  Select
         option value="/agents"  Available to Contact
         option value="/agents?q[s]=name+asc"  Agent Name: A to Z
         option value="/agents?q[s]=name+desc"  Agent Name: Z to A

@@ -5,13 +5,4 @@ class VendorsController < ApplicationController
 
     respond_to :html, :js
   end
-
-  def show
-    @vendor = User.where(id: params[:id]).includes(:user_cities)
-
-    respond_to do |format|
-      format.json { render :json => @vendor, :include => [:user_cities, :user_services] }
-      format.html
-    end
-  end
 end

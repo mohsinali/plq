@@ -1,12 +1,16 @@
 .plq-profile
   .photo
-    a href="#" 
-      img alt="" border="0" src="images/vendor-1.jpg"
+    a.profileDetaillink id="#{user.id}" href="javascript:void(0);"
+      - if user.image?
+        = image_tag user.image, size: "270x190"
+      - else
+        = image_tag "default_avatar.jpg", size: "270x190"
   .info
     .name
-      a href="#"  Angelina Michael
-    .service Travel Services
-    .location Seattle, WA United States
+      a.profileDetaillink id="#{user.id}" href="javascript:void(0);"  #{user.name}
+    .service #{user.services_string}
+    .location #{user.location}
     .specialities
-      .interest Tier: PLQ Gold
+      .interest Tier: #{user.tier}
+      .destination Destination: #{user.country}
   .clear

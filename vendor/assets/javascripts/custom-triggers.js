@@ -264,8 +264,9 @@ $(function () {
 			  	$(".detail_location").html(msg[0].country);
           $(".description").html(msg[0].description);
           $(".cities").html(cities);
+          $(".tier").html(msg[0].tier);
           $(".detail_services").html(services);
-
+          
           if( msg[0].image.url == null )
             $(".profile_image").attr('src', "/assets/default_avatar.jpg");
           else
