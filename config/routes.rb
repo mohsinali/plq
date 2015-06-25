@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   		post :request_for_membership
   	end
   end
+
+  # Static Pages
+  get '/about', to: 'pages#about_us'
+  get '/contact', to: 'pages#contact_us'
+  get '/help', to: 'pages#help_center'
+  get '/app', to: 'pages#app'
+  get '/platform', to: 'pages#platform'
 end
