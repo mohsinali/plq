@@ -197,7 +197,30 @@ $(function () {
 		
 		$( ".service-descp").click(function() {
 			// $( "#servicePopup" ).slideDown();
-			$( "#servicePopup" ).effect( "highlight" );
+			id = $(this).attr("id");
+      
+      // Append content in popup.
+      if( id == "restaurant" )
+        $(".service_image").attr('src', "/assets/restaurant-img.jpg");
+      else if ( id == "chauffeur" )
+        $(".service_image").attr('src', "/assets/driver-img.jpg");
+      else if ( id == "interior" )
+        $(".service_image").attr('src', "/assets/home-decore-img.jpg");
+      else if ( id == "nightlife" )
+        $(".service_image").attr('src', "/assets/nightlife-img.jpg");
+      else if ( id == "travel" )
+        $(".service_image").attr('src', "/assets/travel-img.jpg");
+      else if ( id == "communication" )
+        $(".service_image").attr('src', "/assets/communication-img.jpg");
+      else if ( id == "accomodation" )
+        $(".service_image").attr('src', "/assets/accomodation-img.jpg");
+      else if ( id == "fashion" )
+        $(".service_image").attr('src', "/assets/fashion-img.jpg");
+      else
+        $(".service_image").attr('src', "/assets/network-img.jpg");
+
+      // Open popup
+      $( "#servicePopup" ).effect( "highlight" );
 		});
 		
 		$(".servicepopupclose").click(function() {
