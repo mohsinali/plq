@@ -218,7 +218,7 @@ $(function () {
 			$( "#UserSignUpForm" ).effect("highlight", {color:"#b8dae6"});
 		});
 
-		$( ".profileDetaillink" ).click(function() {	
+    $(document).delegate('.profileDetaillink', 'click', function() {
 			id = $(this).attr("id");
 
 			$( "#ProfileDetail" ).dialog({
