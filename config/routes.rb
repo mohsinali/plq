@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get '/help', to: 'pages#help_center'
   get '/app', to: 'pages#app'
   get '/platform', to: 'pages#platform'
+  get '/plq-provider-network', to: 'pages#plq_provider_network'
 end

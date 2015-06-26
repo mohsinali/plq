@@ -221,7 +221,7 @@ margin-left:120px;
 
 .main-slider-text h2 {
 color:#fff;
-font-size:48px;
+font-size:56px;
 font-family: OpenSans-Semibold;
 margin:0px 0px 13px 0px;
 padding:0px;
@@ -229,7 +229,7 @@ line-height:52px;
 }
 .main-slider-text p {
 color:#fff;
-font-size:38px;
+font-size:48px;
 font-family: OpenSans-Light;
 margin:0px;
 padding:0px;
@@ -264,6 +264,10 @@ padding: 0px 0px 5px 0px;
 .plq-global-network h1 {
 border-bottom:1px solid #cccccc;
 padding-bottom:12px;
+font-size:36px;
+}
+.plq-global-network h1 strong {
+color:#4db6dc;
 }
 .plq-global-network p {
 color:#555555;
@@ -300,6 +304,13 @@ background:#1b99c7;
 .plq-app {
 text-align:center;
 margin-bottom: 50px;
+}
+.plq-app .learn-more {
+text-decoration:none;
+}
+.plq-app .learn-more a {
+text-decoration:none;
+color:#4db6dc;
 }
 .plq-app p {
 font-size:16px;
@@ -914,12 +925,10 @@ color:#4db6dc;
 padding: 0px;
 }
 .services-popup .photo {
-float:right;
-width:54%;
+float:left;
+margin:0px 10px 0px 0px;
 }
 .services-popup .text {
-float:left;
-width:45%;
 text-align:left;
 color:#444;
 font-size:13px;

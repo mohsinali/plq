@@ -13,4 +13,7 @@ class PagesController < ApplicationController
 
   def platform
   end
+
+  def plq_provider_network
+  end
 end

@@ -2,8 +2,10 @@ $(".plq-listing").html("");
 <% if @agents.any? %> 
   <% @agents.each do |agent| %>
     $(".plq-listing").append("<%= escape_javascript(render 'agent_item', user: agent) %>");
+    $("#agentFormButton").hide()
   <% end %>
 
 <% else %>
-  $(".plq-listing").html("Currently we are not active in your region. Be the first one to subscribe as an agent / vendor.");
+  $(".plq-listing").html("<div class='flash_notice'>Currently we are not active in your region. Be the first one to subscribe as an agent.<div>");
+  $("#agentFormButton").show();
 <% end %>

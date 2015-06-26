@@ -213,19 +213,14 @@ $(function () {
   			});
         $( "#servicePopup" ).effect( "highlight" );
 		
-		$( "#servicePopup" ).dialog({
-		  beforeClose: function( event, ui ) {
-			  $( "#servicePopup" ).dialog( "option", "title", '' );
+  		$( "#servicePopup" ).dialog({
+  		  beforeClose: function( event, ui ) {
+  			  $( "#servicePopup" ).dialog( "option", "title", '' );
           $(".service_image").attr('src', '');
           $(".text").html('');
-		  
-			  }
-		
-		
-    });
-
-	
-	});
+  			  }		
+      });
+  	});
 		
 		
     function get_service_data(service_name){

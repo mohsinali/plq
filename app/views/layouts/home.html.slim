@@ -53,6 +53,8 @@ html
           = image_tag "app-screens2.jpg", alt: "PLQ App", border: "0"
 
         p Our iOS and Android applications provide registered users direct access to our network of verified providers.
+		.learn-more
+		  = link_to "Learn More", app_path
 
       .signup-for-early-access
         a#earlyAccessSignupButton href="javascript:void(0);"  SIGN UP FOR EARLY ACCESS
@@ -218,7 +220,7 @@ html
           |  
           a#venderFormButton.join-button href="javascript:void(0);"  VENDOR
 		.learn-more
-		  a href="#" Learn More
+		  = link_to "Learn More", plq_provider_network_path
     .plq-map
       .home-container
         h2 Our Global Network
@@ -455,8 +457,7 @@ html
               a href="/vendors" 
                 strong VENDORS
               br
-              = link_to "HELP CENTER", help_path
-              | &nbsp;&nbsp;
+              
               = link_to "CONTACT US", contact_path
           .footer-right
             a.gplay-icon href="#" 

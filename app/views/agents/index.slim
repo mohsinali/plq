@@ -3,6 +3,7 @@
     = link_to 'HOME ', root_path
     | &raquo; OUR PREFERRED AGENTS
   h1 Our Preferred Agents
+  p Our directory of lifestyle agents and managers have been hand curated to ensure our user and members needs are met across our affiliate services. Each agent is available to assist with any inquire that fits their area of service and can be access using the contact button. We aim to ensure each contact request is answered within 24hrs.
   == render 'layouts/messages'
   
   .left-pannel
@@ -23,7 +24,7 @@
                   = check_box_tag('q[country_cont_any][]', user.country, checked = false, options = { class: "filter_checkbox" })
                   = user.country
             
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           /.view-all-link
             a href="#"  VIEW ALL
@@ -37,7 +38,7 @@
                 = check_box_tag('q[user_cities_name_cont_any][]', city.name, checked = false, options = { class: "filter_checkbox" })
                 = city.name
             
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           
           .clear
@@ -50,7 +51,7 @@
                 = check_box_tag('q[user_services_name_cont_any][]', service.name, checked = false, options = { class: "filter_checkbox" })
                 = service.name
             / = f.submit "Search"
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           .clear
     /.lp-filter-box
@@ -93,8 +94,9 @@
         - @agents.each do |user|
           = render 'agent_item', user: user
       - else
-        p
-        | Currently we are not active in your region. Be the first one to subscribe as an agent / vendor.
+        .flash_notice Currently we are not active in your region. Be the first one to subscribe as an agent.
+    div.align-center
+      a#agentFormButton.join-button style="display: none;" href="javascript:void(0);"  SIGN UP
     = paginate @agents
            
     

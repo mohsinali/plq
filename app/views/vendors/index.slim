@@ -3,6 +3,7 @@
     = link_to 'HOME ', root_path
     | &raquo; OUR PREFERRED VENDORS
   h1 Our Preferred Vendors
+  p Our featured vendors are some of the best establishments for lifestyle and entertainment across the globe. Curated by our panel of lifestyle managers we have selected and created a directory of places to visit from each of our locations. To contact one of our featured vendors simply send a contact request and you'll received a response to your request within 24 hours.
   == render 'layouts/messages'
 
   .left-pannel
@@ -23,7 +24,7 @@
                   = check_box_tag('q[country_cont_any][]', user.country, checked = false, options = { class: "filter_checkbox" })
                   = user.country
             
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           /.view-all-link
             a href="#"  VIEW ALL
@@ -37,7 +38,7 @@
                 = check_box_tag('q[user_cities_name_cont_any][]', city.name, checked = false, options = { class: "filter_checkbox" })
                 = city.name
             
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           
           .clear
@@ -49,7 +50,7 @@
               li
                 = check_box_tag('q[user_services_name_cont_any][]', service.name, checked = false, options = { class: "filter_checkbox" })
                 = service.name
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           .clear
       .lp-filter-box
@@ -60,7 +61,7 @@
               li
                 = check_box_tag('q[tier_cont_any][]', tier, checked = false, options = { class: "filter_checkbox" })
                 = tier
-          .reset-link
+          /.reset-link
             a href="#"  RESET
           .clear
 
@@ -103,8 +104,9 @@
         - @vendors.each do |user|
           = render 'vendor_item', user: user
       - else
-        p
-        | Currently we are not active in your region. Be the first one to subscribe as an agent / vendor.
+        .flash_notice Currently we are not active in your region. Be the first one to subscribe as an vendor.
+    div.align-center
+      a#venderFormButton.join-button style="display: none;" href="javascript:void(0);"  SIGN UP
     = paginate @vendors
 
     = render 'vendor_detail'
