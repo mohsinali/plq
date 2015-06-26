@@ -183,7 +183,7 @@ $(function () {
 			   height: 200,
 			   closeText: false
 			});
-			$( "#SignupTypeSelect" ).effect( "bounce", "fast" );
+			$( "#SignupTypeSelect" ).effect("highlight", {color:"#b8dae6"});
 		});
 		
 		
@@ -196,32 +196,64 @@ $(function () {
 		});
 		
 		$( ".service-descp").click(function() {
+											
 			// $( "#servicePopup" ).slideDown();
 			id = $(this).attr("id");
       
-      // Append content in popup.
-      if( id == "restaurant" )
-        $(".service_image").attr('src', "/assets/restaurant-img.jpg");
-      else if ( id == "chauffeur" )
-        $(".service_image").attr('src', "/assets/driver-img.jpg");
-      else if ( id == "interior" )
-        $(".service_image").attr('src', "/assets/home-decore-img.jpg");
-      else if ( id == "nightlife" )
-        $(".service_image").attr('src', "/assets/nightlife-img.jpg");
-      else if ( id == "travel" )
-        $(".service_image").attr('src', "/assets/travel-img.jpg");
-      else if ( id == "communication" )
-        $(".service_image").attr('src', "/assets/communication-img.jpg");
-      else if ( id == "accomodation" )
-        $(".service_image").attr('src', "/assets/accomodation-img.jpg");
-      else if ( id == "fashion" )
-        $(".service_image").attr('src', "/assets/fashion-img.jpg");
-      else
-        $(".service_image").attr('src', "/assets/network-img.jpg");
+		  // Append content in popup.
+		  switch(id) {
+        case "restaurant":
+          var title = "Restaurant Reservations / Suggestions"
+          $(".text").html("<p>Restaurant Reservations / Suggestions</p><p>Restaurant Reservations / Suggestions</p>");
+          $(".service_image").attr('src', "/assets/restaurant-popup.jpg");
+          break;
+        case "chauffeur":
+          var title = "Chauffeur Services"
+          $(".service_image").attr('src', "/assets/driver-services-popup.jpg");
+          break;
+        case "interior":
+          var title = "Interior Design & Home Planning"
+          $(".service_image").attr('src', "/assets/interior-design-popup.jpg");
+          break;
+        case "nightlife":
+          var title = "Nightlife & Event Hosting"
+          $(".service_image").attr('src', "/assets/nightlife-popup.jpg");
+          break;
+        case "travel":
+          var title = "Travel Coordination"
+          $(".service_image").attr('src', "/assets/travel-services-popup.jpg");
+          break;
+        case "communication":
+          var title = "24/7 Direct Communication"
+          $(".service_image").attr('src', "/assets/24-7-communication-popup.jpg");
+          break;
+        case "accomodation":
+          var title = "Accommodation Sourcing"
+          $(".service_image").attr('src', "/assets/accomodation-popup.jpg");
+          break;
+        case "fashion":
+          var title = "Fashion & Style Consolation"
+          $(".service_image").attr('src', "/assets/style-popup.jpg");
+          break;
+        case "global":
+          var title = "Global Lifestyle Management Network"
+          $(".service_image").attr('src', "/assets/global-network-popup.jpg");
+          break;
+      }
 
-      // Open popup
-      $( "#servicePopup" ).effect( "highlight" );
-		});
+        // Open popup
+  	  $( "#servicePopup" ).dialog({
+  			  modal: true,
+  			  resizable: false,
+          draggable: false,
+          width: 700,
+          height: 500,
+          closeText: false,
+          title: title
+  			});
+        $( "#servicePopup" ).effect( "highlight" );
+    	
+    });
 		
 		$(".servicepopupclose").click(function() {
 			$( "#servicePopup" ).hide();

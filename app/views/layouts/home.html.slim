@@ -8,7 +8,7 @@ html
     == stylesheet_link_tag "application", :media => 'all'
     == javascript_include_tag 'application'
     == csrf_meta_tags
-  body
+  body#skrollr-body
     = render 'layouts/top_nav'
     ul#homeslider.rslides
       li
@@ -43,7 +43,7 @@ html
             p Start enjoying your new lifestyle it's just a few taps away...
 
           
-      .plq-app.featurette data-400-top-top=("opacity:1; right:0;") data-500-top-top=("opacity:0; right:-10%;")
+      .plq-app.featurette data-400-top-top=("opacity:1; right:0;") data-500-top-top=("opacity:0; right:-5%;")
         h2
           span
             | The 
@@ -60,9 +60,8 @@ html
       .plq-affiliate-services
         h2.align-center
           span
-            | Our Afiliate 
+            | Our Affiliate 
             strong Services
-        = render 'layouts/service_popup'
             .clear
         ul.services
           li.service
@@ -71,7 +70,7 @@ html
               h3
                 | Restaurant
                 br
-                | Reservations/Suggestions
+                | Reservations / Suggestions
               .arrow-icon
                 span
             div
@@ -164,25 +163,25 @@ html
       .home-container
         h2 Memberships
         p Exclusive access to a global network of lifestyle agents, managers, and partners gives our members access to a plethora of lifestyle activities such as events and nightlife, to unique hotels and travel destinations with preferential member access. We provide a core network of talented agents who provide dedicated preference based lifestyle management.
-        .membership-box.white.featurette data-300-top-top=("opacity:1; left:0;") data-center-top=("opacity:0; left:-10%;")
+        .membership-box.white.featurette data-300-top-top=("opacity:1; left:0;") data-center-top=("opacity:0; left:-5%;")
           h3 PLQ Social
           h4 Free with PL user account
           p Personalized social guide of things to buy, to do and places to see curated by PL with access to our dedicated network of lifestyle agents.
           div
             a.membership-button.userSignupButton href="javascript:void(0);"  Join
-        .membership-box.featurette data-300-top-top=("opacity:1; top:0;") data-center-top=("opacity:0; top:-10%;")
+        .membership-box.featurette data-300-top-top=("opacity:1; left:0;") data-center-top=("opacity:0; left:-5%;")
           h3 PLQ Silver
           h4 £25 per month
           p Card member access to PL agents, events, products and services. Privilege discounts across our network of affiliates and partners.
           div
             a.membership-button.membershipButtons href="javascript:void(0);" tier="PLQ Silver"  Request
-        .membership-box.featurette data-300-top-top=("opacity:1; bottom:0;") data-center-top=("opacity:0; bottom:-10%;")
+        .membership-box.featurette data-300-top-top=("opacity:1; right:0;") data-center-top=("opacity:0; right:-5%;")
           h3 PLQ Gold
           h4 POA
           p Exclusive access to our global network of dedicated agents and managers providing a range of on demand lifestyle services.
           div
             a.membership-button.membershipButtons href="javascript:void(0);" tier="PLQ Gold" Request
-        .membership-box.featurette data-300-top-top=("opacity:1; right:0;") data-center-top=("opacity:0; right:-10%;")
+        .membership-box.featurette data-300-top-top=("opacity:1; right:0;") data-center-top=("opacity:0; right:-5%;")
           h3 PLQ Black
           h4 POA
           p Personal assistant on demand 24/7 allocated lifetime manager covering all lifestyle management services globally.
@@ -456,8 +455,6 @@ html
               br
               = link_to "HELP CENTER", help_path
               | &nbsp;&nbsp;
-              = link_to "ABOUT US", about_path
-              | &nbsp;&nbsp;
               = link_to "CONTACT US", contact_path
           .footer-right
             a.gplay-icon href="#" 
@@ -479,9 +476,14 @@ html
         = render 'shared/sign_in_form'
 
     = render 'layouts/membership_form'
+    = render 'layouts/service_popup'
 
     #UserSignUpForm style="display:none;" title=("SIGN UP AS USER") 
       .signup-form
         = render "layouts/mailchimp_subscription_form"
-  	javascript:
-      var s = skrollr.init();
+    javascript:
+      $(document).ready(function(){
+        if ($(window).width() > 1000) {
+          var s = skrollr.init()
+        }
+      });

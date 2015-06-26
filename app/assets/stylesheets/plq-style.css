@@ -898,30 +898,24 @@ color:#4db6dc;
 } 
 
 .services-popup {
-background:#222;
-width:100%;
-position:absolute;
-z-index:100;
-color:#fff;
 }
 .services-popup .ipadding {
-padding: 25px;
+padding: 0px;
 }
 .services-popup .photo {
 float:right;
 width:54%;
-padding-top:20px;
 }
 .services-popup .text {
 float:left;
 width:45%;
 text-align:left;
-color:#fff;
+color:#444;
 font-size:13px;
 line-height:20px;
 }
 .services-popup .text p {
-color:#fff;
+color:#444;
 font-size:13px;
 line-height:20px; 
 padding:0px;
@@ -1649,7 +1643,10 @@ font-weight:normal;
 position:relative;
 transition: all 0.5s ease-in-out 0s;
 }
-
+#skrollr-body {
+width: 100%;
+height: 100%;
+}
 @media only screen and (max-width: 1000px) {
 
   .container, .home-container {
