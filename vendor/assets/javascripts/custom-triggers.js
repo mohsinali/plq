@@ -196,64 +196,52 @@ $(function () {
 		});
 		
 		$( ".service-descp").click(function() {
-											
 			// $( "#servicePopup" ).slideDown();
-			id = $(this).attr("id");
-      
-		  // Append content in popup.
-		  switch(id) {
-        case "restaurant":
-          var title = "Restaurant Reservations / Suggestions"
-          $(".text").html("<p>Restaurant Reservations / Suggestions</p><p>Restaurant Reservations / Suggestions</p>");
-          $(".service_image").attr('src', "/assets/restaurant-popup.jpg");
-          break;
-        case "chauffeur":
-          var title = "Chauffeur Services"
-          $(".service_image").attr('src', "/assets/driver-services-popup.jpg");
-          break;
-        case "interior":
-          var title = "Interior Design & Home Planning"
-          $(".service_image").attr('src', "/assets/interior-design-popup.jpg");
-          break;
-        case "nightlife":
-          var title = "Nightlife & Event Hosting"
-          $(".service_image").attr('src', "/assets/nightlife-popup.jpg");
-          break;
-        case "travel":
-          var title = "Travel Coordination"
-          $(".service_image").attr('src', "/assets/travel-services-popup.jpg");
-          break;
-        case "communication":
-          var title = "24/7 Direct Communication"
-          $(".service_image").attr('src', "/assets/24-7-communication-popup.jpg");
-          break;
-        case "accomodation":
-          var title = "Accommodation Sourcing"
-          $(".service_image").attr('src', "/assets/accomodation-popup.jpg");
-          break;
-        case "fashion":
-          var title = "Fashion & Style Consolation"
-          $(".service_image").attr('src', "/assets/style-popup.jpg");
-          break;
-        case "global":
-          var title = "Global Lifestyle Management Network"
-          $(".service_image").attr('src', "/assets/global-network-popup.jpg");
-          break;
-      }
+			service_name = $(this).attr("id");
 
-        // Open popup
+      // Open popup
   	  $( "#servicePopup" ).dialog({
   			  modal: true,
-  			  resizable: false,
+          resizable: false,
           draggable: false,
           width: 700,
           height: 500,
           closeText: false,
-          title: title
+          open: function( event, ui ) { 
+            get_service_data(service_name);
+          }
   			});
         $( "#servicePopup" ).effect( "highlight" );
-    	
+		
+		$( "#servicePopup" ).dialog({
+		  beforeClose: function( event, ui ) {
+			  $( "#servicePopup" ).dialog( "option", "title", '' );
+          $(".service_image").attr('src', '');
+          $(".text").html('');
+		  
+			  }
+		
+		
     });
+
+	
+	});
+		
+		
+    function get_service_data(service_name){
+      data = "";
+      $.ajax({
+        method: "GET",        
+        url: "/visitors/service_content",
+        dataType: 'JSON',
+        data: {service_name: service_name}
+      })
+        .done(function( msg ) {
+          $( "#servicePopup" ).dialog( "option", "title", msg["title"] );
+          $(".service_image").attr('src', msg["image"]);
+          $(".text").html(msg["content"]);
+        });
+    }
 		
 		$(".servicepopupclose").click(function() {
 			$( "#servicePopup" ).hide();

@@ -504,6 +504,17 @@ padding:40px 0px 0px 0px;
 .want-to-join-plq h2 {
 border:none;
 }
+.want-to-join-plq .learn-more {
+text-decoration:none;
+margin-top:20px;
+}
+.want-to-join-plq .learn-more a {
+text-decoration:none;
+color:#4db6dc;
+}
+.want-to-join-plq .learn-more a:hover {
+color:#333;
+}
 a.join-button {
 background:#4db6dc;
 font-family: OpenSans-Bold;
@@ -2092,7 +2103,12 @@ height: 100%;
   .plq-global-network {
     background: none;
     margin-top: 50px;
+	text-align:center;
   }
+  .plq-global-network p strong {
+
+	font-size:26px;
+	}
   .plq-global-network .outer-padd {
       padding: 0 0 20px;
   }
@@ -2158,7 +2174,7 @@ height: 100%;
     margin:0px auto;
   }
   .plq-map {
-    background:url(../images/map-bg.jpg) repeat-x;
+    background:url(map-bg.jpg) repeat-x;
     color:#fff;
     min-height:600px;
     text-align:center;
@@ -2748,7 +2764,12 @@ height: 100%;
   .plq-global-network {
     background: none;
     margin-top: 50px;
+  text-align:center;
   }
+  .plq-global-network p strong {
+
+	font-size:26px;
+	}
   .plq-global-network .outer-padd {
       padding: 0 0 50px;
   }
@@ -2814,7 +2835,7 @@ height: 100%;
     margin:0px auto;
   }
   .plq-map {
-    background:url(../images/map-bg.jpg) repeat-x;
+    background:url(map-bg.jpg) repeat-x;
     color:#fff;
     min-height:600px;
     text-align:center;

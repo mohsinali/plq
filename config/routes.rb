@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   	end
   end
 
+  resources :visitors do
+    collection do
+      get :service_content
+    end
+  end
+
   # Static Pages
   get '/about', to: 'pages#about_us'
   get '/contact', to: 'pages#contact_us'
