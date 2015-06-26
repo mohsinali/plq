@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   
   ## Static Methods
   def self.cities
-    ["Los Angeles", "Las Vegas", "Miami", "Toronto", "New York", "London", "Paris", "Stockholm", "Dubai"]
+    ["Istanbul", "Los Angeles", "Las Vegas", "Miami", "Toronto", "New York", "London", "Stockholm", "Dubai"]
   end
 
   def self.services

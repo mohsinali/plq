@@ -18,11 +18,11 @@
         h4 Country
         .options
           ul          
-            - User.all.order("country asc").each do |user|
-              - unless user.country.blank?
-                li
-                  = check_box_tag('q[country_cont_any][]', user.country, checked = false, options = { class: "filter_checkbox" })
-                  = user.country
+            - countries = ["Dubai", "United Kingdom", "Sweden", "Turkey", "Canada", "United Stated"]
+            - countries.each do |country|
+              li
+                = check_box_tag('q[country_cont_any][]', country, checked = false, options = { class: "filter_checkbox" })
+                = country
             
           /.reset-link
             a href="#"  RESET
@@ -33,10 +33,10 @@
         h4 City
         .options
           ul
-            - UserCity.select(:name).uniq.order("name asc").each do |city|
+            - User.cities.each do |city|
               li
-                = check_box_tag('q[user_cities_name_cont_any][]', city.name, checked = false, options = { class: "filter_checkbox" })
-                = city.name
+                = check_box_tag('q[user_cities_name_cont_any][]', city, checked = false, options = { class: "filter_checkbox" })
+                = city
             
           /.reset-link
             a href="#"  RESET
@@ -46,10 +46,10 @@
         h4 Services
         .options
           ul
-            - UserService.select(:name).uniq.order("name asc").each do |service|
+            - User.services.each do |service|
               li
-                = check_box_tag('q[user_services_name_cont_any][]', service.name, checked = false, options = { class: "filter_checkbox" })
-                = service.name
+                = check_box_tag('q[user_services_name_cont_any][]', service, checked = false, options = { class: "filter_checkbox" })
+                = service
           /.reset-link
             a href="#"  RESET
           .clear
