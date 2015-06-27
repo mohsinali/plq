@@ -38,6 +38,7 @@ $(function () {
 	  
 	  $(".service a").hover(function(){	 
 		$(this).next('.overlay').slideToggle();
+		$(this).next('.overlay').next('div').next('.courtesy').slideToggle();
 	  });
 	  
 	  $.widget("ui.tooltip", $.ui.tooltip, {
@@ -130,7 +131,7 @@ $(function () {
 			  resizable: false,
 			   draggable: false,
 			   width: 500,
-			   height: 270,
+			   height: 320,
 			   closeText: false
 			});
 			//$( "#EarlyAccessForm" ).effect( "bounce", "slow" );
@@ -249,7 +250,7 @@ $(function () {
 			  resizable: false,
 			   draggable: false,
 			   width: 500,
-			   height: 270,
+			   height: 320,
 			   closeText: false
 			});
 			//$( "#UserSignUpForm" ).effect( "bounce", "slow" );
