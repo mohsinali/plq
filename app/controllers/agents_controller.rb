@@ -14,4 +14,12 @@ class AgentsController < ApplicationController
   		format.html
   	end
   end
+
+  def editable
+    field_name = params[:name]
+    field_value = params[:value]
+    User.find(params[:pk]).update_attribute(field_name, field_value)
+    
+    render :text => 'success'
+  end
 end

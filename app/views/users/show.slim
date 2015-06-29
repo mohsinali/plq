@@ -6,6 +6,7 @@
     .edit-profile-button
       = link_to 'Edit Profile', edit_user_registration_path
   h1 My Account
+  
   .left-pannel
     .user-profile-lp
       .img-box
@@ -14,11 +15,11 @@
         - else
           = image_tag "default_avatar.jpg", border: "0", width: "100%"
       .name
-        = @user.name
-      .location
-        = @user.location
+        = link_to @user.name, "#", id: "name", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
+      .location        
+        = link_to @user.location, "#", id: "location", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .city
-        = @user.country
+        = link_to @user.country, "#", id: "country", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .member-since
         = "Member Since " + @user.created_at.strftime("%b %d, %Y")
       .recommended
@@ -42,12 +43,12 @@
           = services.join(", ")
 
         .tier
-          span Tier: 
-          = @user.tier
+          span Tier:
+          = link_to @user.tier, "#", id: "tier", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .info-box
         .interest
-          span Interests: 
-          | Hotels, Independent Tours
+          span Interests:          
+          = @user.interest_list
         .destination
           span Destination: 
           - cities = []
