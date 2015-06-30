@@ -1,6 +1,6 @@
-<% if @resource == "unconfirmed" %>
-	$(".sign_in_error").show();
-	$(".sign_in_error").html("Confirm your account.");
+<% if @resource == "not_approved" %>
+  $(".sign_in_error").show();
+  $(".sign_in_error").html("Your account has not been approved by your administrator yet.");
   $(".signin_loader").hide();
   $(".btn_sign_in").show();
 <% elsif @resource == "invalid" %>

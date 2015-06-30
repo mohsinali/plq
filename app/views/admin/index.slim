@@ -1,3 +1,4 @@
+= link_to "Providers awaiting approval", unapproved_admin_index_path()
 - if @agents.any? or @vendors.any?
   - if @agents.any?
     h1 Registered Agents
@@ -18,10 +19,10 @@
             td = agent.email
             td = agent.country
             td = agent.roles.first.name.humanize
-            td = link_to 'View Detail', user_path(agent)
+            td = link_to 'View Profile', user_path(agent)
 
   - if @vendors.any?
-    h1 Registered Partners
+    h1 Registered Vendors
     table.table.table-bordered.users-list
       thead
         tr
@@ -41,4 +42,4 @@
             td = link_to 'View Detail', user_path(vendor)
 
 - else
-  h1 No registered Agent or Partner yet.
+  h1 No registered Agent or Vendor yet.

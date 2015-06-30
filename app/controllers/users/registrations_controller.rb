@@ -44,7 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       ## Notify Admin
       notify_admin()
       
-      flash[:notice] = "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      flash[:notice] = "You have signed up successfully but your account has not been approved by your administrator yet."
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)

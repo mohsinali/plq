@@ -7,6 +7,10 @@ class AdminController < ApplicationController
   	@vendors = User.with_role(:vendor)
   end
 
+  def unapproved
+    @providers = User.where(approved: false)
+  end
+
   protected
   def authenticate_admin!
     redirect_to root_path unless current_user and current_user.has_role? :admin

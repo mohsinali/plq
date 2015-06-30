@@ -1,0 +1,25 @@
+= link_to "All providers", admin_index_path()
+- if @providers.any?
+  h1 Providers Awaiting Approval
+
+  table.table.table-bordered.users-list
+    thead
+      tr
+        th Name
+        th Email
+        th Country
+        th Role
+        th
+
+    tbody
+      - @providers.each do |provider|
+        tr
+          td = provider.name
+          td = provider.email
+          td = provider.country
+          td = provider.roles.first.name.humanize
+          td = link_to 'View Profile', user_path(provider)
+          
+
+- else
+  h1 No provider to be approved.
