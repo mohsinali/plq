@@ -22,7 +22,7 @@ Role.create(name: "admin")
 
 puts "Roles created: User, Manager, Agent, Vendor, Admin"
 
-user = User.create(email: "admin@plq.com", password: "321321321", name: "Kerwin", confirmed_at: Time.now)
+user = User.create(email: "admin@plq.com", password: "321321321", name: "Kerwin", approved: true)
 user.add_role :admin
 
 puts "Admin created."

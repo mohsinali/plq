@@ -15,16 +15,19 @@ prepend_before_filter { request.env["devise.skip_timeout"] = true }
     caught = catch(:warden) do
       resource = warden.authenticate!(auth_options)
     end
-    
+
     if resource
+      # User is confirmed
       self.resource = resource
       set_flash_message(:notice, :signed_in) if is_flashing_format?
       sign_in(resource_name, resource)
       yield resource if block_given?
       @resource = resource
-    elsif caught and caught[:message] == :unconfirmed
-      @resource = "unconfirmed"
+    elsif caught and caught[:message] == :not_approved
+      # User is unconfirmed
+      @resource = "not_approved"
     else
+      # User is not signed in
       @resource = "invalid"
     end
     respond_to :html, :js
