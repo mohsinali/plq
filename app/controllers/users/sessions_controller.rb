@@ -11,17 +11,21 @@ prepend_before_filter { request.env["devise.skip_timeout"] = true }
 
   # POST /resource/sign_in
   def create
+    resource  = nil
+    caught = catch(:warden) do
+      resource = warden.authenticate!(auth_options)
+    end
     
-    if warden.authenticate(auth_options).nil?
-      @resource = nil
-    else
-      self.resource = warden.authenticate!(auth_options)
+    if resource
+      self.resource = resource
       set_flash_message(:notice, :signed_in) if is_flashing_format?
       sign_in(resource_name, resource)
-      
       yield resource if block_given?
-      # respond_with resource, location: after_sign_in_path_for(resource)
-      @resource = resource      
+      @resource = resource
+    elsif caught and caught[:message] == :unconfirmed
+      @resource = "unconfirmed"
+    else
+      @resource = "invalid"
     end
     respond_to :html, :js
   end
