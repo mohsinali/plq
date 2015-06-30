@@ -1,5 +1,11 @@
-<% if @resource.nil? %>
+<% if @resource == "unconfirmed" %>
 	$(".sign_in_error").show();
+	$(".sign_in_error").html("Confirm your account.");
+  $(".signin_loader").hide();
+  $(".btn_sign_in").show();
+<% elsif @resource == "invalid" %>
+  $(".sign_in_error").show();
+  $(".sign_in_error").html("Invalid email or password.");
   $(".signin_loader").hide();
   $(".btn_sign_in").show();
 <% else %>
