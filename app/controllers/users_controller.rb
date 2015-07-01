@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
-  after_action :verify_authorized, except: [:request_for_membership, :show]
+  after_action :verify_authorized, except: [:request_for_membership, :show, :approve_disapprove]
 
   def index
     @users = User.all
@@ -34,6 +34,14 @@ class UsersController < ApplicationController
     flash[:notice] = "Your membership request has been received."
 
     respond_to :js
+  end
+
+  def approve_disapprove
+    user = User.find(params[:id])
+    user.approve_disapprove
+    
+    msg = { :status => 200, :message => "Success!", :approved => user.approved ? "Yes" : "No" }
+    render :json => msg
   end
 
   private

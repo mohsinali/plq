@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :users do
   	collection do
   		post :request_for_membership
+      post :approve_disapprove
   	end
   end
 

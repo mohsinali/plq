@@ -9,6 +9,7 @@
         th Email
         th Country
         th Role
+        th Approved
         th
 
     tbody
@@ -18,8 +19,9 @@
           td = provider.email
           td = provider.country
           td = provider.roles.first.name.humanize
+          td = link_to provider.approved ? "Yes" : "No", "javascript:void(0);", id: provider.id, class: "approve_disapprove approve_#{provider.id}"
           td = link_to 'View Profile', user_path(provider)
           
 
 - else
-  h1 No provider to be approved.
+  h1 No provider to approve.

@@ -7,3 +7,10 @@ $ ->
   $('.user_editable').each (i, obj) ->
     $(this).editable()
     return
+
+  $(".approve_disapprove").click ->
+    id = $(this).attr("id")
+
+    $.post "/users/approve_disapprove", { id: id }, (data) ->
+      if data.status == 200
+        $(".approve_" + id).html(data.approved)
