@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController  
   def index
-    @q = User.with_role(:agent).ransack(params[:q])
+    @q = User.with_role(:agent).where(approved: true).ransack(params[:q])
     @agents = @q.result(distinct: true).includes(:user_cities, :user_services).page(params[:page])
 
     respond_to :html, :js
