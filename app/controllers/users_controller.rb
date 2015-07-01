@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
+  before_action :verify_user, only: [:show]
   after_action :verify_authorized, except: [:request_for_membership, :show, :approve_disapprove]
 
   def index
@@ -48,6 +49,10 @@ class UsersController < ApplicationController
 
   def secure_params
     params.require(:user).permit(:role, :tag_list)
+  end
+
+  def verify_user
+    redirect_to root_path unless (current_user and current_user.has_role? :admin) or (current_user and current_user.id == params[:id].split("-").first.to_i)
   end
 
 end
