@@ -62,4 +62,11 @@ class User < ActiveRecord::Base
       super # Use whatever other message 
     end 
   end
+
+  def approve_disapprove
+    self.update_attribute(:approved, self.approved ^= true)
+    if self.approved
+      UserMailer.provider_approved(self).deliver
+    end
+  end
 end

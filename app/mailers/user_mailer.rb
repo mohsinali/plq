@@ -10,4 +10,8 @@ class UserMailer < ActionMailer::Base
   	@form_fields = form_fields
   	mail(to: "Kerwin Alabi <kerwin@platformiv.com>", subject: 'New membership request')
   end
+
+  def provider_approved provider
+  	mail(to: provider.email, subject: 'Your account has been approved.')
+  end
 end
