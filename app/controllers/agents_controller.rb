@@ -52,4 +52,13 @@ class AgentsController < ApplicationController
 
     render :text => 'success'
   end
+
+  def interests_editable
+    user_id = params[:pk]
+    interests = params[:value]
+    user = User.find(user_id)
+    user.interest_list = interests
+    user.save
+    render :text => 'success'
+  end
 end

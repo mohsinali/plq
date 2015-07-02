@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       post :editable
       post :service_editable
       post :cities_editable
+      post :interests_editable
     end
   end
 

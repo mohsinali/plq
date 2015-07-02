@@ -49,7 +49,8 @@
       .info-box
         .interest
           span Interests:          
-          = @user.interest_list
+          /= @user.interest_list
+          = link_to @user.interest_list, "#", id: "tags", class: 'editable editable-click user_editable', "data-pk" => @user.id, "data-type" => "text", "data-url" => interests_editable_agents_path()
         .destination
           span Destination: 
           - cities = []
