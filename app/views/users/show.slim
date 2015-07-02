@@ -40,11 +40,12 @@
           - services = []
           - @user.user_services.each do |s|
             - services << s.name
-          = services.join(", ")
+          = link_to "#", id: "user_services", class: 'editable editable-click user_editable', "data-pk" => @user.id, "data-type" => "checklist", "data-source" => "/users/user_services.json", "data-name" => "user_services", "data-value" => services.join(", "), "data-url" => service_editable_agents_path() do
+            = services.join(", ")
 
         .tier
-          span Tier:
-          = link_to @user.tier, "#", id: "tier", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
+          span Tier: 
+          = link_to @user.tier, "#", id: "tier", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "select", "data-source" => '[{"PLQ Social":"PLQ Social"},{"PLQ Silver":"PLQ Silver"},{"PLQ Gold":"PLQ Gold"},{"PLQ Black":"PLQ Black"}]', "data-value" => @user.tier, "data-url" => editable_agents_path()
       .info-box
         .interest
           span Interests:          
@@ -54,14 +55,15 @@
           - cities = []
           - @user.user_cities.each do |c|
             - cities << c.name
-          = cities.join(", ")
+          = link_to "#", id: "user_cities", class: 'editable editable-click user_editable', "data-pk" => @user.id, "data-type" => "checklist", "data-source" => "/users/user_cities.json", "data-name" => "user_cities", "data-value" => cities.join(", "), "data-url" => cities_editable_agents_path() do
+            = cities.join(", ")
         div
           span Years of Experience: 
           | 16
       .info-box
         h3 My Social Media Links
         div
-          = @user.social_links
+          = link_to @user.social_links, "#", id: "social_links", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
         /div
           a href="https://www.facebook.com/plqrobert" target="_blank"  https://www.facebook.com/plqrobert
           
@@ -69,7 +71,7 @@
         .about
           h3 About Me
           p
-            = @user.description
+            = link_to @user.description, "#", id: "description", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "textarea", "data-url" => editable_agents_path()
       .reviews
         h3 Reviews
         .user-review

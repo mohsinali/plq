@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   	collection do
   		post :request_for_membership
       post :approve_disapprove
+      get :user_services
+      get :user_cities
   	end
   end
 
@@ -33,6 +35,8 @@ Rails.application.routes.draw do
   resources :agents do
     collection do
       post :editable
+      post :service_editable
+      post :cities_editable
     end
   end
 

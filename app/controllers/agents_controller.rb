@@ -22,4 +22,34 @@ class AgentsController < ApplicationController
     
     render :text => 'success'
   end
+
+  def service_editable
+    user_id = params[:pk]
+    services = params[:value]
+    user = User.find(user_id)
+    user.user_services.delete_all
+
+    unless services.nil?
+      services.each do |service_name|
+        UserService.create(:name => service_name, :user_id => user_id)
+      end
+    end
+
+    render :text => 'success'
+  end
+
+  def cities_editable
+    user_id = params[:pk]
+    cities = params[:value]
+    user = User.find(user_id)
+    user.user_cities.delete_all
+    
+    unless cities.nil?
+      cities.each do |city|
+        UserCity.create(:name => city, :user_id => user_id)
+      end
+    end
+
+    render :text => 'success'
+  end
 end
