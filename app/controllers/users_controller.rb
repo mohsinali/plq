@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
   before_action :verify_user, only: [:show]
-  after_action :verify_authorized, except: [:request_for_membership, :show, :approve_disapprove]
+  after_action :verify_authorized, except: [:request_for_membership, :show, :destroy, :approve_disapprove]
 
   def index
     @users = User.all
@@ -25,9 +25,10 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
-    authorize user
     user.destroy
-    redirect_to users_path, :notice => "User deleted."
+    respond_to do |format|
+      format.js
+    end
   end
 
   def request_for_membership
