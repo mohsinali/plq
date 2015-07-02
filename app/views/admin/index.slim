@@ -11,6 +11,7 @@
           th Country
           th Role
           th 
+          th
 
       tbody
         - @agents.each do |agent|
@@ -20,6 +21,7 @@
             td = agent.country
             td = agent.roles.first.name.humanize
             td = link_to 'View Profile', user_path(agent)
+            td = link_to 'Delete', user_path(agent.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
   - if @vendors.any?
     h1 Registered Vendors
@@ -30,7 +32,8 @@
           th Email
           th Country
           th Role
-          th Action
+          th
+          th
 
       tbody
         - @vendors.each do |vendor|
@@ -40,6 +43,7 @@
             td = vendor.country
             td = vendor.roles.first.name.humanize
             td = link_to 'View Profile', user_path(vendor)
+            td = link_to 'Delete', user_path(vendor.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
 - else
   h1 No registered Agent or Vendor yet.

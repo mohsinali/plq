@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
   before_action :verify_user, only: [:show]
-  after_action :verify_authorized, except: [:request_for_membership, :show, :approve_disapprove]
+  after_action :verify_authorized, except: [:request_for_membership, :show, :destroy, :approve_disapprove, :user_services, :user_cities]
 
   def index
     @users = User.all
@@ -25,9 +25,10 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
-    authorize user
     user.destroy
-    redirect_to users_path, :notice => "User deleted."
+    respond_to do |format|
+      format.js
+    end
   end
 
   def request_for_membership
@@ -43,6 +44,22 @@ class UsersController < ApplicationController
     
     msg = { :status => 200, :message => "Success!", :approved => user.approved ? "Yes" : "No" }
     render :json => msg
+  end
+
+  def user_services
+    @user_services = User.services
+    respond_to do |format|
+      format.html
+      format.json { render :json =>  @user_services.map{ |m| {m => m} }.to_json}
+    end
+  end
+
+  def user_cities
+    @user_cities = User.cities
+    respond_to do |format|
+      format.html
+      format.json { render :json =>  @user_cities.map{ |m| {m => m} }.to_json}
+    end
   end
 
   private
