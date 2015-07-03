@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :admin do
     collection do
       get :unapproved
+      get :add_provider
+      post :add_provider
     end
   end
 

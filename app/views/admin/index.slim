@@ -1,49 +1,49 @@
 = link_to "Providers awaiting approval", unapproved_admin_index_path()
-- if @agents.any? or @vendors.any?
-  - if @agents.any?
-    h1 Registered Agents
 
-    table.table.table-bordered.users-list
-      thead
+h1 Registered Agents
+= link_to "Add Agent", add_provider_admin_index_path(role: "agent")
+
+- if @agents.any?
+  table.table.table-bordered.users-list
+    thead
+      tr
+        th Name
+        th Email
+        th Country
+        th Role
+        th 
+        th
+
+    tbody
+      - @agents.each do |agent|
         tr
-          th Name
-          th Email
-          th Country
-          th Role
-          th 
-          th
+          td = agent.name
+          td = agent.email
+          td = agent.country
+          td = agent.roles.first.name.humanize
+          td = link_to 'View Profile', user_path(agent)
+          td = link_to 'Delete', user_path(agent.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
-      tbody
-        - @agents.each do |agent|
-          tr
-            td = agent.name
-            td = agent.email
-            td = agent.country
-            td = agent.roles.first.name.humanize
-            td = link_to 'View Profile', user_path(agent)
-            td = link_to 'Delete', user_path(agent.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
+h1 Registered Vendors
+= link_to "Add Vendor", add_provider_admin_index_path(role: "vendor")
 
-  - if @vendors.any?
-    h1 Registered Vendors
-    table.table.table-bordered.users-list
-      thead
+- if @vendors.any?
+  table.table.table-bordered.users-list
+    thead
+      tr
+        th Name
+        th Email
+        th Country
+        th Role
+        th
+        th
+
+    tbody
+      - @vendors.each do |vendor|
         tr
-          th Name
-          th Email
-          th Country
-          th Role
-          th
-          th
-
-      tbody
-        - @vendors.each do |vendor|
-          tr
-            td = vendor.name
-            td = vendor.email
-            td = vendor.country
-            td = vendor.roles.first.name.humanize
-            td = link_to 'View Profile', user_path(vendor)
-            td = link_to 'Delete', user_path(vendor.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
-
-- else
-  h1 No registered Agent or Vendor yet.
+          td = vendor.name
+          td = vendor.email
+          td = vendor.country
+          td = vendor.roles.first.name.humanize
+          td = link_to 'View Profile', user_path(vendor)
+          td = link_to 'Delete', user_path(vendor.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
