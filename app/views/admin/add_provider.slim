@@ -55,6 +55,7 @@ form.simple_form.edit_user accept-charset="UTF-8" action="/admin/add_provider" e
       .left-label Describe yourself in 140 characters
       .input
         textarea#user_description name="user[description]" type="text" maxlength="140"
+        input type="hidden" name="role" value="#{params[:role]}"
       .clear
     .field-div
       .left-label Profile Image
@@ -76,7 +77,6 @@ form.simple_form.edit_user accept-charset="UTF-8" action="/admin/add_provider" e
       .input
         input#user_password_confirmation autocomplete="off" name="user[password_confirmation]" type="password"
       .clear
-  input type="hidden" name="user[role]" value="#{params[:role]}"
   .form-actions
     input.btn name="commit" type="submit" value="Add"
 
