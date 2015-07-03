@@ -1,11 +1,17 @@
 .inner-pages-main-padd
   .breadcrumbs
     = link_to 'HOME ', root_path 
-    | &raquo; My Account
+    - if params[:id].split("-").first.to_i == current_user.id
+      | &raquo; My Profile
+    - else
+      | &raquo; Profile
   - if @user == current_user
     .edit-profile-button
-      = link_to 'Edit Profile', edit_user_registration_path
-  h1 My Account
+      = link_to 'Change Login Details', edit_user_registration_path
+  - if params[:id].split("-").first.to_i == current_user.id
+    h1 My Profile
+  - else
+    h1 Profile
   
   .left-pannel
     .user-profile-lp
