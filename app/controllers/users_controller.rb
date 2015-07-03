@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
   before_action :verify_user, only: [:show]
-  after_action :verify_authorized, except: [:request_for_membership, :show, :destroy, :approve_disapprove, :user_services, :user_cities]
+  after_action :verify_authorized, except: [:request_for_membership, :show, :destroy, :approve_disapprove, :user_services, :user_cities, :user_countries]
 
   def index
     @users = User.all
@@ -59,6 +59,14 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json =>  @user_cities.map{ |m| {m => m} }.to_json}
+    end
+  end
+
+  def user_countries
+    countries = Country.all
+    respond_to do |format|
+      format.html
+      format.json { render :json =>  countries.map{ |m| {m.name => m.name} }.to_json}
     end
   end
 

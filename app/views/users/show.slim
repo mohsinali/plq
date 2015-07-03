@@ -19,7 +19,7 @@
       .location        
         = link_to @user.location, "#", id: "location", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .city
-        = link_to @user.country, "#", id: "country", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
+        = link_to @user.country, "#", id: "country", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "select", "data-source" => "/users/user_countries.json", "data-value" => @user.country, "data-url" => editable_agents_path()
       .member-since
         = "Member Since " + @user.created_at.strftime("%b %d, %Y")
       .recommended

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       post :approve_disapprove
       get :user_services
       get :user_cities
+      get :user_countries
   	end
   end
 
