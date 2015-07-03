@@ -1,25 +1,37 @@
 .inner-pages-main-padd
   .breadcrumbs
     = link_to 'HOME ', root_path 
-    | &raquo; My Account
+    - if params[:id].split("-").first.to_i == current_user.id
+      | &raquo; My Profile
+    - else
+      | &raquo; Profile
   - if @user == current_user
     .edit-profile-button
-      = link_to 'Edit Profile', edit_user_registration_path
-  h1 My Account
+      = link_to 'Change Login Details', edit_user_registration_path
+  - if params[:id].split("-").first.to_i == current_user.id
+    h1 My Profile
+  - else
+    h1 Profile
   
   .left-pannel
     .user-profile-lp
-      .img-box
+      .img-box#profile_image
         - if @user.image?
           = image_tag @user.image, border: "0", width: "100%"
         - else
           = image_tag "default_avatar.jpg", border: "0", width: "100%"
+        a.upload_new_image href="javascript:void(0);" style="display:none;" Upload New Photo
+        .upload_photo_form style="display:none;"
+          = form_tag('/users/upload_image', multipart: true)
+            = file_field(:user, :image)
+            = hidden_field_tag "id", @user.id
+            = submit_tag "Upload"
       .name
         = link_to @user.name, "#", id: "name", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .location        
         = link_to @user.location, "#", id: "location", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .city
-        = link_to @user.country, "#", id: "country", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
+        = link_to @user.country, "#", id: "country", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "select", "data-source" => "/users/user_countries.json", "data-value" => @user.country, "data-url" => editable_agents_path()
       .member-since
         = "Member Since " + @user.created_at.strftime("%b %d, %Y")
       .recommended
