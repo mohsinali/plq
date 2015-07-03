@@ -1,0 +1,84 @@
+h1 Add #{params[:role].humanize}
+
+form.simple_form.edit_user accept-charset="UTF-8" action="/admin/add_provider" enctype="multipart/form-data" method="post"
+  div style="display:none" 
+    input name="utf8" type="hidden" value="✓"
+    input name="authenticity_token" type="hidden" value="uBu3g5G73H9tx59Dgm2WHjU0w0SRZuaYRUEeoOkfhVw="
+  .form-inputs
+    .field-div
+      .left-label Name
+      .input
+        input#user_name name="user[name]" autofocus="autofocus" type="text"
+      .clear
+    .field-div
+      .left-label Location
+      .input
+        input#user_location name="user[location]" type="text"
+      .clear
+    .field-div
+      .left-label Services
+      .input
+        - User.services.each do |s|
+          = check_box_tag "user_service[]", s, checked = false
+          label #{s}
+      .clear
+    .field-div
+      .left-label Tier
+      .input
+        - User.tier.each do |t|
+          = radio_button_tag 'user[tier]', t, checked = false
+          label #{t}
+      .clear
+    .field-div
+      .left-label Social Links
+      .input
+        input#user_social_links name="user[social_links]" type="text" placeholder="Add Facebook, Instagram, Twitter (Comma Separated)"
+      .clear
+    .field-div
+      .left-label Country
+      .input
+        = select_tag "user[country]", options_from_collection_for_select(Country.all.order("name asc"), "name", "name")
+      .clear
+    .field-div
+      .left-label Cities
+      .input
+        - User.cities.each do |c|
+          = check_box_tag "user_cities[]", c, checked = false
+          label #{c}
+      .clear
+    .field-div
+      .left-label Interests
+      .input
+        input#user_interests name="interests" type="text" placeholder="Comma seperated interests"
+      .clear
+    .field-div
+      .left-label Describe yourself in 140 characters
+      .input
+        textarea#user_description name="user[description]" type="text" maxlength="140"
+        input type="hidden" name="role" value="#{params[:role]}"
+      .clear
+    .field-div
+      .left-label Profile Image
+      .input
+        input#user_image type="file" name="user[image]"
+      .clear
+    .field-div
+      .left-label Email
+      .input
+        input#user_email.required name="user[email]" type="email"
+      .clear
+    .field-div
+      .left-label Password
+      .input
+        input#user_password autocomplete="off" name="user[password]" type="password"
+      .clear
+    .field-div
+      .left-label Password Confirmation
+      .input
+        input#user_password_confirmation autocomplete="off" name="user[password_confirmation]" type="password"
+      .clear
+  .form-actions
+    input.btn name="commit" type="submit" value="Add"
+
+.cancel-back
+  = link_to "Back", :back
