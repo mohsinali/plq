@@ -14,3 +14,17 @@ $ ->
     $.post "/users/approve_disapprove", { id: id }, (data) ->
       if data.status == 200
         $(".approve_" + id).html(data.approved)
+
+  ## Show Upload New Photo link when hover on Profile Image ##
+  $("#profile_image").mouseover ->
+    if not $(".upload_photo_form").is ':visible'
+      $(".upload_new_image").show()
+
+  ## Hide Upload New Photo link ##
+  $("#profile_image").mouseout ->
+    $(".upload_new_image").hide()
+
+  ## Show a form to upload new Profile Image ##
+  $(".upload_new_image").click ->
+    $(this).hide()
+    $(".upload_photo_form").show()
