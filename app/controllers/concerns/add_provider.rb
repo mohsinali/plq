@@ -2,7 +2,7 @@ module AddProvider
   extend ActiveSupport::Concern
   
   def create_user
-    user = User.new(email: params[:user][:email], password: params[:user][:password], name: params[:user][:name], location: params[:user][:location], tier: params[:user][:tier], social_links: params[:user][:social_links], country: params[:user][:country], description: params[:user][:description], approved: true)
+    user = User.new(email: params[:user][:email], password: params[:user][:password], name: params[:user][:name], location: params[:user][:location], tier: params[:user][:tier], social_links: params[:user][:social_links], country: params[:user][:country], description: params[:user][:description], approved: true, manager_id: params[:manager_id])
     if user.save
       ## #####################################
       ## Assign a role to newly created user

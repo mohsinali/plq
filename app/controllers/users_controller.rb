@@ -85,8 +85,17 @@ class UsersController < ApplicationController
     params.require(:user).permit(:role, :tag_list)
   end
 
+  def provider_is_added_by_manager(user_id)
+    user = User.find(user_id)
+    if user.manager_id == current_user.id
+      return true
+    else
+      return false
+    end    
+  end
+
   def verify_user
-    redirect_to root_path unless (current_user and current_user.has_role? :admin) or (current_user and current_user.id == params[:id].split("-").first.to_i)
+    redirect_to root_path unless (current_user and current_user.has_role? :admin) or (current_user and current_user.id == params[:id].split("-").first.to_i) or (current_user and current_user.has_role? :manager and provider_is_added_by_manager(params[:id].split("-").first.to_i))
   end
 
 end

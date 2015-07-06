@@ -11,6 +11,8 @@
 <% else %>
   <% if current_user.has_role? :admin %>
     window.location = '/admin'
+  <% elsif current_user.has_role? :manager %>
+    window.location = '/managers'
   <% else %>
     location.reload();
   <% end %>
