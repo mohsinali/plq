@@ -56,6 +56,7 @@ form.simple_form.edit_user accept-charset="UTF-8" action="#{params[:to_post]}" e
       .input
         textarea#user_description name="user[description]" type="text" maxlength="140"
         input type="hidden" name="role" value="#{params[:role]}"
+        input type="hidden" name="manager_id" value="#{params[:manager_id]}"
       .clear
     .field-div
       .left-label Profile Image

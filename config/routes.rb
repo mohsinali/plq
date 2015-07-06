@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :managers do
+    collection do
+      get :add_provider
+      post :add_provider
+    end
+  end
+
   resources :mailchimp do
     collection do 
       post :subscribe_to_mailchimp
