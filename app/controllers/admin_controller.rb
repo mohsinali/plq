@@ -5,6 +5,7 @@ class AdminController < ApplicationController
   def index
   	@agents = User.with_role(:agent)
   	@vendors = User.with_role(:vendor)
+    @managers = User.with_role(:manager)
   end
 
   def unapproved
