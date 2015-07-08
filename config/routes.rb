@@ -59,4 +59,6 @@ Rails.application.routes.draw do
   get '/app', to: 'pages#app'
   get '/platform', to: 'pages#platform'
   get '/plq-provider-network', to: 'pages#plq_provider_network'
+  get '/memberships', to: 'pages#memberships'
+  
 end

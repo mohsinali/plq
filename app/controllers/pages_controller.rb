@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def plq_provider_network
   end
+  
+  def memberships
+  end
 end
