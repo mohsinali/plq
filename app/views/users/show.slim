@@ -72,7 +72,7 @@
             = cities.join(", ")
         div
           span Years of Experience: 
-          | 16
+          = link_to @user.experience, "#", id: "experience", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
       .info-box
         h3 My Social Media Links
         div

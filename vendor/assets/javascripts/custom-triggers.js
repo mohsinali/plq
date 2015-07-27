@@ -305,6 +305,7 @@ $(function () {
           $(".cities").html(cities);
           $(".tier").html(msg[0].tier);
           $(".detail_services").html(services);
+          $(".experience").html(msg[0].experience);
           
           if( msg[0].image.url == null )
             $(".profile_image").attr('src', "/assets/default_avatar.jpg");

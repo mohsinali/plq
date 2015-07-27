@@ -17,9 +17,15 @@
         .moreheight
           - User.services.each do |s|
             = check_box_tag "user_service[]", s, checked = false, options = { class: "chkboxfield" }
-            label #{s}
-          
+            label #{s}  
       .clear
+
+    .field-div
+      .label Years of Experience
+      .field
+        input#user_experience.inputfield name="user[experience]" type="number" value="1" min="1"
+      .clear
+
     .field-div
       .label Tier
       .field
