@@ -13,7 +13,8 @@ h1 Registered Agents
         th Email
         th Country
         th Role
-        th 
+        th Approved
+        th
         th
 
     tbody
@@ -23,6 +24,7 @@ h1 Registered Agents
           td = agent.email
           td = agent.country
           td = agent.roles.first.name.humanize
+          td = link_to agent.approved ? "Yes" : "No", "javascript:void(0);", id: agent.id, class: "approve_disapprove approve_#{agent.id}"
           td = link_to 'View Profile', user_path(agent)
           td = link_to 'Delete', user_path(agent.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
@@ -38,6 +40,7 @@ h1 Registered Vendors
         th Email
         th Country
         th Role
+        th Approved
         th
         th
 
@@ -48,6 +51,7 @@ h1 Registered Vendors
           td = vendor.email
           td = vendor.country
           td = vendor.roles.first.name.humanize
+          td = link_to vendor.approved ? "Yes" : "No", "javascript:void(0);", id: vendor.id, class: "approve_disapprove approve_#{vendor.id}"
           td = link_to 'View Profile', user_path(vendor)
           td = link_to 'Delete', user_path(vendor.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
@@ -63,6 +67,7 @@ h1 Registered Managers
         th Email
         th Country
         th Role
+        th Approved
         th
         th
 
@@ -73,5 +78,6 @@ h1 Registered Managers
           td = manager.email
           td = manager.country
           td = manager.roles.first.name.humanize
+          td = link_to manager.approved ? "Yes" : "No", "javascript:void(0);", id: manager.id, class: "approve_disapprove approve_#{manager.id}"
           td = link_to 'View Profile', user_path(manager)
           td = link_to 'Delete', user_path(manager.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
