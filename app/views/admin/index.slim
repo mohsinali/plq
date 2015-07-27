@@ -1,7 +1,9 @@
-= link_to "Providers awaiting approval", unapproved_admin_index_path()
+.btn-links.top-padd-fl-right 
+  = link_to "Providers awaiting approval", unapproved_admin_index_path()
 
 h1 Registered Agents
-= link_to "Add Agent", add_provider_admin_index_path(role: "agent", to_post: "/admin/add_provider")
+.btn-links
+  = link_to "Add Agent", add_provider_admin_index_path(role: "agent", to_post: "/admin/add_provider")
 
 - if @agents.any?
   table.table.table-bordered.users-list
@@ -25,7 +27,8 @@ h1 Registered Agents
           td = link_to 'Delete', user_path(agent.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
 h1 Registered Vendors
-= link_to "Add Vendor", add_provider_admin_index_path(role: "vendor", to_post: "/admin/add_provider")
+.btn-links
+  = link_to "Add Vendor", add_provider_admin_index_path(role: "vendor", to_post: "/admin/add_provider")
 
 - if @vendors.any?
   table.table.table-bordered.users-list
@@ -49,7 +52,8 @@ h1 Registered Vendors
           td = link_to 'Delete', user_path(vendor.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote => true, class: 'delete_user'
 
 h1 Registered Managers
-= link_to "Add Manager", add_provider_admin_index_path(role: "manager", to_post: "/admin/add_provider")
+.btn-links
+  = link_to "Add Manager", add_provider_admin_index_path(role: "manager", to_post: "/admin/add_provider")
 
 - if @managers.any?
   table.table.table-bordered.users-list

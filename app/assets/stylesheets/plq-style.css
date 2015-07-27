@@ -813,7 +813,13 @@ font-weight:normal!important;
 .signup-form .field-div {
 margin:0px 0px 12px 0px;
 }
-
+.signup-form.login-page-form {
+width:50%;
+}
+.signup-form.login-page-form .form-inputs .field-div .input {
+float:none;
+width:auto;
+}
 .signup-form .field-div .label {
 float:left;
 width:30%;
@@ -1686,6 +1692,49 @@ height: 100%;
 color:#333; text-align:center; font-size:12px; width:356px; position:absolute;
 }
 
+.form-action-links {
+padding-top:10px;
+font-size:14px;
+line-height:24px;
+}
+
+.form-action-links a {
+text-decoration:none;
+color:#4db6dc;
+}
+.form-action-links a:hover {
+color:#333;
+}
+.inner-page a {
+text-decoration:none;
+color:#4db6dc;
+}
+.inner-page a:hover {
+color:#333;
+}
+.btn-links {
+margin-bottom:20px;
+}
+.btn-links a {
+background:#4db6dc;
+font-weight:normal;
+color:#fff;
+font-size:16px;
+text-decoration:none;
+padding:5px 10px 5px 10px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+margin-bottom:20px;
+}
+.btn-links a:hover {
+background:#333;
+color:#fff;
+}
+.btn-links.top-padd-fl-right {
+float:right;
+padding-top:10px;
+}
 @media only screen and (max-width: 1000px) {
 
   .container, .home-container {
