@@ -1,5 +1,4 @@
 class ManagersController < ApplicationController
-  before_action :authenticate_user!
   before_action :authenticate_manager!
 
   include AddProvider
