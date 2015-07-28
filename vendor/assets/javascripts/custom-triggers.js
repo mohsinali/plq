@@ -299,6 +299,8 @@ $(function () {
 	}
 
   $( ".contact_agent" ).click(function() {
+    agent_id = $(this).attr("agent_id");
+
     $( "#ContactAgentForm" ).dialog({
       modal: true,
       resizable: false,
@@ -309,6 +311,7 @@ $(function () {
     });
     //$( "#ContactAgentForm" ).effect( "bounce", "slow" );
     $( "#ContactAgentForm" ).effect("highlight", {color:"#b8dae6"});
+    $("#sendMessageTo").val(agent_id);
   });
 
 });

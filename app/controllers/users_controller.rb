@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:request_for_membership]
   before_action :verify_user, only: [:show]
-  after_action :verify_authorized, except: [:request_for_membership, :show, :destroy, :approve_disapprove, :user_services, :user_languages, :user_cities, :user_countries, :upload_image]
+  after_action :verify_authorized, except: [:request_for_membership, :show, :destroy, :approve_disapprove, :user_services, :user_languages, :user_cities, :user_countries, :upload_image, :contact_agent]
 
   def index
     @users = User.all
@@ -88,7 +88,14 @@ class UsersController < ApplicationController
   end
 
   def contact_agent
-    
+    receiver = User.find(params[:agent_id])
+    sender = current_user
+    unless params[:subject].blank? and params[:message].blank?
+      sender.send_message(receiver, params[:message], params[:subject])
+    end
+
+    flash[:notice] = "Your message has been successfully sent."
+    respond_to :js
   end
 
   private

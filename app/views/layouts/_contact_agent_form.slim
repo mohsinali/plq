@@ -2,16 +2,17 @@
   .signup-form
     form action="/users/contact_agent" method="post" name="contactagentfrm" data-remote="true"
       .field-div
-        .label Email
+        .label Subject
         .field
-          input.inputfield.user_email name="email" type="text" value=""
+          input.inputfield name="subject" type="text" value=""
         .clear
       .field-div
-        .label Location
+        .label Message
         .field
-          input.inputfield.user_location name="location" type="text" value=""
+          input.inputfield name="message" type="text" value=""
+          input#sendMessageTo type="text" name="agent_id" value=""
         .clear
       .align-right.padd-rgt-10
         .user_loader style="display:none;"
             = image_tag "loading.gif"
-        input.submit-button.btn_user_signup name="submit" type="submit" value=("Send")
+        input.submit-button.btn_user_signup agent_id="" name="submit" type="submit" value=("Send")
