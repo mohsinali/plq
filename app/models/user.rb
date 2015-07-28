@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   has_many :user_services, dependent: :destroy
   has_many :user_cities, dependent: :destroy
+  has_and_belongs_to_many :languages
 
   # def set_default_role
   #   self.role ||= :user

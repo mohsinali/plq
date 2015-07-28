@@ -41,7 +41,11 @@
         | Reviews
       .language
         span Languages: 
-        | English, Spanish, French
+        - languages = []
+        - @user.languages.each do |lang|
+          - languages << lang.name
+        = link_to "#", id: "user_languages", class: 'editable editable-click user_editable', "data-pk" => @user.id, "data-type" => "checklist", "data-source" => "/users/user_languages.json", "data-name" => "user_languages", "data-value" => languages.join(", "), "data-url" => language_editable_agents_path() do
+          = languages.join(", ")
   .content-pannel
     .user-profile-cp
       .info-box

@@ -7,10 +7,10 @@ class AgentsController < ApplicationController
   end
 
   def show
-  	@agent = User.where(id: params[:id]).includes(:user_cities)
+  	@agent = User.where(id: params[:id])
 
   	respond_to do |format|
-  		format.json { render :json => @agent, :include => [:user_cities, :user_services] }
+  		format.json { render :json => @agent, :include => [:user_cities, :user_services, :languages] }
   		format.html
   	end
   end
@@ -33,6 +33,21 @@ class AgentsController < ApplicationController
       services.each do |service_name|
         UserService.create(:name => service_name, :user_id => user_id)
       end
+    end
+
+    render :text => 'success'
+  end
+
+  def language_editable
+    user_id = params[:pk]
+    languages = params[:value]
+    user = User.find(user_id)
+    user.languages.delete_all
+
+    unless languages.nil?
+      languages = Language.where(:name => languages)
+      user.languages << languages
+      user.save
     end
 
     render :text => 'success'

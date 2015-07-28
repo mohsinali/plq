@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   		post :request_for_membership
       post :approve_disapprove
       get :user_services
+      get :user_languages
       get :user_cities
       get :user_countries
       post :upload_image
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
     collection do
       post :editable
       post :service_editable
+      post :language_editable
       post :cities_editable
       post :interests_editable
     end

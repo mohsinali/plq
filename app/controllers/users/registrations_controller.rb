@@ -19,16 +19,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
       ## Assign a role to newly created user
       resource.add_role params[:role]
       
-      # Add Selected services
-      params[:user_service].each do |service|
-        UserService.create(name: service, user_id: resource.id)
+      # Add selected services
+      unless params[:user_service].nil?
+        params[:user_service].each do |service|
+          UserService.create(name: service, user_id: resource.id)
+        end
       end
 
-      # Add Selected cities
-      params[:user_cities].each do |city|
-        UserCity.create(name: city, user_id: resource.id)
+      # Add selected cities
+      unless params[:user_cities].nil?
+        params[:user_cities].each do |city|
+          UserCity.create(name: city, user_id: resource.id)
+        end
       end
-      
+
+      # Add selected languages
+      unless params[:user_languages].nil?
+        languages = Language.where(:id => params[:user_languages])
+        resource.languages << languages
+      end
       ## ########################
       ## Upload Profile Image      
       resource.image = params[:user][:image]

@@ -45,6 +45,16 @@
           = check_box_tag "user_cities[]", c, checked = false, options = { class: "chkboxfield" }
           label #{c}
       .clear
+
+    .field-div
+      .label Languages
+      .field
+        .moreheight
+          - Language.all.each do |lang|
+            = check_box_tag "user_languages[]", lang.id, checked = false, options = { class: "chkboxfield" }
+            label #{lang.name}
+      .clear
+      
     .field-div
       .label Email
       .field
