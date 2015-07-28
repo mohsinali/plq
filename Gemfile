@@ -23,6 +23,7 @@ gem 'kaminari'
 gem 'ransack'
 gem 'carrierwave'
 gem 'remotipart', '~> 1.2'
+gem 'mailboxer'
 group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
