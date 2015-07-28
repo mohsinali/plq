@@ -289,8 +289,7 @@ $(function () {
       $(".detail_services").html(services);
       $(".experience").html(msg[0].experience);
       $(".languages").html(languages);
-      
-      // $(".contact_agent_from_card").attr("agent_id", msg[0].id);
+      $(".contact_agent_from_popup").attr("agent_id", msg[0].id);
       
       if( msg[0].image.url == null )
         $(".profile_image").attr('src', "/assets/default_avatar.jpg");
@@ -298,5 +297,18 @@ $(function () {
         $(".profile_image").attr('src', msg[0].image.url);
 	  });
 	}
+
+  $( ".contact_agent" ).click(function() {
+    $( "#ContactAgentForm" ).dialog({
+      modal: true,
+      resizable: false,
+      draggable: false,
+      width: 500,
+      height: 320,
+      closeText: false
+    });
+    //$( "#ContactAgentForm" ).effect( "bounce", "slow" );
+    $( "#ContactAgentForm" ).effect("highlight", {color:"#b8dae6"});
+  });
 
 });

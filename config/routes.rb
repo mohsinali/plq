@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       get :user_cities
       get :user_countries
       post :upload_image
+      post :contact_agent
   	end
   end
 

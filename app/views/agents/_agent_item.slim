@@ -13,6 +13,7 @@
     .specialities
       .interest Interests: #{user.interest_list}
       .destination Destination: #{user.country}
-    .contact
-      a href="#"  CONTACT
+    - if user_signed_in?
+      .contact
+        a.contact_agent agent_id="#{user.id}" href="javascript:void(0);"  CONTACT
   .clear

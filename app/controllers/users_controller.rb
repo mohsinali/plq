@@ -87,6 +87,10 @@ class UsersController < ApplicationController
     redirect_to user_path(user)
   end
 
+  def contact_agent
+    
+  end
+
   private
 
   def secure_params

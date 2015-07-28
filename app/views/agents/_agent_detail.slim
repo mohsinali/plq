@@ -8,8 +8,9 @@
         | Recommended | 
         span 5 
         | Reviews
-      .contact
-        a href="#" CONTACT
+      - if user_signed_in?
+        .contact
+          a.contact_agent.contact_agent_from_popup.contact_agent agent_id="" href="javascript:void(0);" CONTACT
     .info
       .service.detail_services 
       .location.detail_location 
