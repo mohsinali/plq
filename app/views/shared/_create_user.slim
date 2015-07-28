@@ -22,6 +22,16 @@ form.simple_form.edit_user accept-charset="UTF-8" action="#{params[:to_post]}" e
           = check_box_tag "user_service[]", s, checked = false
           label #{s}
       .clear
+    
+    - if params[:role] == "agent"
+      .field-div
+        .left-label Years of Experience
+        .input
+          input#user_experience name="user[experience]" type="number" value="1" min="1"
+        .clear
+    - else
+      input type="hidden" name="user[experience]" value="0"
+    
     .field-div
       .left-label Tier
       .input
@@ -45,6 +55,13 @@ form.simple_form.edit_user accept-charset="UTF-8" action="#{params[:to_post]}" e
         - User.cities.each do |c|
           = check_box_tag "user_cities[]", c, checked = false
           label #{c}
+      .clear
+    .field-div
+      .left-label Languages
+      .input
+        - Language.all.each do |lang|
+          = check_box_tag "user_languages[]", lang.id, checked = false
+          label #{lang.name}
       .clear
     .field-div
       .left-label Interests
