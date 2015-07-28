@@ -83,12 +83,33 @@
           = link_to @user.social_links, "#", id: "social_links", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "text", "data-url" => editable_agents_path()
         /div
           a href="https://www.facebook.com/plqrobert" target="_blank"  https://www.facebook.com/plqrobert
-          
+      
       .info-box
         .about
           h3 About Me
           p
             = link_to @user.description, "#", id: "description", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "textarea", "data-url" => editable_agents_path()
+
+      .info-box
+        .conversations
+          h3 Inbox
+          - @user.mailbox.inbox.each do |conversation|
+            - receipts = conversation.receipts_for @user
+            - receipts.each do |receipt|
+              p Subject: #{receipt.message.subject}
+              p Message: #{receipt.message.body}
+              = "-------------------------------"
+
+      .info-box
+        .conversations
+          h3 Sentbox
+          - @user.mailbox.sentbox.each do |conversation|
+            - receipts = conversation.receipts_for @user
+            - receipts.each do |receipt|
+              p Subject: #{receipt.message.subject}
+              p Message: #{receipt.message.body}
+              = "-------------------------------"
+
       .reviews
         h3 Reviews
         .user-review
