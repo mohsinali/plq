@@ -27,5 +27,10 @@ html
     #LoginForm style="display:none;" title=("LOG IN") 
       .signup-form
         = render 'shared/sign_in_form'
+
+    = render 'layouts/membership_form'
+    #UserSignUpForm style="display:none;" title=("Become a PLQ member") 
+      .signup-form
+        = render "layouts/mailchimp_subscription_form"
     = render 'layouts/footer'
     

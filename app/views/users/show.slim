@@ -6,7 +6,7 @@
     - else
       | &raquo; Profile
   - if @user == current_user
-    .edit-profile-button
+    .btn-links.top-padd-fl-right
       = link_to 'Change Login Details', edit_user_registration_path
   - if params[:id].split("-").first.to_i == current_user.id
     h1 My Profile
