@@ -90,25 +90,29 @@
           p
             = link_to @user.description, "#", id: "description", class: "editable editable-click user_editable", "data-pk" => @user.id, "data-type" => "textarea", "data-url" => editable_agents_path()
 
+     
+	  
+	  .conversations
+      h3 Messages
       .info-box
-        .conversations
-          h3 Inbox
-          - @user.mailbox.inbox.each do |conversation|
-            - receipts = conversation.receipts_for @user
-            - receipts.each do |receipt|
-              p Subject: #{receipt.message.subject}
-              p Message: #{receipt.message.body}
-              = "-------------------------------"
+        h3 Inbox
+        - @user.mailbox.inbox.each do |conversation|
+          - receipts = conversation.receipts_for @user
+          - receipts.each do |receipt|
+            / p #{receipt.notification.created_at.strftime("%b %d, %Y %I:%M%p")}
+            / p From: #{receipt.notification.sender.name} <#{receipt.notification.sender.email}>
+            p Subject: #{receipt.message.subject}
+            p Message: #{receipt.message.body}
+            = "-------------------------------"
 
       .info-box
-        .conversations
-          h3 Sentbox
-          - @user.mailbox.sentbox.each do |conversation|
-            - receipts = conversation.receipts_for @user
-            - receipts.each do |receipt|
-              p Subject: #{receipt.message.subject}
-              p Message: #{receipt.message.body}
-              = "-------------------------------"
+        h3 Sent Messages
+        - @user.mailbox.sentbox.each do |conversation|
+          - receipts = conversation.receipts_for @user
+          - receipts.each do |receipt|
+            p Subject: #{receipt.message.subject}
+            p Message: #{receipt.message.body}
+            = "-------------------------------"
 
       .reviews
         h3 Reviews
